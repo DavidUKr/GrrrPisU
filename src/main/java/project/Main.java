@@ -1,3 +1,5 @@
+package project;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,11 +12,11 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        Parent root= FXMLLoader.load(getClass().getResource("com/example/grrrpisu/main.fxml"));
+        Parent root= FXMLLoader.load(getClass().getResource("UI/pages/Initial_Setup.fxml"));
         Scene scene=new Scene(root);
         stage.setScene(scene);
         stage.setTitle("GrrPisU");
-        Image icon=new Image("com/example/grrrpisu/Cat_images/lloadingBarFace.psd");
+        Image icon=new Image("UI/images/icon_paw.png");
         stage.getIcons().add(icon);
         stage.show();
     }
