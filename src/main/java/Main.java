@@ -12,6 +12,7 @@ public class Main extends Application {
 
         Parent root= FXMLLoader.load(getClass().getResource("UI/pages/Initial_Setup.fxml"));
         Scene scene=new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("UI/css/InitialSetup/EN_init.css").toExternalForm());
         stage.setScene(scene);
         stage.setTitle("GrrPisU");
         Image icon=new Image("UI/images/icon_paw.png");

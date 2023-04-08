@@ -1,14 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="UI.Controllers.SettingsController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.InitialSet_SettingsController">
+    <children>
+        <ImageView fx:id="imgSelBLUE" fitHeight="802.0" fitWidth="427.0" onMouseClicked="#select_Blue" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/InitialSetup_Settings/BlueCat_Unselected.png" />
+            </image></ImageView>
+        <ImageView fx:id="imgSelYELLOW" fitHeight="802.0" fitWidth="372.0" layoutX="361.0" onMouseClicked="#select_Yellow" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/InitialSetup_Settings/YellowCat_Unselected.png" />
+            </image></ImageView>
+        <ImageView fx:id="imgLanguageBackground" fitHeight="864.0" fitWidth="722.0" layoutX="720.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/InitialSetup_Settings/Button_Languages.png" />
+            </image></ImageView>
+        <ImageView fx:id="imgSelEn" fitHeight="150.0" fitWidth="200.0" layoutX="829.0" layoutY="460.0" onMouseClicked="#select_EN" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/InitialSetup_Settings/ENG_Unselected.png" />
+            </image></ImageView>
+        <ImageView fx:id="imgSelRo" fitHeight="150.0" fitWidth="200.0" layoutX="1152.0" layoutY="460.0" onMouseClicked="#select_RO" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/InitialSetup_Settings/RO_Unselected.png" />
+            </image></ImageView>
+        <ImageView fx:id="imgLblSelCat" fitHeight="185.0" fitWidth="376.0" layoutX="173.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/InitialSetup_Settings/Text_SELECTCAT.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="imgLblSelLanguage" fitHeight="185.0" fitWidth="376.0" layoutX="893.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/InitialSetup_Settings/Text_SELECTLANGUAGE.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="btnToMAIN" layoutX="40.0" layoutY="900.0" mnemonicParsing="false" onAction="#gotoMain">
+         <graphic>
+            <ImageView fitHeight="83.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Icons/Icon_Back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+        </Button>
+        <Button fx:id="btnDetectGPU" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="612.0" layoutY="841.0" mnemonicParsing="false" onAction="#detect_GPU">
+            <graphic>
+                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/InitialSetup_Settings/Button_DETECTGPU.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </children>
 </AnchorPane>

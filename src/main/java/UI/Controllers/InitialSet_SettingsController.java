@@ -1,23 +1,19 @@
 package UI.Controllers;
 
-import UI.SceneLoaders.GenLoader;
+import UI.SceneLoaders.PageLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
+
 
 import java.io.IOException;
 
 
-public class InitialSetupCntroller {
+public class InitialSet_SettingsController {
     //FXML injections
     @FXML
-    public ImageView imgBtnBEGIN;
+    public ImageView imgToMAIN;
     @FXML
     private ImageView imgSelBLUE;
     @FXML
@@ -40,32 +36,32 @@ public class InitialSetupCntroller {
     public void select_Blue(){
         imgSelBLUE.setImage(Blue_sel);
         imgSelYELLOW.setImage(Yel_unsel);
-        GenLoader.setThemeb(false);
+        PageLoader.setThemeb(false);
     }
 
     public void select_Yellow(){
         imgSelBLUE.setImage(Blue_unsel);
         imgSelYELLOW.setImage(Yel_sel);
-        GenLoader.setThemeb(true);
+        PageLoader.setThemeb(true);
     }
 
     public void select_EN(){
         imgSelEn.setImage(EN_sel);
         imgSelRo.setImage(RO_unsel);
-        GenLoader.setLangb(false);
+        PageLoader.setLangb(false);
     }
 
     public void select_RO(){
         imgSelEn.setImage(EN_unsel);
         imgSelRo.setImage(RO_sel);
-        GenLoader.setLangb(true);
+        PageLoader.setLangb(true);
     }
 
-    public void begin_gotoMain(ActionEvent event) throws IOException {
-        GenLoader.load(event, GenLoader.page_select.MENU);
+    public void gotoMain(ActionEvent event) throws IOException {
+        PageLoader.load(event, PageLoader.page_select.MENU);
     }
 
     public void detect_GPU(ActionEvent event) throws IOException {
-
+        System.out.println("Detecting GPU");
     }
 }

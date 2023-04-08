@@ -5,7 +5,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.InitialSetupCntroller">
+<AnchorPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.InitialSet_SettingsController">
    <children>
       <ImageView fx:id="imgSelBLUE" fitHeight="802.0" fitWidth="427.0" onMouseClicked="#select_Blue" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -37,7 +37,7 @@
             <Image url="@../images/InitialSetup_Settings/Text_SELECTLANGUAGE.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnBEGIN" layoutX="613.0" layoutY="848.0" mnemonicParsing="false" onAction="#begin_gotoMain">
+      <Button fx:id="btnToMain" layoutX="613.0" layoutY="848.0" mnemonicParsing="false" onAction="#gotoMain">
          <graphic>
             <ImageView fitHeight="67.0" fitWidth="805.0" pickOnBounds="true" preserveRatio="true">
                <image>
