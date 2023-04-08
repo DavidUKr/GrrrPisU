@@ -1,5 +1,6 @@
 package UI.Controllers;
 
+import UI.SceneLoaders.GenLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +15,7 @@ import java.io.IOException;
 
 
 public class InitialSetupCntroller {
+    //FXML injections
     @FXML
     public ImageView imgBtnBEGIN;
     @FXML
@@ -25,7 +27,7 @@ public class InitialSetupCntroller {
     @FXML
     private ImageView imgSelRo;
 
-
+    //images for cat and language selection
     Image Blue_sel=new Image(getClass().getResourceAsStream("/UI/images/InitialSetup_Settings/BlueCat_Selected.png"));
     Image Blue_unsel=new Image(getClass().getResourceAsStream("/UI/images/InitialSetup_Settings/BlueCat_Unselected.png"));
     Image Yel_sel=new Image(getClass().getResourceAsStream("/UI/images/InitialSetup_Settings/YellowCat_Selected.png"));
@@ -35,37 +37,32 @@ public class InitialSetupCntroller {
     Image RO_sel=new Image(getClass().getResourceAsStream("/UI/images/InitialSetup_Settings/RO_Selected.png"));
     Image RO_unsel=new Image(getClass().getResourceAsStream("/UI/images/InitialSetup_Settings/RO_Unselected.png"));
 
-    Stage stage;
-    Scene scene;
-    Parent root;
-
     public void select_Blue(){
         imgSelBLUE.setImage(Blue_sel);
         imgSelYELLOW.setImage(Yel_unsel);
+        GenLoader.setThemeb(false);
     }
 
     public void select_Yellow(){
         imgSelBLUE.setImage(Blue_unsel);
         imgSelYELLOW.setImage(Yel_sel);
+        GenLoader.setThemeb(true);
     }
-
 
     public void select_EN(){
         imgSelEn.setImage(EN_sel);
         imgSelRo.setImage(RO_unsel);
+        GenLoader.setLangb(false);
     }
 
     public void select_RO(){
         imgSelEn.setImage(EN_unsel);
         imgSelRo.setImage(RO_sel);
+        GenLoader.setLangb(true);
     }
 
     public void begin_gotoMain(ActionEvent event) throws IOException {
-        root= FXMLLoader.load(getClass().getResource("/UI/pages/main.fxml"));
-        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-        scene=new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        GenLoader.load(event, GenLoader.page_select.MENU);
     }
 
     public void detect_GPU(ActionEvent event) throws IOException {
