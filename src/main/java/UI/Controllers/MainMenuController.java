@@ -1,4 +1,4 @@
-package project.UI.Controllers;
+package UI.Controllers;
 
 public class MainMenuController {
 }

@@ -1,4 +1,4 @@
-package project.UI.Controllers;
+package UI.Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,14 +21,14 @@ public class InitialSetupCntroller {
     private ImageView imgSelEn;
     private ImageView imgSelRo;
 
-    Image Blue_sel=new Image(getClass().getResourceAsStream("project/UI/images/InitialSetup_Settings/YellowCat_Unselected.png"));
-    Image Blue_unsel=new Image(getClass().getResourceAsStream("project/UI/images/InitialSetup_Settings/BlueCat_Unselected.png"));
-    Image Yel_sel=new Image(getClass().getResourceAsStream("project/UI/images/InitialSetup_Settings/YellowCat_Selected.png"));
-    Image Yel_unsel=new Image(getClass().getResourceAsStream("project/UI/images/InitialSetup_Settings/YellowCat_Unselected.png"));
-    Image EN_sel=new Image(getClass().getResourceAsStream("project/UI/images/InitialSetup_Settings/ENG_Selected.png"));
-    Image EN_unsel=new Image(getClass().getResourceAsStream("project/UI/images/InitialSetup_Settings/ENG_Unselected.png"));
-    Image RO_sel=new Image(getClass().getResourceAsStream("project/UI/images/InitialSetup_Settings/RO_Selected.png"));
-    Image RO_unsel=new Image(getClass().getResourceAsStream("project/UI/images/InitialSetup_Settings/RO_Unselected.png"));
+    Image Blue_sel=new Image(getClass().getResourceAsStream("/UI/images/InitialSetup_Settings/BlueCat_Selected.png"));
+    Image Blue_unsel=new Image(getClass().getResourceAsStream("/UI/images/InitialSetup_Settings/BlueCat_Unselected.png"));
+    Image Yel_sel=new Image(getClass().getResourceAsStream("/UI/images/InitialSetup_Settings/YellowCat_Selected.png"));
+    Image Yel_unsel=new Image(getClass().getResourceAsStream("/UI/images/InitialSetup_Settings/YellowCat_Unselected.png"));
+    Image EN_sel=new Image(getClass().getResourceAsStream("/UI/images/InitialSetup_Settings/ENG_Selected.png"));
+    Image EN_unsel=new Image(getClass().getResourceAsStream("/UI/images/InitialSetup_Settings/ENG_Unselected.png"));
+    Image RO_sel=new Image(getClass().getResourceAsStream("/UI/images/InitialSetup_Settings/RO_Selected.png"));
+    Image RO_unsel=new Image(getClass().getResourceAsStream("/UI/images/InitialSetup_Settings/RO_Unselected.png"));
 
     Stage stage;
     Scene scene;
