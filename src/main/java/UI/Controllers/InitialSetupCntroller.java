@@ -14,12 +14,17 @@ import java.io.IOException;
 
 
 public class InitialSetupCntroller {
-
+    @FXML
+    public ImageView imgBtnBEGIN;
     @FXML
     private ImageView imgSelBLUE;
+    @FXML
     private ImageView imgSelYELLOW;
+    @FXML
     private ImageView imgSelEn;
+    @FXML
     private ImageView imgSelRo;
+
 
     Image Blue_sel=new Image(getClass().getResourceAsStream("/UI/images/InitialSetup_Settings/BlueCat_Selected.png"));
     Image Blue_unsel=new Image(getClass().getResourceAsStream("/UI/images/InitialSetup_Settings/BlueCat_Unselected.png"));
@@ -56,7 +61,7 @@ public class InitialSetupCntroller {
     }
 
     public void begin_gotoMain(ActionEvent event) throws IOException {
-        root= FXMLLoader.load(getClass().getResource("project.UI/pages/main.fxml"));
+        root= FXMLLoader.load(getClass().getResource("/UI/pages/main.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setScene(scene);
