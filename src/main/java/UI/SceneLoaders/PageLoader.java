@@ -36,7 +36,7 @@ public class PageLoader {
 
         switch (page) {
             case MENU -> {
-                FXML_name = "/UI/pages/main.fxml";
+                FXML_name = "/UI/pages/resized/main.fxml";
 
                 if (THEME_b)
                     CSS_theme = PageLoader.class.getResource("/UI/css/MainMenu/Yellow_menu.css").toExternalForm();
@@ -47,7 +47,7 @@ public class PageLoader {
 
             }
             case HISTORY -> {
-                FXML_name = "/UI/pages/History.fxml";
+                FXML_name = "/UI/pages/resized/History.fxml";
 
                 if (THEME_b)
                     CSS_theme = PageLoader.class.getResource("/UI/css/History/Yellow_hist.css").toExternalForm();
@@ -58,7 +58,7 @@ public class PageLoader {
 
             }
             case SETTINGS -> {
-                FXML_name = "/UI/pages/Settings.fxml";
+                FXML_name = "/UI/pages/resized/Settings.fxml";
 
                 if (THEME_b)
                     CSS_theme = PageLoader.class.getResource("/UI/css/Settings/Yellow_set.css").toExternalForm();

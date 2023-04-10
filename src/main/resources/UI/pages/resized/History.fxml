@@ -7,19 +7,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="1200.0" prefWidth="826.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.HistoryController">
+<AnchorPane prefHeight="826.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.HistoryController">
    <children>
-      <Button fx:id="btnToMAIN" layoutX="80.0" layoutY="848.0" mnemonicParsing="false" onAction="#gotoMain">
+      <Button fx:id="btnToMAIN" layoutX="54.0" layoutY="685.0" mnemonicParsing="false" onAction="#gotoMain">
          <graphic>
-            <ImageView fitHeight="118.0" fitWidth="137.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="75.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/Icons/Icon_Back.png" />
+                  <Image url="@../../images/Icons/Icon_Back.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Label layoutX="529.0" layoutY="278.0" text="~HISTORY~">
+      <Label layoutX="417.0" layoutY="219.0" text="~HISTORY~">
          <font>
             <Font size="72.0" />
          </font>
