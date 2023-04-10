@@ -5,7 +5,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.InitialSet_SettingsController">
+<AnchorPane maxHeight="1024" maxWidth="1440" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.InitialSet_SettingsController">
    <children>
       <ImageView fx:id="imgSelBLUE" fitHeight="802.0" fitWidth="427.0" onMouseClicked="#select_Blue" pickOnBounds="true" preserveRatio="true">
          <image>
