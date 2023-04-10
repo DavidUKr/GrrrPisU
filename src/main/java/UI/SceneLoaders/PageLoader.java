@@ -78,7 +78,6 @@ public class PageLoader {
         root= FXMLLoader.load(PageLoader.class.getResource(FXML_name));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
-        //we don't have theme for settings, it is the same
         scene.getStylesheets().add(CSS_theme);
         scene.getStylesheets().add(CSS_lang);
         //loading stage
