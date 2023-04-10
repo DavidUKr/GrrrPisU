@@ -3,6 +3,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -17,7 +18,8 @@ public class Main extends Application {
         stage.setTitle("GrrPisU");
         Image icon=new Image("UI/images/icon_paw.png");
         stage.getIcons().add(icon);
-        stage.setMaximized(false);
+        stage.setResizable(false);
+        //stage.setFullScreenExitKeyCombination(KeyCombination.valueOf("ESC"));
         stage.show();
     }
 
