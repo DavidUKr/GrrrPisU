@@ -5,7 +5,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="826.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.InitialSet_SettingsController">
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.InitialSet_SettingsController">
     <children>
         <ImageView fx:id="imgSelBLUE" fitHeight="667.0" fitWidth="300.0" onMouseClicked="#select_Blue" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -17,7 +17,7 @@
             </image></ImageView>
         <ImageView fx:id="imgLanguageBackground" fitHeight="667.0" fitWidth="602.0" layoutX="600.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../images/InitialSetup_Settings/Button_Languages.png" />
+                <Image url="@../../images/InitialSetup_Settings/Language_background.png" />
             </image></ImageView>
         <ImageView fx:id="imgSelEn" fitHeight="150.0" fitWidth="200.0" layoutX="650.0" layoutY="408.0" onMouseClicked="#select_EN" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -46,14 +46,6 @@
             </ImageView>
          </graphic>
         </Button>
-        <Button fx:id="btnDetectGPU" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="492.0" layoutY="697.0" mnemonicParsing="false" onAction="#detect_GPU">
-            <graphic>
-                <ImageView fx:id="btnDetectGPU" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../images/InitialSetup_Settings/Button_DETECTGPU.png" />
-                    </image>
-                </ImageView>
-            </graphic>
-        </Button>
+        <Button fx:id="btnDetectGPU" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="492.0" layoutY="697.0" mnemonicParsing="false" onAction="#detect_GPU" text="DETECT GPU"></Button>
     </children>
 </AnchorPane>
