@@ -6,32 +6,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <?import java.net.URL?>
-<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.MainMenuController">
+<AnchorPane fx:id="anchorpane" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.MainMenuController">
    <children>
-      <Button fx:id="btnSETTINGS" layoutX="49.0" layoutY="702.0" mnemonicParsing="false" onAction="#gotoSettings" prefHeight="86.0" prefWidth="120.0">
-         <graphic>
-            <ImageView fitHeight="99.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/MainMenu/(PlaceHolder)Button_BlueSettings.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button fx:id="btnHISTORY" layoutX="1076.0" layoutY="712.0" mnemonicParsing="false" onAction="#gotoHistory">
-         <graphic>
-            <ImageView fitHeight="70.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/MainMenu/Button_History.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button fx:id="btnSTART_TEST" blendMode="DARKEN" layoutX="569.0" layoutY="347.0" mnemonicParsing="false" onAction="#startTest" text="StartTest" />
+      <Button fx:id="btnHELP" layoutX="1100.0" layoutY="0.0" prefHeight="100.0" prefWidth="100.0"  mnemonicParsing="false"></Button>
+
+      <Button fx:id="btnSETTINGS" layoutX="0.0" layoutY="600.0" mnemonicParsing="false" onAction="#gotoSettings" prefHeight="100.0" prefWidth="100.0"></Button>
+
+      <Button fx:id="btnHISTORY" layoutX="1100.0" layoutY="600.0" mnemonicParsing="false" onAction="#gotoHistory"></Button>
+
+      <Button fx:id="btnSTART_TEST" blendMode="DARKEN" layoutX="512.0" layoutY="365.0" mnemonicParsing="false" onAction="#startTest" text="StartTest" />
+
       <ImageView fx:id="imgLogo" fitHeight="78.0" fitWidth="108.0" layoutX="69.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/lloadingBarFace.png" />
          </image>
       </ImageView>
+
       <Button fx:id="btnSelBENCHMARK" layoutX="772.0" layoutY="503.0" mnemonicParsing="false" onAction="#selectBenchmark" text="openCatFight" />
    </children>
 </AnchorPane>
