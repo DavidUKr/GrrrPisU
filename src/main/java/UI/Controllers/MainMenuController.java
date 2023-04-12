@@ -18,7 +18,11 @@ public class MainMenuController {
         System.out.println("STARTING TEST");
     }
 
-    public void selectBenchmark(){
-        System.out.println("Choose Benchmark");
+    public void openCatFight(){
+        System.out.println("Opening Cat fght pop-up");
+    }
+
+    public void openHelp(){
+        System.out.println("Opening Help pop-up");
     }
 }

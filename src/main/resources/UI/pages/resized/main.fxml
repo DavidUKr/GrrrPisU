@@ -5,14 +5,13 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<?import java.net.URL?>
 <AnchorPane fx:id="anchorpane" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.MainMenuController">
    <children>
-      <Button fx:id="btnHELP" layoutX="1100.0" layoutY="0.0" prefHeight="100.0" prefWidth="100.0"  mnemonicParsing="false"></Button>
+      <Button fx:id="btnHELP" layoutX="1100.0" layoutY="0.0" mnemonicParsing="false" onAction="#openHelp" prefHeight="100.0" prefWidth="100.0" />
 
-      <Button fx:id="btnSETTINGS" layoutX="0.0" layoutY="600.0" mnemonicParsing="false" onAction="#gotoSettings" prefHeight="100.0" prefWidth="100.0"></Button>
+      <Button fx:id="btnSETTINGS" layoutX="0.0" layoutY="600.0" mnemonicParsing="false" onAction="#gotoSettings" prefHeight="100.0" prefWidth="100.0" />
 
-      <Button fx:id="btnHISTORY" layoutX="1100.0" layoutY="600.0" mnemonicParsing="false" onAction="#gotoHistory"></Button>
+      <Button fx:id="btnHISTORY" layoutX="1100.0" layoutY="600.0" mnemonicParsing="false" onAction="#gotoHistory" />
 
       <Button fx:id="btnSTART_TEST" blendMode="DARKEN" layoutX="512.0" layoutY="365.0" mnemonicParsing="false" onAction="#startTest" text="StartTest" />
 
@@ -22,6 +21,6 @@
          </image>
       </ImageView>
 
-      <Button fx:id="btnSelBENCHMARK" layoutX="772.0" layoutY="503.0" mnemonicParsing="false" onAction="#selectBenchmark" text="openCatFight" />
+      <Button fx:id="btnOpenCATFIGHT" layoutX="772.0" layoutY="503.0" mnemonicParsing="false" onAction="#openCatFight" text="openCatFight" />
    </children>
 </AnchorPane>
