@@ -9,39 +9,39 @@
    <children>
       <ImageView fx:id="imgSelBLUE" fitHeight="802.0" fitWidth="427.0" onMouseClicked="#select_Blue" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/InitialSetup_Settings/BlueCat_Unselected.png" />
+            <Image url="@../../images/InitialSetup_Settings/BlueCat_Unselected.png" />
          </image></ImageView>
       <ImageView fx:id="imgSelYELLOW" fitHeight="802.0" fitWidth="372.0" layoutX="361.0" onMouseClicked="#select_Yellow" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/InitialSetup_Settings/YellowCat_Unselected.png" />
+            <Image url="@../../images/InitialSetup_Settings/YellowCat_Unselected.png" />
          </image></ImageView>
       <ImageView fx:id="imgLanguageBackground" fitHeight="864.0" fitWidth="722.0" layoutX="720.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/InitialSetup_Settings/Button_Languages.png" />
+            <Image url="@../../images/InitialSetup_Settings/Button_Languages.png" />
          </image></ImageView>
       <ImageView fx:id="imgSelEn" fitHeight="150.0" fitWidth="200.0" layoutX="829.0" layoutY="460.0" onMouseClicked="#select_EN" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/InitialSetup_Settings/ENG_Unselected.png" />
+            <Image url="@../../images/InitialSetup_Settings/ENG_Unselected.png" />
          </image></ImageView>
       <ImageView fx:id="imgSelRo" fitHeight="150.0" fitWidth="200.0" layoutX="1152.0" layoutY="460.0" onMouseClicked="#select_RO" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/InitialSetup_Settings/RO_Unselected.png" />
+            <Image url="@../../images/InitialSetup_Settings/RO_Unselected.png" />
          </image></ImageView>
       <ImageView fx:id="imgLblSelCat" fitHeight="185.0" fitWidth="376.0" layoutX="173.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/InitialSetup_Settings/Text_SELECTCAT.png" />
+            <Image url="@../../images/InitialSetup_Settings/Text_SELECTCAT.png" />
          </image>
       </ImageView>
       <ImageView fx:id="imgLblSelLanguage" fitHeight="185.0" fitWidth="376.0" layoutX="893.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/InitialSetup_Settings/Text_SELECTLANGUAGE.png" />
+            <Image url="@../../images/InitialSetup_Settings/Text_SELECTLANGUAGE.png" />
          </image>
       </ImageView>
       <Button fx:id="btnToMain" layoutX="613.0" layoutY="848.0" mnemonicParsing="false" onAction="#gotoMain">
          <graphic>
             <ImageView fitHeight="67.0" fitWidth="805.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/InitialSetup_Settings/Button_BEGIN!.png" />
+                  <Image url="@../../images/InitialSetup_Settings/Button_BEGIN!.png" />
                </image>
             </ImageView>
          </graphic>
@@ -50,7 +50,7 @@
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/InitialSetup_Settings/Button_DETECTGPU.png" />
+                  <Image url="@../../images/InitialSetup_Settings/Button_DETECTGPU.png" />
                </image>
             </ImageView>
          </graphic>

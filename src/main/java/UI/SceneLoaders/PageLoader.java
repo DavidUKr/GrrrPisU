@@ -30,7 +30,7 @@ public class PageLoader {
         LANG_b=language;
     }
 
-    public enum page_select {MENU, SETTINGS, HISTORY};
+    public enum page_select {MENU, SETTINGS, HISTORY, LOADING};
 
     private static void setPage(page_select page){
 
@@ -68,6 +68,10 @@ public class PageLoader {
                 else CSS_lang = PageLoader.class.getResource("/UI/css/Settings/EN_set.css").toExternalForm();
 
             }
+            case LOADING ->{
+                FXML_name = "/UI/pages/loadingScreen.fxml";
+                break;
+            }
         }
 
     }
@@ -78,8 +82,11 @@ public class PageLoader {
         root= FXMLLoader.load(PageLoader.class.getResource(FXML_name));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
-        scene.getStylesheets().add(CSS_theme);
-        scene.getStylesheets().add(CSS_lang);
+        //css styling
+        if(page!=page_select.LOADING){
+            scene.getStylesheets().add(CSS_theme);
+            scene.getStylesheets().add(CSS_lang);
+        }
         //loading stage
         stage.setScene(scene);
         stage.show();
