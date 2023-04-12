@@ -14,7 +14,7 @@
 
       <Button fx:id="btnHISTORY" layoutX="1100.0" layoutY="600.0" mnemonicParsing="false" onAction="#gotoHistory"></Button>
 
-      <Button fx:id="btnSTART_TEST" blendMode="DARKEN" layoutX="512.0" layoutY="365.0" mnemonicParsing="false" onAction="#startTest" text="StartTest" />
+      <Button fx:id="btnSTART_TEST" mnemonicParsing="false" onAction="#startTest" text="StartTest" />
 
       <ImageView fx:id="imgLogo" fitHeight="78.0" fitWidth="108.0" layoutX="69.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
          <image>
