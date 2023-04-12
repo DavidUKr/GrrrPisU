@@ -47,3 +47,12 @@
     -fx-pref-width: 10;
     -fx-opacity: 0;
 }
+
+#btnOpenCATFIGHT {
+    -fx-translate-x: 620;
+    -fx-translate-y: 550;
+    -fx-pref-width: 100;
+    -fx-pref-height: 70;
+    -fx-rotate: 30;
+    -fx-opacity: 0;
+}

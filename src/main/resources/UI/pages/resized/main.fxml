@@ -21,6 +21,6 @@
          </image>
       </ImageView>
 
-      <Button fx:id="btnOpenCATFIGHT" layoutX="772.0" layoutY="503.0" mnemonicParsing="false" onAction="#openCatFight" text="openCatFight" />
+      <Button fx:id="btnOpenCATFIGHT" mnemonicParsing="false" onAction="#openCatFight" text="openCatFight" />
    </children>
 </AnchorPane>
