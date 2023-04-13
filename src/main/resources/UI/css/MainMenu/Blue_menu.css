@@ -1,0 +1,58 @@
+#anchorpane {
+    -fx-background-color: #D0EFF4;
+    -fx-background-image: url("../../images/MainMenu/Background_BlueStartup.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 1100 700;
+    -fx-background-position: center center;
+}
+
+#btnHISTORY {
+    -fx-pref-width: 100px;
+    -fx-pref-height: 100px;
+    -fx-background-color: #D9D9D9;
+    -fx-background-image: url("../../images/MainMenu/Button_History.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100 100;
+    -fx-background-position: center center;
+    -fx-background-radius: 100px;
+    -fx-border-color: black;
+    -fx-border-width: 3px;
+    -fx-border-radius: 100px;
+}
+
+#btnSETTINGS {
+    -fx-background-color: #D0EFF4;
+    -fx-background-image: url("../../images/MainMenu/(PlaceHolder)Button_BlueSettings.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100 100;
+    -fx-background-position: center center;
+}
+
+#btnHELP {
+    -fx-background-color: #D9D9D9;
+    -fx-background-image: url("../../images/MainMenu/Button_Help.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100 100;
+    -fx-background-position: center center;
+    -fx-background-radius: 100px;
+    -fx-border-color: black;
+    -fx-border-width: 3px;
+    -fx-border-radius: 100px;
+}
+
+#btnSTART_TEST {
+    -fx-translate-x: 512;
+    -fx-translate-y: 365;
+    -fx-pref-height: 10;
+    -fx-pref-width: 10;
+    -fx-opacity: 0;
+}
+
+#btnOpenCATFIGHT {
+    -fx-translate-x: 620;
+    -fx-translate-y: 550;
+    -fx-pref-width: 100;
+    -fx-pref-height: 70;
+    -fx-rotate: 30;
+    -fx-opacity: 0;
+}
