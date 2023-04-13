@@ -1,0 +1,31 @@
+#pane {
+    -fx-background-color: #D0EFF4;
+}
+
+#btnDetectGPU {
+    -fx-translate-x: 500;
+    -fx-translate-y: 618;
+    -fx-pref-height: 37px;
+    -fx-pref-width: 200px;
+    -fx-background-radius: 30px;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-border-radius: 30px;
+}
+
+#btnToMAIN {
+    -fx-background-image: url("../../images/Icons/Icon_Back.png");
+    -fx-background-size: 50 50;
+    -fx-background-radius: 50px;
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+    -fx-translate-x: 0;
+    -fx-translate-y: 620;
+    -fx-pref-height: 80;
+    -fx-pref-width: 80;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-border-radius: 50px;
+}
