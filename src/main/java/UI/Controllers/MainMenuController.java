@@ -1,5 +1,6 @@
 package UI.Controllers;
 
+import UI.SceneLoaders.HelpLoader;
 import UI.SceneLoaders.PageLoader;
 import javafx.event.ActionEvent;
 
@@ -21,4 +22,9 @@ public class MainMenuController {
     public void selectBenchmark(){
         System.out.println("Choose Benchmark");
     }
-}
+
+    public void help(ActionEvent event) throws IOException {
+           HelpLoader.changeScene(event, "/UI/pages/resized/help.fxml");
+        }
+    }
+
