@@ -1,8 +1,10 @@
 package UI.Controllers;
 
+import UI.SceneLoaders.HelpLoader;
 import UI.SceneLoaders.PageLoader;
 import javafx.event.ActionEvent;
 
+import javax.swing.*;
 import java.io.IOException;
 
 
@@ -22,7 +24,7 @@ public class MainMenuController {
         System.out.println("Opening Cat fght pop-up");
     }
 
-    public void openHelp(){
-        System.out.println("Opening Help pop-up");
+    public void openHelp(ActionEvent event)throws IOException{
+        HelpLoader.changeScene(event, "/UI/pages/resized/help.fxml");
     }
 }
