@@ -13,6 +13,8 @@ public class PageLoader {
     //THEME/LANGUAGE settings for css loading
     private static boolean THEME_b=false;  //false-blue, true-yellow
     private static boolean LANG_b=false;  //false-EN, true-RO
+    private static boolean inSettings=false; //for DetectGPU when backBtn to return to settings or to Initial_setup
+    private static boolean notFirstInit=false; // for language selection in InitialSetup when coming from GpuDet
     private static String CSS_theme;
     private static String CSS_lang;
 
@@ -29,11 +31,26 @@ public class PageLoader {
         LANG_b=language;
     }
 
-    public enum page_select {MENU, SETTINGS, HISTORY, LOADING};
+    public enum page_select {INITIAL_SETUP, MENU, SETTINGS, HISTORY, LOADING, DETECT_GPU};
 
     private static void setPage(page_select page){
 
         switch (page) {
+            case INITIAL_SETUP -> {
+                FXML_name="/UI/pages/Initial_setup.fxml";
+
+                if(!notFirstInit) {
+                    if (THEME_b)
+                        CSS_theme = PageLoader.class.getResource("/UI/css/InitialSetup/Yellow_init.css").toExternalForm();
+                    else
+                        CSS_theme = PageLoader.class.getResource("/UI/css/InitialSetup/Blue_init.css").toExternalForm();
+                }
+                else CSS_theme = PageLoader.class.getResource("/UI/css/InitialSetup/NoTheme_init.css").toExternalForm();
+
+                if(LANG_b)
+                    CSS_lang= PageLoader.class.getResource("/UI/css/InitialSetup/RO_init.css").toExternalForm();
+                else CSS_lang= PageLoader.class.getResource("/UI/css/InitialSetup/EN_init.css").toExternalForm();
+            }
             case MENU -> {
                 FXML_name = "/UI/pages/main.fxml";
 
@@ -66,13 +83,21 @@ public class PageLoader {
                 if (LANG_b) CSS_lang = PageLoader.class.getResource("/UI/css/Settings/RO_set.css").toExternalForm();
                 else CSS_lang = PageLoader.class.getResource("/UI/css/Settings/EN_set.css").toExternalForm();
 
+                inSettings=true;
             }
             case LOADING ->{
                 FXML_name = "/UI/pages/loadingScreen.fxml";
-                break;
+            }
+            case DETECT_GPU -> {
+                notFirstInit=true;
+                FXML_name="/UI/pages/GpuDet.fxml";
             }
         }
 
+    }
+
+    public static boolean getInSettings(){
+        return inSettings;
     }
     public static void load(ActionEvent event, page_select page) throws IOException {
 
@@ -82,7 +107,7 @@ public class PageLoader {
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         //css styling
-        if(page!=page_select.LOADING){
+        if(page!=page_select.LOADING && page!=page_select.DETECT_GPU){
             scene.getStylesheets().add(CSS_theme);
             scene.getStylesheets().add(CSS_lang);
         }

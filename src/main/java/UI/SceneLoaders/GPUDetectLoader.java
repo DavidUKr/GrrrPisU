@@ -1,6 +1,6 @@
 package UI.SceneLoaders;
 
-import UI.Controllers.GPUDetect;
+import UI.Controllers.GPUDetectController;
 
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -20,7 +20,7 @@ public class GPUDetectLoader {
         Parent root = null;
 
         try{
-            root= FXMLLoader.load(GPUDetect.class.getResource(fxmlFile));
+            root= FXMLLoader.load(GPUDetectController.class.getResource(fxmlFile));
         }catch (IOException e){
             e.printStackTrace();
         }

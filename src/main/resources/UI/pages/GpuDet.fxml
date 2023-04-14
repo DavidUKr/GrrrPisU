@@ -6,7 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.InitialSet_SettingsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.GPUDetectController">
     <effect>
         <Glow />
     </effect>
@@ -26,7 +26,7 @@
                 <Image url="@../images/DetectGPU/Display_CurrentGPU(ENG).png" />
             </image>
         </ImageView>
-        <Button fx:id="backbtn" layoutX="23.0" layoutY="382.0" mnemonicParsing="false" onAction="#goback_GPU" prefHeight="41.0" prefWidth="74.0" text="Back">
+        <Button fx:id="btnBACK" layoutX="23.0" layoutY="382.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="74.0" text="Back">
             <graphic>
                 <ImageView fitHeight="29.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                     <image>

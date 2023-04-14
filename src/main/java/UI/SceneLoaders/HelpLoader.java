@@ -1,6 +1,7 @@
 package UI.SceneLoaders;
 
 import UI.Controllers.Help;
+import UI.Controllers.MainMenuController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -34,8 +35,8 @@ public class HelpLoader {
         stage.setScene(new Scene(root));
         stage.centerOnScreen();
 
-        //stage.initOwner(MainMenuController);
-        stage.initModality(Modality.WINDOW_MODAL);
+       // stage.initOwner(MainMenuController.class());
+        // stage.initModality(Modality.WINDOW_MODAL);
         stage.show();
 
     }

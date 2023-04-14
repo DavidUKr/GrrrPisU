@@ -25,6 +25,6 @@ public class MainMenuController {
     }
 
     public void openHelp(ActionEvent event)throws IOException{
-        HelpLoader.changeScene(event, "/UI/pages/resized/help.fxml");
+        HelpLoader.changeScene(event, "/UI/pages/help.fxml");
     }
 }
