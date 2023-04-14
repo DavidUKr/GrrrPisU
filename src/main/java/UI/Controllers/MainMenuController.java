@@ -1,6 +1,5 @@
 package UI.Controllers;
 
-import UI.SceneLoaders.HelpLoader;
 import UI.SceneLoaders.PageLoader;
 import javafx.event.ActionEvent;
 
@@ -26,9 +25,4 @@ public class MainMenuController {
     public void openHelp(){
         System.out.println("Opening Help pop-up");
     }
-
-    public void help(ActionEvent event) throws IOException {
-           HelpLoader.changeScene(event, "/UI/pages/resized/help.fxml");
-        }
-    }
-
+}

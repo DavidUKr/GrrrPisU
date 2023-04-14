@@ -50,7 +50,7 @@ public class PageLoader {
                 FXML_name = "/UI/pages/resized/History.fxml";
 
                 if (THEME_b)
-                 CSS_theme = PageLoader.class.getResource("/UI/css/History/Yellow_hist.css").toExternalForm();
+                    CSS_theme = PageLoader.class.getResource("/UI/css/History/Yellow_hist.css").toExternalForm();
                 else CSS_theme = PageLoader.class.getResource("/UI/css/History/Blue_hist.css").toExternalForm();
 
                 if (LANG_b) CSS_lang = PageLoader.class.getResource("/UI/css/History/RO_hist.css").toExternalForm();
@@ -72,7 +72,6 @@ public class PageLoader {
                 FXML_name = "/UI/pages/loadingScreen.fxml";
                 break;
             }
-
         }
 
     }
@@ -82,7 +81,7 @@ public class PageLoader {
         //setting up scene with its root
         root= FXMLLoader.load(PageLoader.class.getResource(FXML_name));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-      scene=new Scene(root);
+        scene=new Scene(root);
         //css styling
         if(page!=page_select.LOADING){
             scene.getStylesheets().add(CSS_theme);
@@ -93,16 +92,3 @@ public class PageLoader {
         stage.show();
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
