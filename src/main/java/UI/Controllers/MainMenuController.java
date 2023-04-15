@@ -2,9 +2,9 @@ package UI.Controllers;
 
 import UI.SceneLoaders.HelpLoader;
 import UI.SceneLoaders.PageLoader;
+import UI.SceneLoaders.PopUpLoader;
 import javafx.event.ActionEvent;
-
-import javax.swing.*;
+import javafx.stage.Popup;
 import java.io.IOException;
 
 
@@ -24,7 +24,9 @@ public class MainMenuController {
         System.out.println("Opening Cat fght pop-up");
     }
 
-    public void openHelp(ActionEvent event)throws IOException{
-        HelpLoader.changeScene(event, "/UI/pages/help.fxml");
+    public void openHelp(ActionEvent event) throws IOException, InterruptedException {
+        //HelpLoader.changeScene(event, "/UI/pages/help.fxml");
+
+        PopUpLoader.loadHelp(event);
     }
 }
