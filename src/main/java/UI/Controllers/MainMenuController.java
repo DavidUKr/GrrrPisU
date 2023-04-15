@@ -11,24 +11,20 @@ import java.io.IOException;
 public class MainMenuController {
 
     public void gotoSettings(ActionEvent event) throws IOException {
-        PopUpLoader.getPopup().hide();
+        closePopups();
         PageLoader.load(event, PageLoader.page_select.SETTINGS);
     }
     public void gotoHistory(ActionEvent event) throws IOException {
-
-        PopUpLoader.getPopup().hide();
-
+        closePopups();
         PageLoader.load(event, PageLoader.page_select.HISTORY);
     }
     public void startTest(){
-
-        PopUpLoader.getPopup().hide();
-
+        closePopups();
         System.out.println("STARTING TEST");
     }
 
     public void openCatFight(){
-        PopUpLoader.getPopup().hide();
+        closePopups();
         System.out.println("Opening Cat fght pop-up");
     }
 
@@ -36,5 +32,12 @@ public class MainMenuController {
         //HelpLoader.changeScene(event, "/UI/pages/help.fxml");
 
         PopUpLoader.loadHelp(event);
+    }
+
+    private void closePopups(){
+
+        try {
+            PopUpLoader.getPopup().hide();
+        } catch (Exception e){}
     }
 }
