@@ -32,6 +32,10 @@ public class PopUpLoader {
         hide_after(10, popup);
     }
 
+    public static Popup getPopup(){
+        return popup;
+    }
+
     private static void hide_after(int timeout, Popup pop) {
         Timeline timeline=new Timeline(new KeyFrame(Duration.seconds(timeout), event->{
             pop.hide();

@@ -11,16 +11,24 @@ import java.io.IOException;
 public class MainMenuController {
 
     public void gotoSettings(ActionEvent event) throws IOException {
+        PopUpLoader.getPopup().hide();
         PageLoader.load(event, PageLoader.page_select.SETTINGS);
     }
     public void gotoHistory(ActionEvent event) throws IOException {
+
+        PopUpLoader.getPopup().hide();
+
         PageLoader.load(event, PageLoader.page_select.HISTORY);
     }
     public void startTest(){
+
+        PopUpLoader.getPopup().hide();
+
         System.out.println("STARTING TEST");
     }
 
     public void openCatFight(){
+        PopUpLoader.getPopup().hide();
         System.out.println("Opening Cat fght pop-up");
     }
 
