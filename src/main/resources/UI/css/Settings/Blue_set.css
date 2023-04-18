@@ -13,6 +13,10 @@
     -fx-background-repeat: stretch;
 }
 
+#imgLanguageBackground {
+    -fx-image: url("../../images/InitialSetup_Settings/Language_Background.png");
+}
+
 #btnDetectGPU {
     -fx-translate-x: 500;
     -fx-translate-y: 618;
