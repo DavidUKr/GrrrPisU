@@ -1,6 +1,6 @@
 package UI.Controllers;
 
-import UI.SceneLoaders.GPUDetectLoader;
+
 import UI.SceneLoaders.PageLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -63,7 +63,7 @@ public class InitialSet_SettingsController {
     }
 
     public void detect_GPU(ActionEvent event) throws IOException {
-        GPUDetectLoader.changeScene(event, "/UI/pages/ENG/GpuDet.fxml");
+        PageLoader.load(event, PageLoader.page_select.DETECT_GPU);
     }
 
     public void goback_GPU(ActionEvent event) throws IOException {

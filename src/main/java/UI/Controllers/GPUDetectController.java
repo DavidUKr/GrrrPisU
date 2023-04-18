@@ -1,6 +1,5 @@
 package UI.Controllers;
 
-import UI.SceneLoaders.GPUDetectLoader;
 import UI.SceneLoaders.PageLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchorpane" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.MainMenuController">
+   <children>
+      <Button fx:id="btnHELP" layoutX="1100.0" layoutY="0.0" mnemonicParsing="false" onAction="#openHelp" prefHeight="100.0" prefWidth="100.0" />
+
+      <Button fx:id="btnSETTINGS" layoutX="0.0" layoutY="600.0" mnemonicParsing="false" onAction="#gotoSettings" prefHeight="100.0" prefWidth="100.0" />
+
+      <Button fx:id="btnHISTORY" layoutX="1100.0" layoutY="600.0" mnemonicParsing="false" onAction="#gotoHistory" />
+
+      <Button fx:id="btnSTART_TEST" mnemonicParsing="false" onAction="#startTest" text="StartTest" />
+
+      <ImageView fx:id="imgLogo" fitHeight="150.0" fitWidth="158.0" layoutX="26.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/Logo_fundal_transparent.png" />
+         </image>
+      </ImageView>
+
+      <Button fx:id="btnOpenCATFIGHT" mnemonicParsing="false" onAction="#openCatFight" text="openCatFight" />
+   </children>
+</AnchorPane>

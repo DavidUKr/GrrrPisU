@@ -31,6 +31,7 @@ public class PopUpLoader {
         info.setFitHeight(300);
         info.setFitWidth(450);
         info.setX(700);
+
         popup.getContent().add(info);
         popup.show(stage);
         hide_after(10, popup);

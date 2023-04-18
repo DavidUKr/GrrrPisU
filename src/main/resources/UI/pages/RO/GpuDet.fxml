@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.GPUDetectController">
+    <effect>
+        <Glow />
+    </effect>
+    <children>
+        <ImageView fx:id="backround" fitHeight="468.0" fitWidth="668.0" layoutX="-47.0" layoutY="-19.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../images/InitialSetup_Settings/Background_Gray.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="detgpuimg" fitHeight="53.0" fitWidth="496.0" layoutX="42.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../images/DetectGPU/Text_DETECTGPU(ENG).png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="247.0" fitWidth="489.0" layoutX="57.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../images/DetectGPU/Display_CurrentGPU(ENG).png" />
+            </image>
+        </ImageView>
+        <Button fx:id="btnBACK" layoutX="23.0" layoutY="382.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="74.0" text="Back">
+            <graphic>
+                <ImageView fitHeight="29.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/Icons/Icon_Back.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </children>
+</AnchorPane>

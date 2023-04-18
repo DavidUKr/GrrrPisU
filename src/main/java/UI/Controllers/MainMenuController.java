@@ -1,6 +1,5 @@
 package UI.Controllers;
 
-import UI.SceneLoaders.HelpLoader;
 import UI.SceneLoaders.PageLoader;
 import UI.SceneLoaders.PopUpLoader;
 import javafx.event.ActionEvent;
