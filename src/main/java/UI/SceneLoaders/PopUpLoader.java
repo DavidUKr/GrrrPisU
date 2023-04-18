@@ -15,6 +15,7 @@ public class PopUpLoader {
 
     private static Stage stage;
     private static Popup popup;
+    private static ImageView info;
 
     private static final Object lock=new Object();
 
@@ -23,7 +24,9 @@ public class PopUpLoader {
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 
         popup=new Popup();
-        ImageView info=new ImageView("/UI/images/Help/PopUp_Help(ENG).png");
+
+        if(PageLoader.getLANG_b()) info=new ImageView();
+        info=new ImageView("/UI/images/Help/PopUp_Help(ENG).png");
         info.setFitHeight(300);
         info.setFitWidth(450);
         info.setX(700);

@@ -99,6 +99,7 @@ public class PageLoader {
     public static boolean getInSettings(){
         return inSettings;
     }
+    public static boolean getLANG_b(){ return LANG_b;}
     public static void load(ActionEvent event, page_select page) throws IOException {
 
         setPage(page);
