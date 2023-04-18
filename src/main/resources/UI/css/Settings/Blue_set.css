@@ -2,6 +2,17 @@
     -fx-background-color: #D0EFF4;
 }
 
+#imgSelBLUE {
+    -fx-image: url("../../images/InitialSetup_Settings/BlueCat_Selected.png");
+    -fx-translate-x: 0;
+    -fx-translate-y: 0;
+    -fx-background-size: 667 300;
+    -fx-pref-height: 667px;
+    -fx-pref-width: 300px;
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
 #btnDetectGPU {
     -fx-translate-x: 500;
     -fx-translate-y: 618;
