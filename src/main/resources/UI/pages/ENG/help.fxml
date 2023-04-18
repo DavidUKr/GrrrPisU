@@ -9,12 +9,12 @@
     <children>
         <ImageView fitHeight="443.0" fitWidth="794.0" layoutX="-7.0" layoutY="-38.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../images/InitialSetup_Settings/Background_Gray.png" />
+                <Image url="@../../images/InitialSetup_Settings/Background_Gray.png" />
             </image>
         </ImageView>
         <ImageView fitHeight="400.0" fitWidth="590.0" layoutX="5.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../images/Help/PopUp_Help(ENG).png" />
+                <Image url="@../../images/Help/PopUp_Help(ENG).png" />
             </image>
         </ImageView>
     </children>

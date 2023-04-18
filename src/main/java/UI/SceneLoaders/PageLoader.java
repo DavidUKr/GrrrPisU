@@ -37,7 +37,6 @@ public class PageLoader {
 
         switch (page) {
             case INITIAL_SETUP -> {
-                FXML_name="/UI/pages/Initial_setup.fxml";
 
                 if(!notFirstInit) {
                     if (THEME_b)
@@ -47,50 +46,70 @@ public class PageLoader {
                 }
                 else CSS_theme = PageLoader.class.getResource("/UI/css/InitialSetup/NoTheme_init.css").toExternalForm();
 
-                if(LANG_b)
-                    CSS_lang= PageLoader.class.getResource("/UI/css/InitialSetup/RO_init.css").toExternalForm();
-                else CSS_lang= PageLoader.class.getResource("/UI/css/InitialSetup/EN_init.css").toExternalForm();
+                if(LANG_b) {
+                    FXML_name="/UI/pages/ENG/Initial_setup.fxml";
+                    CSS_lang = PageLoader.class.getResource("/UI/css/InitialSetup/RO_init.css").toExternalForm();
+                }
+                else {
+                    FXML_name="/UI/pages/ENG/Initial_setup.fxml";
+                    CSS_lang = PageLoader.class.getResource("/UI/css/InitialSetup/EN_init.css").toExternalForm();
+                }
             }
             case MENU -> {
-                FXML_name = "/UI/pages/main.fxml";
 
                 if (THEME_b)
                     CSS_theme = PageLoader.class.getResource("/UI/css/MainMenu/Yellow_menu.css").toExternalForm();
                 else CSS_theme = PageLoader.class.getResource("/UI/css/MainMenu/Blue_menu.css").toExternalForm();
 
-                if (LANG_b) CSS_lang = PageLoader.class.getResource("/UI/css/MainMenu/RO_menu.css").toExternalForm();
-                else CSS_lang = PageLoader.class.getResource("/UI/css/MainMenu/EN_menu.css").toExternalForm();
+                if (LANG_b) {
+                    FXML_name="/UI/pages/ENG/main.fxml";
+                    CSS_lang = PageLoader.class.getResource("/UI/css/MainMenu/RO_menu.css").toExternalForm();
+                }
+                else{
+                    FXML_name="/UI/pages/ENG/main.fxml";
+                    CSS_lang = PageLoader.class.getResource("/UI/css/MainMenu/EN_menu.css").toExternalForm();
+                }
 
             }
             case HISTORY -> {
-                FXML_name = "/UI/pages/History.fxml";
 
                 if (THEME_b)
                     CSS_theme = PageLoader.class.getResource("/UI/css/History/Yellow_hist.css").toExternalForm();
                 else CSS_theme = PageLoader.class.getResource("/UI/css/History/Blue_hist.css").toExternalForm();
 
-                if (LANG_b) CSS_lang = PageLoader.class.getResource("/UI/css/History/RO_hist.css").toExternalForm();
-                else CSS_lang = PageLoader.class.getResource("/UI/css/History/EN_hist.css").toExternalForm();
+                if (LANG_b) {
+                    FXML_name="/UI/pages/ENG/History.fxml";
+                    CSS_lang = PageLoader.class.getResource("/UI/css/History/RO_hist.css").toExternalForm();
+                }
+                else {
+                    FXML_name="/UI/pages/ENG/History.fxml";
+                    CSS_lang = PageLoader.class.getResource("/UI/css/History/EN_hist.css").toExternalForm();
+                }
 
             }
             case SETTINGS -> {
-                FXML_name = "/UI/pages/Settings.fxml";
 
                 if (THEME_b)
                     CSS_theme = PageLoader.class.getResource("/UI/css/Settings/Yellow_set.css").toExternalForm();
                 else CSS_theme = PageLoader.class.getResource("/UI/css/Settings/Blue_set.css").toExternalForm();
 
-                if (LANG_b) CSS_lang = PageLoader.class.getResource("/UI/css/Settings/RO_set.css").toExternalForm();
-                else CSS_lang = PageLoader.class.getResource("/UI/css/Settings/EN_set.css").toExternalForm();
+                if (LANG_b) {
+                    FXML_name="/UI/pages/ENG/Settings.fxml";
+                    CSS_lang = PageLoader.class.getResource("/UI/css/Settings/RO_set.css").toExternalForm();
+                }
+                else {
+                    FXML_name="/UI/pages/ENG/Settings.fxml";
+                    CSS_lang = PageLoader.class.getResource("/UI/css/Settings/EN_set.css").toExternalForm();
+                }
 
                 inSettings=true;
             }
             case LOADING ->{
-                FXML_name = "/UI/pages/loadingScreen.fxml";
+                FXML_name = "/UI/pages/ENG/loadingScreen.fxml";
             }
             case DETECT_GPU -> {
                 notFirstInit=true;
-                FXML_name="/UI/pages/GpuDet.fxml";
+                FXML_name= "/UI/pages/ENG/GpuDet.fxml";
             }
         }
 

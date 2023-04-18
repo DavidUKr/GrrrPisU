@@ -63,7 +63,7 @@ public class InitialSet_SettingsController {
     }
 
     public void detect_GPU(ActionEvent event) throws IOException {
-        GPUDetectLoader.changeScene(event, "/UI/pages/GpuDet.fxml");
+        GPUDetectLoader.changeScene(event, "/UI/pages/ENG/GpuDet.fxml");
     }
 
     public void goback_GPU(ActionEvent event) throws IOException {

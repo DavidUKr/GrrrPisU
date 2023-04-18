@@ -15,7 +15,7 @@ public class Help implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         helpBtn.setOnAction(event -> {
-            GPUDetectLoader.changeScene(event, "/UI/pages/GpuDet.fxml");
+            GPUDetectLoader.changeScene(event, "/UI/pages/ENG/GpuDet.fxml");
         });
     }
 

@@ -16,7 +16,7 @@
 
       <ImageView fx:id="imgLogo" fitHeight="150.0" fitWidth="158.0" layoutX="26.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/Logo_fundal_transparent.png" />
+            <Image url="@../../images/Logo_fundal_transparent.png" />
          </image>
       </ImageView>
 
