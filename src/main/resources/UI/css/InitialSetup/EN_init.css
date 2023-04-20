@@ -22,3 +22,7 @@
     -fx-border-color: black;
     -fx-border-radius: 50px;
 }
+
+#imgSelEn {
+    -fx-image: url("../../images/InitialSetup_Settings/ENG_Selected.png");
+}

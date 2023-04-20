@@ -1,0 +1,21 @@
+#imgSelBLUE {
+    -fx-image: url("../../images/InitialSetup_Settings/BlueCat_Selected.png");
+    -fx-translate-x: 0;
+    -fx-translate-y: 0;
+    -fx-background-size: 667 350;
+    -fx-pref-height: 667px;
+    -fx-pref-width: 350px;
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+#imgSelYELLOW {
+    -fx-image: url("../../images/InitialSetup_Settings/YellowCat_Unselected.png");
+    -fx-translate-x: 300;
+    -fx-translate-y: 0;
+    -fx-pref-height: 667;
+    -fx-pref-width: 350;
+    -fx-background-size: 667 350;
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
