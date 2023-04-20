@@ -13,6 +13,10 @@
     -fx-background-repeat: stretch;
 }
 
+#imgSelYELLOW{
+    -fx-image: url("../../images/InitialSetup_Settings/YellowCat_Unselected.png");
+}
+
 #imgLanguageBackground {
     -fx-image: url("../../images/InitialSetup_Settings/Language_Background.png");
 }

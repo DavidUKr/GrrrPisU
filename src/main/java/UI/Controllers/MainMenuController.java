@@ -25,7 +25,7 @@ public class MainMenuController {
     public void openCatFight(){
         closePopups();
         System.out.println("Opening Cat fight pop-up");
-    }
+     }
 
     public void openHelp(ActionEvent event) throws IOException, InterruptedException {
         //HelpLoader.changeScene(event, "/UI/pages/help.fxml");

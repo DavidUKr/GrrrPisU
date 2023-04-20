@@ -1,0 +1,33 @@
+#pane {
+    -fx-background-color: #848484;
+}
+
+#btnToMAIN {
+    -fx-background-image: url("../../images/Icons/Icon_Back.png");
+    -fx-background-size: 70 70;
+    -fx-background-radius: 50px;
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+    -fx-translate-x: 54;
+    -fx-translate-y: 600;
+    -fx-pref-height: 90;
+    -fx-pref-width: 90;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-border-radius: 50px;
+}
+
+#label_hist {
+    -fx-translate-x: 100;
+    -fx-translate-y: 50;
+    -fx-pref-width: 1000px;
+    -fx-pref-height: 50px;
+    -fx-background-color: #D9D9D9;
+    -fx-background-radius: 30px;
+    -fx-alignment: center;
+    -fx-font-size: 30px;
+    -fx-font-style: "Arial";
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-border-radius: 30px;
+}

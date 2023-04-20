@@ -11,7 +11,7 @@
 
 #imgSelYELLOW {
     -fx-image: url("../../images/InitialSetup_Settings/YellowCat_Unselected.png");
-    -fx-translate-x: 300;
+    -fx-translate-x: 0;
     -fx-translate-y: 0;
     -fx-pref-height: 667;
     -fx-pref-width: 350;

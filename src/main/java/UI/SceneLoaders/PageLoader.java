@@ -14,7 +14,7 @@ public class PageLoader {
     private static boolean THEME_b=false;  //false-blue, true-yellow
     private static boolean LANG_b=false;  //false-EN, true-RO
     private static boolean inSettings=false; //for DetectGPU when backBtn to return to settings or to Initial_setup
-    private static boolean notFirstInit=false; // for language selection in InitialSetup when coming from GpuDet
+    private static boolean FirstInit=true; // for language selection in InitialSetup when coming from GpuDet
     private static String CSS_theme;
     private static String CSS_lang;
 
@@ -38,16 +38,18 @@ public class PageLoader {
         switch (page) {
             case INITIAL_SETUP -> {
 
-                if(!notFirstInit) {
+                if(!FirstInit) {
                     if (THEME_b)
                         CSS_theme = PageLoader.class.getResource("/UI/css/InitialSetup/Yellow_init.css").toExternalForm();
                     else
                         CSS_theme = PageLoader.class.getResource("/UI/css/InitialSetup/Blue_init.css").toExternalForm();
                 }
-                else CSS_theme = PageLoader.class.getResource("/UI/css/InitialSetup/NoTheme_init.css").toExternalForm();
+                else {
+                    CSS_theme = PageLoader.class.getResource("/UI/css/InitialSetup/NoTheme_init.css").toExternalForm();
+                }
 
                 if(LANG_b) {
-                    FXML_name="/UI/pages/ENG/Initial_setup.fxml";
+                    FXML_name="/UI/pages/RO/Initial_setup.fxml";
                     CSS_lang = PageLoader.class.getResource("/UI/css/InitialSetup/RO_init.css").toExternalForm();
                 }
                 else {
@@ -62,7 +64,7 @@ public class PageLoader {
                 else CSS_theme = PageLoader.class.getResource("/UI/css/MainMenu/Blue_menu.css").toExternalForm();
 
                 if (LANG_b) {
-                    FXML_name="/UI/pages/ENG/main.fxml";
+                    FXML_name="/UI/pages/RO/main.fxml";
                     CSS_lang = PageLoader.class.getResource("/UI/css/MainMenu/RO_menu.css").toExternalForm();
                 }
                 else{
@@ -78,7 +80,7 @@ public class PageLoader {
                 else CSS_theme = PageLoader.class.getResource("/UI/css/History/Blue_hist.css").toExternalForm();
 
                 if (LANG_b) {
-                    FXML_name="/UI/pages/ENG/History.fxml";
+                    FXML_name="/UI/pages/RO/History.fxml";
                     CSS_lang = PageLoader.class.getResource("/UI/css/History/RO_hist.css").toExternalForm();
                 }
                 else {
@@ -94,7 +96,7 @@ public class PageLoader {
                 else CSS_theme = PageLoader.class.getResource("/UI/css/Settings/Blue_set.css").toExternalForm();
 
                 if (LANG_b) {
-                    FXML_name="/UI/pages/ENG/Settings.fxml";
+                    FXML_name="/UI/pages/RO/Settings.fxml";
                     CSS_lang = PageLoader.class.getResource("/UI/css/Settings/RO_set.css").toExternalForm();
                 }
                 else {
@@ -108,8 +110,12 @@ public class PageLoader {
                 FXML_name = "/UI/pages/ENG/loadingScreen.fxml";
             }
             case DETECT_GPU -> {
-                notFirstInit=true;
-                FXML_name= "/UI/pages/ENG/GpuDet.fxml";
+                FirstInit=false;
+                if (LANG_b) {
+                    FXML_name= "/UI/pages/RO/GpuDet.fxml";
+                } else {
+                    FXML_name= "/UI/pages/ENG/GpuDet.fxml";
+                }
             }
         }
 
