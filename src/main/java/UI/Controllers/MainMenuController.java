@@ -17,9 +17,10 @@ public class MainMenuController {
         closePopups();
         PageLoader.load(event, PageLoader.page_select.HISTORY);
     }
-    public void startTest(){
+    public void startTest(ActionEvent event) throws IOException {
         closePopups();
         System.out.println("STARTING TEST");
+        PageLoader.load(event, PageLoader.page_select.LOADING);
     }
 
     public void openCatFight(){

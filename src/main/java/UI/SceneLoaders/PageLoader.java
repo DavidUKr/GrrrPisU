@@ -125,6 +125,7 @@ public class PageLoader {
         return inSettings;
     }
     public static boolean getLANG_b(){ return LANG_b;}
+    public static boolean getTHEME_b(){return THEME_b;}
     public static void load(ActionEvent event, page_select page) throws IOException {
 
         setPage(page);
