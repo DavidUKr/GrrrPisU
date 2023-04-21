@@ -26,11 +26,6 @@
                 <Image url="@../../images/DetectGPU/Display_CurrentGPU(ENG).png" />
             </image>
         </ImageView>
-        <Button fx:id="btnBACK" layoutX="33.0" layoutY="631.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="76.0" text="   Back" />
-          <ImageView fitHeight="29.0" fitWidth="25.0" layoutX="42.0" layoutY="640.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                  <Image url="@../../images/Icons/Icon_Back.png" />
-              </image>
-          </ImageView>
+        <Button fx:id="btnBACK" mnemonicParsing="false" prefHeight="42.0" prefWidth="76.0"/>
     </children>
 </AnchorPane>

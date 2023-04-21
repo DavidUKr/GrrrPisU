@@ -111,6 +111,7 @@ public class PageLoader {
             }
             case DETECT_GPU -> {
                 FirstInit=false;
+                CSS_theme = PageLoader.class.getResource("/UI/css/DetectGPU/detect.css").toExternalForm();
                 if (LANG_b) {
                     FXML_name= "/UI/pages/RO/GpuDet.fxml";
                 } else {
@@ -137,6 +138,9 @@ public class PageLoader {
         if(page!=page_select.LOADING && page!=page_select.DETECT_GPU){
             scene.getStylesheets().add(CSS_theme);
             scene.getStylesheets().add(CSS_lang);
+        }
+        if(page==page_select.DETECT_GPU) {
+            scene.getStylesheets().add(CSS_theme);
         }
         //loading stage
         stage.setScene(scene);
