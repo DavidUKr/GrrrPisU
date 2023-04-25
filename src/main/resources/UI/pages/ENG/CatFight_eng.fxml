@@ -37,12 +37,9 @@
             <Image url="@../../images/CatFight/Display_ScoreY(ENG).png" />
          </image>
       </ImageView>
+
       <Button fx:id="btnBack" layoutX="196.0" layoutY="320.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="170.0" />
-      <ImageView fitHeight="42.0" fitWidth="164.0" layoutX="199.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../images/CatFight/Button_BtM(ENG).png" />
-         </image>
-      </ImageView>
+
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="181.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/CatFight/Text_Blue(ENG).png" />
