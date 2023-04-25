@@ -41,4 +41,5 @@ public class MainMenuController {
             PopUpLoader.getPopup().hide();
         } catch (Exception e){}
     }
+
 }

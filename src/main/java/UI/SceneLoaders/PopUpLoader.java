@@ -2,14 +2,13 @@ package UI.SceneLoaders;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
@@ -47,13 +46,21 @@ public class PopUpLoader {
 
     public static void catFight(ActionEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(PopUpLoader.class.getResource("/UI/pages/ENG/CatFight_eng.fxml"));
+        FXMLLoader loader;
+        if (PageLoader.getLANG_b()) {
+            loader = new FXMLLoader(PopUpLoader.class.getResource("/UI/pages/RO/CatFight_ro.fxml"));
+        } else {
+            loader = new FXMLLoader(PopUpLoader.class.getResource("/UI/pages/ENG/CatFight_eng.fxml"));
+        }
         Parent root = loader.load();
 
         // Create a new stage
         Stage popupStage = new Stage();
         popupStage.initModality(Modality.APPLICATION_MODAL);
 
+        //add icon
+        Image icon=new Image("/UI/images/Logo_fundal_alb.png");
+        popupStage.getIcons().add(icon);
 
         // Set the scene on the stage
         Scene scene = new Scene(root);
@@ -69,7 +76,7 @@ public class PopUpLoader {
         popup=new Popup();
 
         // Load the FXML file
-        FXMLLoader loader = new FXMLLoader(PopUpLoader.class.getResource("/UI/pages/ENG/CatFight_eng.fxml"));
+        FXMLLoader loader = new FXMLLoader(PopUpLoader.class.getResource("/UI/pages/ENG/CatFight_ro.fxml"));
         Node fxml= loader.load();
 
 

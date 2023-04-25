@@ -3,9 +3,11 @@ package UI.Controllers;
 
 import UI.SceneLoaders.PageLoader;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 
 import java.io.IOException;
@@ -46,16 +48,18 @@ public class InitialSet_SettingsController {
         PageLoader.setThemeb(true);
     }
 
-    public void select_EN(){
+    public void select_EN() throws IOException {
         imgSelEn.setImage(EN_sel);
         imgSelRo.setImage(RO_unsel);
         PageLoader.setLangb(false);
+        //loadBack();
     }
 
-    public void select_RO(){
+    public void select_RO() throws IOException {
         imgSelEn.setImage(EN_unsel);
         imgSelRo.setImage(RO_sel);
         PageLoader.setLangb(true);
+        //loadBack();
     }
 
     public void gotoMain(ActionEvent event) throws IOException {
@@ -69,4 +73,14 @@ public class InitialSet_SettingsController {
     public void goback_GPU(ActionEvent event) throws IOException {
         PageLoader.load(event, PageLoader.page_select.MENU);
     }
+
+    /*private void loadBack() throws IOException {
+
+        Event event=new Event();
+
+        if(PageLoader.getInSettings()){
+            PageLoader.load(event, PageLoader.page_select.SETTINGS);
+        }
+        else PageLoader.load(event, PageLoader.page_select.INITIAL_SETUP);
+    }*/
 }
