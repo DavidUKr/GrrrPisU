@@ -23,9 +23,10 @@ public class MainMenuController {
         PageLoader.load(event, PageLoader.page_select.LOADING);
     }
 
-    public void openCatFight(){
-        closePopups();
+    public void openCatFight(ActionEvent event) throws InterruptedException, IOException {
         System.out.println("Opening Cat fight pop-up");
+        PopUpLoader.catFight(event);
+        //closePopups();
      }
 
     public void openHelp(ActionEvent event) throws IOException, InterruptedException {

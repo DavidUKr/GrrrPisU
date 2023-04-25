@@ -4,12 +4,20 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 
 import javafx.util.Duration;
+
+import java.io.IOException;
+
 
 public class PopUpLoader {
 
@@ -37,6 +45,39 @@ public class PopUpLoader {
         hide_after(10, popup);
     }
 
+    public static void catFight(ActionEvent event) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(PopUpLoader.class.getResource("/UI/pages/ENG/CatFight_eng.fxml"));
+        Parent root = loader.load();
+
+        // Create a new stage
+        Stage popupStage = new Stage();
+        popupStage.initModality(Modality.APPLICATION_MODAL);
+
+
+        // Set the scene on the stage
+        Scene scene = new Scene(root);
+        popupStage.setScene(scene);
+
+        // Show the stage as a modal dialog
+        popupStage.showAndWait();
+    }
+
+
+        /**stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+
+        popup=new Popup();
+
+        // Load the FXML file
+        FXMLLoader loader = new FXMLLoader(PopUpLoader.class.getResource("/UI/pages/ENG/CatFight_eng.fxml"));
+        Node fxml= loader.load();
+
+
+        popup.getContent().add(fxml);
+        popup.show(stage);
+        hide_after(10, popup);
+
+    }*/
     public static Popup getPopup(){
         return popup;
     }
