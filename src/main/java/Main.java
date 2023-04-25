@@ -1,26 +1,24 @@
 import javafx.application.Application;
-import javafx.scene.Group;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    Color backgound_color= Color.rgb(209,239,244);
-
     @Override
     public void start(Stage stage) throws Exception {
 
-        Group root=new Group();
-        Scene scene=new Scene(root, backgound_color);
-
+        Parent root= FXMLLoader.load(getClass().getResource("UI/pages/ENG/Initial_Setup.fxml"));
+        Scene scene=new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("UI/css/InitialSetup/NoTheme_init.css").toExternalForm());
         stage.setScene(scene);
         stage.setTitle("GrrPisU");
-        //stage.setFullScreen(true);
-        stage.setFullScreenExitHint("");
-        stage.setWidth(1440);
-        stage.setHeight(1024);
-
+        Image icon=new Image("UI/images/Logo_fundal_alb.png");
+        stage.getIcons().add(icon);
+        stage.setResizable(false);
+        //stage.setFullScreenExitKeyCombination(KeyCombination.valueOf("ESC"));
         stage.show();
     }
 
