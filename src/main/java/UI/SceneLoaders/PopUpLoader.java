@@ -66,6 +66,9 @@ public class PopUpLoader {
         Scene scene = new Scene(root);
         popupStage.setScene(scene);
 
+        //add css
+        scene.getStylesheets().add("/UI/css/CatFight/fight.css");
+
         // Show the stage as a modal dialog
         popupStage.showAndWait();
     }
