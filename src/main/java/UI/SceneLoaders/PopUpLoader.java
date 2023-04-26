@@ -24,6 +24,7 @@ public class PopUpLoader {
     private static Stage stage;
     private static Popup popup;
     private static ImageView info;
+    private static String CSS_theme;
 
     private static final Object lock=new Object();
 
@@ -58,6 +59,8 @@ public class PopUpLoader {
         // Set the scene on the stage
         Scene scene = new Scene(root);
         popupStage.setScene(scene);
+        CSS_theme = PageLoader.class.getResource("/UI/css/CatFight/fight.css").toExternalForm();
+        scene.getStylesheets().add(CSS_theme);
 
         // Show the stage as a modal dialog
         popupStage.showAndWait();
