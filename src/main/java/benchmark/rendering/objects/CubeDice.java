@@ -1,4 +1,4 @@
-package benchmark.object3d.objects;
+package benchmark.rendering.objects;
 
 public class CubeDice implements IObject{
     @Override

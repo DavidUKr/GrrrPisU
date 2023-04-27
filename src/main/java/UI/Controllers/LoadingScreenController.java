@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import main_pack.Main;
 
 import java.io.IOException;
 import java.net.URL;
@@ -70,6 +71,7 @@ public class LoadingScreenController implements Initializable {
         if(imIt.hasNext()) imgBar_Cat.setImage(imIt.next());
         else {
             System.out.println("Loading finished");
+            Main.loadRender();
             PageLoader.load(event, PageLoader.page_select.MENU);
         }
     }
