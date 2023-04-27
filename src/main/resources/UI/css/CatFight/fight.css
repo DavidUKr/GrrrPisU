@@ -1,6 +1,22 @@
 #btnBack {
-    -fx-translate-x: 196;
+    -fx-opacity: 0;
+    -fx-pref-height: 1;
+    -fx-pref-width: 1;
+    -fx-translate-x: -1;
+    -fx-translate-y: -1;
+}
+
+#labelHelp {
+    -fx-translate-x: 180;
     -fx-translate-y: 320;
-    -fx-pref-height: 50;
-    -fx-pref-width: 50;
+    -fx-pref-height: 25;
+    -fx-pref-width: 200;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-padding: 2px;
+    -fx-background-radius: 50px;
+    -fx-background-color: #27DA59;
+    -fx-border-width: 2px;
+    -fx-border-color: white;
+    -fx-border-radius: 50px;
 }
