@@ -13,7 +13,7 @@ public class RenderFrame {
         pane.setLayout(new BorderLayout());
         pane.add(renderPanel, BorderLayout.CENTER);
 
-        frame.setSize(600, 600);
+        frame.setSize(1000, 700);
         frame.setVisible(true);
     }
 }

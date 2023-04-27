@@ -39,17 +39,17 @@ public class LoadingScreenController implements Initializable {
         BLUE.add(new Image("/UI/images/Loading/Blue/LB_9.png"));
         BLUE.add(new Image("/UI/images/Loading/Blue/LB_End.png"));
 
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB1.png"));
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB2.png"));
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB3.png"));
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB4.png"));
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB5.png"));
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB6.png"));
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB7.png"));
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB8.png"));
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB9.png"));
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB10.png"));
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB11.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB1.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB2.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB3.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB4.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB5.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB6.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB7.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB8.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB9.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB10.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB11.png"));
 
         if(PageLoader.getTHEME_b()) {
             imIt=YELLOW.iterator();
@@ -87,5 +87,9 @@ public class LoadingScreenController implements Initializable {
             }
         }
 
+    }
+
+    public LoadingScreenController getController(){
+        return this;
     }
 }
