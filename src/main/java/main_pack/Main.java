@@ -1,3 +1,6 @@
+package main_pack;
+
+import benchmark.rendering.Generator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,12 +13,12 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        Parent root= FXMLLoader.load(getClass().getResource("UI/pages/ENG/Initial_Setup.fxml"));
+        Parent root= FXMLLoader.load(getClass().getResource("/UI/pages/ENG/Initial_Setup.fxml"));
         Scene scene=new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("UI/css/InitialSetup/NoTheme_init.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/UI/css/InitialSetup/NoTheme_init.css").toExternalForm());
         stage.setScene(scene);
         stage.setTitle("GrrPisU");
-        Image icon=new Image("UI/images/Logo_fundal_alb.png");
+        Image icon=new Image("/UI/images/Logo_fundal_alb.png");
         stage.getIcons().add(icon);
         stage.setResizable(false);
         //stage.setFullScreenExitKeyCombination(KeyCombination.valueOf("ESC"));
@@ -24,5 +27,9 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public static void loadRender(){
+        new Generator();
     }
 }
