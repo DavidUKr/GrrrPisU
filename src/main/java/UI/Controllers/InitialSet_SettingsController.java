@@ -2,6 +2,7 @@ package UI.Controllers;
 
 
 import UI.SceneLoaders.PageLoader;
+import UI.SceneLoaders.page_select;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
@@ -22,6 +23,7 @@ public class InitialSet_SettingsController implements IController{
     private ImageView imgSelEn;
     @FXML
     private ImageView imgSelRo;
+
 
     //images for cat and language selection
     Image Blue_sel=new Image(getClass().getResourceAsStream("/UI/images/InitialSetup_Settings/BlueCat_Selected.png"));
@@ -45,39 +47,37 @@ public class InitialSet_SettingsController implements IController{
         PageLoader.setThemeb(true);
     }
 
-    public void select_EN() throws IOException {
+    public void select_EN(ActionEvent event) throws IOException {
         imgSelEn.setImage(EN_sel);
         imgSelRo.setImage(RO_unsel);
         PageLoader.setLangb(false);
-        //loadBack();
+        loadBack(event);
     }
 
-    public void select_RO() throws IOException {
+    public void select_RO(ActionEvent event) throws IOException {
         imgSelEn.setImage(EN_unsel);
         imgSelRo.setImage(RO_sel);
         PageLoader.setLangb(true);
-        //loadBack();
+        loadBack(event);
     }
 
     public void gotoMain(ActionEvent event) throws IOException {
-        PageLoader.load(event, PageLoader.page_select.MENU);
+        PageLoader.load(event, page_select.MENU);
     }
 
     public void detect_GPU(ActionEvent event) throws IOException {
-        PageLoader.load(event, PageLoader.page_select.DETECT_GPU);
+        PageLoader.load(event, page_select.DETECT_GPU);
     }
 
     public void goback_GPU(ActionEvent event) throws IOException {
-        PageLoader.load(event, PageLoader.page_select.MENU);
+        PageLoader.load(event, page_select.MENU);
     }
 
-    /*private void loadBack() throws IOException {
-
-        Event event=new Event();
+    private void loadBack(ActionEvent event) throws IOException {
 
         if(PageLoader.getInSettings()){
-            PageLoader.load(event, PageLoader.page_select.SETTINGS);
+            PageLoader.load(event, page_select.SETTINGS);
         }
-        else PageLoader.load(event, PageLoader.page_select.INITIAL_SETUP);
-    }*/
+        else PageLoader.load(event, page_select.INITIAL_SETUP);
+    }
 }

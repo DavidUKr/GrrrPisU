@@ -1,6 +1,7 @@
 package UI.Controllers;
 
 import UI.SceneLoaders.PageLoader;
+import UI.SceneLoaders.page_select;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -26,14 +27,14 @@ public class GPUDetectController implements Initializable, IController{
 
             if(PageLoader.getInSettings()) {
                 try {
-                    PageLoader.load(event, PageLoader.page_select.SETTINGS);
+                    PageLoader.load(event, page_select.SETTINGS);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
             }
             else{
                 try {
-                    PageLoader.load(event, PageLoader.page_select.INITIAL_SETUP);
+                    PageLoader.load(event, page_select.INITIAL_SETUP);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }

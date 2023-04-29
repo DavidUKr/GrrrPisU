@@ -1,6 +1,7 @@
 package UI.Controllers;
 
 import UI.SceneLoaders.PageLoader;
+import UI.SceneLoaders.page_select;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -19,7 +20,7 @@ public class CatFightController implements Initializable, IController{
 
          btnBack.setOnAction(event -> {
             try {
-                PageLoader.load(event, PageLoader.page_select.MENU);
+                PageLoader.load(event, page_select.MENU);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

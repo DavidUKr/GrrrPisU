@@ -4,7 +4,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="1024" maxWidth="1441.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.InitialSet_SettingsController">
+<AnchorPane maxHeight="1024" maxWidth="1441.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.InitialSet_SettingsController">
    <children>
       <ImageView fx:id="imgSelBLUE" fitHeight="667.0" fitWidth="350.0" onMouseClicked="#select_Blue" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -24,18 +24,6 @@
          </image>
       </ImageView>
 
-      <ImageView fx:id="imgSelEn" fitHeight="150.0" fitWidth="200.0" layoutX="650.0" layoutY="350.0" onMouseClicked="#select_EN" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../images/InitialSetup_Settings/ENG_Unselected.png" />
-         </image>
-      </ImageView>
-
-      <ImageView fx:id="imgSelRo" fitHeight="150.0" fitWidth="200.0" layoutX="968.0" layoutY="350.0" onMouseClicked="#select_RO" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../images/InitialSetup_Settings/RO_Unselected.png" />
-         </image>
-      </ImageView>
-
       <ImageView fx:id="imgLblSelCat" fitHeight="64.0" fitWidth="366.0" layoutX="140.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/InitialSetup_Settings/Text_SELECTCAT_RO.jpg" />
@@ -51,5 +39,23 @@
       <Button fx:id="btnToMain" layoutX="505.0" layoutY="600.0" mnemonicParsing="false" onAction="#gotoMain" prefHeight="48.0" prefWidth="191.0" text="Incepe!" />
 
       <Button fx:id="btnDetectGPU" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="920.0" layoutY="600.0" mnemonicParsing="false" onAction="#detect_GPU" text="Redetectati GPU" />
+      <Button fx:id="btnSelEN" layoutX="642.0" layoutY="346.0" mnemonicParsing="false" onAction="#select_EN">
+         <graphic>
+            <ImageView fx:id="imgSelEn" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/InitialSetup_Settings/ENG_Unselected.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnSelRO" layoutX="960.0" layoutY="346.0" mnemonicParsing="false" onAction="#select_RO">
+         <graphic>
+            <ImageView fx:id="imgSelRo" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/InitialSetup_Settings/RO_Unselected.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

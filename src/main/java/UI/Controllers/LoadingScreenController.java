@@ -1,6 +1,7 @@
 package UI.Controllers;
 
 import UI.SceneLoaders.PageLoader;
+import UI.SceneLoaders.page_select;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -63,7 +64,7 @@ public class LoadingScreenController implements Initializable,IController{
         if(imIt.hasNext()) imgBar_Cat.setImage(imIt.next());
         else {
             System.out.println("Loading finished");
-            PageLoader.load(event, PageLoader.page_select.MENU);
+            PageLoader.load(event, page_select.MENU);
         }
     }
 

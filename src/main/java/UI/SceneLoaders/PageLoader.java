@@ -34,7 +34,7 @@ public class PageLoader {
         LANG_b=language;
     }
 
-    public enum page_select {INITIAL_SETUP, MENU, SETTINGS, HISTORY, LOADING, DETECT_GPU};
+    ;
 
     private static void setPage(page_select page){
 

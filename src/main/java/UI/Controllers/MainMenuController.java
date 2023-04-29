@@ -2,6 +2,7 @@ package UI.Controllers;
 
 import UI.SceneLoaders.PageLoader;
 import UI.SceneLoaders.PopUpLoader;
+import UI.SceneLoaders.page_select;
 import javafx.event.ActionEvent;
 import main_pack.Main;
 import java.io.IOException;
@@ -11,15 +12,15 @@ public class MainMenuController implements IController{
 
     public void gotoSettings(ActionEvent event) throws IOException {
         closePopups();
-        PageLoader.load(event, PageLoader.page_select.SETTINGS);
+        PageLoader.load(event, page_select.SETTINGS);
     }
     public void gotoHistory(ActionEvent event) throws IOException {
         closePopups();
-        PageLoader.load(event, PageLoader.page_select.HISTORY);
+        PageLoader.load(event, page_select.HISTORY);
     }
     public void startTest(ActionEvent event) throws IOException {
         closePopups();
-        PageLoader.load(event, PageLoader.page_select.LOADING);
+        PageLoader.load(event, page_select.LOADING);
         Main.loadRender((LoadingScreenController) PageLoader.getController());
     }
 
