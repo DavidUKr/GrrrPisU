@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="pane" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.InitialSet_SettingsController">
+<AnchorPane fx:id="pane" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.InitialSet_SettingsController">
     <children>
         <ImageView fx:id="imgSelBLUE" fitHeight="667.0" fitWidth="300.0" onMouseClicked="#select_Blue" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -34,19 +33,19 @@
             </image></ImageView>
         <ImageView fx:id="imgLblSelCat" fitHeight="64.0" fitWidth="366.0" layoutX="173.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../images/InitialSetup_Settings/Text_SELECTCAT.png" />
+                <Image url="@../../images/InitialSetup_Settings/Text_SELECTCAT_RO.jpg" />
             </image>
         </ImageView>
 
         <ImageView fx:id="imgLblSelLanguage" fitHeight="66.0" fitWidth="366.0" layoutX="738.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../images/InitialSetup_Settings/Text_SELECTLANGUAGE.png" />
+                <Image url="@../../images/InitialSetup_Settings/Text_SELECTLANGUAGE_RO.jpg" />
             </image>
         </ImageView>
 
-        <Button fx:id="btnToMAIN" mnemonicParsing="false" onAction="#gotoMain"></Button>
+        <Button fx:id="btnToMAIN" mnemonicParsing="false" onAction="#gotoMain" />
 
-        <Button fx:id="btnDetectGPU" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#detect_GPU" text="REDETECT GPU"></Button>
+        <Button fx:id="btnDetectGPU" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#detect_GPU" text="REDETECTATI GPU" />
 
     </children>
 </AnchorPane>

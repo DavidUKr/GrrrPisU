@@ -38,18 +38,18 @@
 
       <ImageView fx:id="imgLblSelCat" fitHeight="64.0" fitWidth="366.0" layoutX="140.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../images/InitialSetup_Settings/Text_SELECTCAT.png" />
+            <Image url="@../../images/InitialSetup_Settings/Text_SELECTCAT_RO.jpg" />
          </image>
       </ImageView>
 
       <ImageView fx:id="imgLblSelLanguage" fitHeight="66.0" fitWidth="366.0" layoutX="735.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../images/InitialSetup_Settings/Text_SELECTLANGUAGE.png" />
+            <Image url="@../../images/InitialSetup_Settings/Text_SELECTLANGUAGE_RO.jpg" />
          </image>
       </ImageView>
 
-      <Button fx:id="btnToMain" layoutX="505.0" layoutY="600.0" mnemonicParsing="false" onAction="#gotoMain" prefHeight="48.0" prefWidth="191.0" text="ÎNCEPE!" />
+      <Button fx:id="btnToMain" layoutX="505.0" layoutY="600.0" mnemonicParsing="false" onAction="#gotoMain" prefHeight="48.0" prefWidth="191.0" text="Incepe!" />
 
-      <Button fx:id="btnDetectGPU" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="960.0" layoutY="600.0" mnemonicParsing="false" onAction="#detect_GPU" text="DETECTEAZĂ PLACĂ VIDEO" />
+      <Button fx:id="btnDetectGPU" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="920.0" layoutY="600.0" mnemonicParsing="false" onAction="#detect_GPU" text="Redetectati GPU" />
    </children>
 </AnchorPane>
