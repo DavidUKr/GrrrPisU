@@ -19,9 +19,6 @@ public class GPUDetectController implements Initializable, IController{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        /*btnDetectGPU.setOnAction(event -> {
-            GPUDetectLoader.changeScene(event, "/UI/pages/GpuDet.fxml");
-        });*/
 
         btnBACK.setOnAction(event -> {
 

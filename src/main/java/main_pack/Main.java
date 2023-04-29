@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class Main extends Application {
 
     @Override
@@ -30,7 +32,7 @@ public class Main extends Application {
         launch(args);
     }
 
-    public static void loadRender(LoadingScreenController loadingController){
+    public static void loadRender(LoadingScreenController loadingController) throws IOException {
         new Generator(loadingController);
     }
 }

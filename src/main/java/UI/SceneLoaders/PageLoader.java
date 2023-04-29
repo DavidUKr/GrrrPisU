@@ -25,6 +25,7 @@ public class PageLoader {
     private static Stage stage;
 
     private static FXMLLoader loader;
+    private static ActionEvent lastEvent;
 
     public static void setThemeb(boolean theme){//false for blue, true for yellow
         THEME_b=theme;
@@ -134,7 +135,12 @@ public class PageLoader {
     public static IController getController(){
         return loader.getController();
     }
+    /*public static ActionEvent getLastEvent() {
+        return lastEvent;
+    }*/
+
     public static void load(ActionEvent event, page_select page) throws IOException {
+        //lastEvent=event;
 
         setPage(page);
         //setting up scene with its root

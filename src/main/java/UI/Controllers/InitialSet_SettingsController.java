@@ -13,8 +13,7 @@ import java.io.IOException;
 
 public class InitialSet_SettingsController implements IController{
     //FXML injections
-    @FXML
-    public ImageView imgToMAIN;
+
     @FXML
     private ImageView imgSelBLUE;
     @FXML
@@ -67,10 +66,6 @@ public class InitialSet_SettingsController implements IController{
 
     public void detect_GPU(ActionEvent event) throws IOException {
         PageLoader.load(event, page_select.DETECT_GPU);
-    }
-
-    public void goback_GPU(ActionEvent event) throws IOException {
-        PageLoader.load(event, page_select.MENU);
     }
 
     private void loadBack(ActionEvent event) throws IOException {

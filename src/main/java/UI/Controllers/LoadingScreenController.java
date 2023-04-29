@@ -68,13 +68,13 @@ public class LoadingScreenController implements Initializable,IController{
         }
     }
 
-    public void increaseProg(int steps){
+    public void increaseProg(int steps) throws IOException {
 
         for (int i=0; i<steps;i++) {
             if(imIt.hasNext()) imgBar_Cat.setImage(imIt.next());
             else {
                 System.out.println("Loading finished");
-                //start rendering
+                //PageLoader.load(PageLoader.getLastEvent(), page_select.MENU);
                 break;
             }
         }
