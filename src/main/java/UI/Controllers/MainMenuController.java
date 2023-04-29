@@ -2,14 +2,12 @@ package UI.Controllers;
 
 import UI.SceneLoaders.PageLoader;
 import UI.SceneLoaders.PopUpLoader;
-import benchmark.rendering.Generator;
-import com.sun.tools.javac.Main;
 import javafx.event.ActionEvent;
-import javafx.stage.Popup;
+import main_pack.Main;
 import java.io.IOException;
 
 
-public class MainMenuController {
+public class MainMenuController implements IController{
 
     public void gotoSettings(ActionEvent event) throws IOException {
         closePopups();
@@ -21,9 +19,8 @@ public class MainMenuController {
     }
     public void startTest(ActionEvent event) throws IOException {
         closePopups();
-        System.out.println("STARTING TEST");
         PageLoader.load(event, PageLoader.page_select.LOADING);
-
+        Main.loadRender((LoadingScreenController) PageLoader.getController());
     }
 
     public void openCatFight(ActionEvent event) throws InterruptedException, IOException {

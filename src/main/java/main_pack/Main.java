@@ -1,5 +1,6 @@
 package main_pack;
 
+import UI.Controllers.LoadingScreenController;
 import benchmark.rendering.Generator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -29,7 +30,7 @@ public class Main extends Application {
         launch(args);
     }
 
-    public static void loadRender(){
-        new Generator();
+    public static void loadRender(LoadingScreenController loadingController){
+        new Generator(loadingController);
     }
 }

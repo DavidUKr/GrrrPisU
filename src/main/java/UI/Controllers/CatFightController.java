@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CatFightController implements Initializable {
+public class CatFightController implements Initializable, IController{
 
     @FXML
     Button btnBack;

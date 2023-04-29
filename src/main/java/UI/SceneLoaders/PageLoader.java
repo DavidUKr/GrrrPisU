@@ -1,5 +1,6 @@
 package UI.SceneLoaders;
 
+import UI.Controllers.IController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -22,6 +23,8 @@ public class PageLoader {
     private static Parent root;
     private static Scene scene;
     private static Stage stage;
+
+    private static FXMLLoader loader;
 
     public static void setThemeb(boolean theme){//false for blue, true for yellow
         THEME_b=theme;
@@ -112,10 +115,10 @@ public class PageLoader {
             case DETECT_GPU -> {
                 FirstInit=false;
                 if (LANG_b) {
-                    CSS_theme = PageLoader.class.getResource("/UI/css/DetectGPU/detect_ro.css").toExternalForm();
+                    CSS_lang= PageLoader.class.getResource("/UI/css/DetectGPU/detect_ro.css").toExternalForm();
                     FXML_name= "/UI/pages/RO/GpuDet.fxml";
                 } else {
-                    CSS_theme = PageLoader.class.getResource("/UI/css/DetectGPU/detect.css").toExternalForm();
+                    CSS_lang= PageLoader.class.getResource("/UI/css/DetectGPU/detect.css").toExternalForm();
                     FXML_name= "/UI/pages/ENG/GpuDet.fxml";
                 }
             }
@@ -128,11 +131,15 @@ public class PageLoader {
     }
     public static boolean getLANG_b(){ return LANG_b;}
     public static boolean getTHEME_b(){return THEME_b;}
+    public static IController getController(){
+        return loader.getController();
+    }
     public static void load(ActionEvent event, page_select page) throws IOException {
 
         setPage(page);
         //setting up scene with its root
-        root= FXMLLoader.load(PageLoader.class.getResource(FXML_name));
+        loader=new FXMLLoader(PageLoader.class.getResource(FXML_name));
+        root= loader.load();
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         //css styling
@@ -140,9 +147,8 @@ public class PageLoader {
             scene.getStylesheets().add(CSS_theme);
             scene.getStylesheets().add(CSS_lang);
         }
-        if(page==page_select.DETECT_GPU) {
-            scene.getStylesheets().add(CSS_theme);
-        }
+        if(page==page_select.DETECT_GPU) scene.getStylesheets().add(CSS_lang);
+
         //loading stage
         stage.setScene(scene);
         stage.show();

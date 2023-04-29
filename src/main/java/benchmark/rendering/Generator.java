@@ -1,12 +1,6 @@
 package benchmark.rendering;
 
 import UI.Controllers.LoadingScreenController;
-import benchmark.rendering.objects.IObject;
-import javafx.fxml.FXMLLoader;
-
-import javax.swing.*;
-import java.awt.*;
-import java.util.ArrayList;
 
 public class Generator implements Runnable{
 
@@ -14,12 +8,12 @@ public class Generator implements Runnable{
     RenderPanel renderPanel;
 
     LoadingScreenController loadingScreenController;
-    public Generator(){
-        //loadingScreenController=new LoadingScreenController();
+    public Generator(LoadingScreenController loadingController){
+        loadingScreenController=loadingController;
         renderPanel = new RenderPanel();
-        //loadingScreenController.increaseProg(5);
+        loadingScreenController.increaseProg(5);
         renderFrame = new RenderFrame(renderPanel);
-        //loadingScreenController.increaseProg(5);
+        loadingScreenController.increaseProg(6);
         run();
     }
     @Override
