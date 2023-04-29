@@ -1,0 +1,14 @@
+#btnBACK {
+    -fx-background-image: url("/UI/images/DetectGPU/Button_Back.png");
+    -fx-background-size: 50 50;
+    -fx-background-radius: 50px;
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+    -fx-translate-x: 0;
+    -fx-translate-y: 620;
+    -fx-pref-height: 80;
+    -fx-pref-width: 120;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-border-radius: 50px;
+}

@@ -15,11 +15,11 @@ public class Generator implements Runnable{
 
     LoadingScreenController loadingScreenController;
     public Generator(){
-        loadingScreenController=new LoadingScreenController();
+        //loadingScreenController=new LoadingScreenController();
         renderPanel = new RenderPanel();
-        loadingScreenController.increaseProg(5);
+        //loadingScreenController.increaseProg(5);
         renderFrame = new RenderFrame(renderPanel);
-        loadingScreenController.increaseProg(5);
+        //loadingScreenController.increaseProg(5);
         run();
     }
     @Override

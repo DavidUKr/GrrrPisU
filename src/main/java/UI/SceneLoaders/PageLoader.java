@@ -49,11 +49,11 @@ public class PageLoader {
                 }
 
                 if(LANG_b) {
-                    FXML_name="/UI/pages/RO/Initial_setup.fxml";
+                    FXML_name= "/UI/pages/RO/Initial_setup.fxml";
                     CSS_lang = PageLoader.class.getResource("/UI/css/InitialSetup/RO_init.css").toExternalForm();
                 }
                 else {
-                    FXML_name="/UI/pages/ENG/Initial_setup.fxml";
+                    FXML_name= "/UI/pages/ENG/Initial_setup.fxml";
                     CSS_lang = PageLoader.class.getResource("/UI/css/InitialSetup/EN_init.css").toExternalForm();
                 }
             }
@@ -64,11 +64,11 @@ public class PageLoader {
                 else CSS_theme = PageLoader.class.getResource("/UI/css/MainMenu/Blue_menu.css").toExternalForm();
 
                 if (LANG_b) {
-                    FXML_name="/UI/pages/RO/main.fxml";
+                    FXML_name= "/UI/pages/RO/main.fxml";
                     CSS_lang = PageLoader.class.getResource("/UI/css/MainMenu/RO_menu.css").toExternalForm();
                 }
                 else{
-                    FXML_name="/UI/pages/ENG/main.fxml";
+                    FXML_name= "/UI/pages/ENG/main.fxml";
                     CSS_lang = PageLoader.class.getResource("/UI/css/MainMenu/EN_menu.css").toExternalForm();
                 }
 
@@ -80,11 +80,11 @@ public class PageLoader {
                 else CSS_theme = PageLoader.class.getResource("/UI/css/History/Blue_hist.css").toExternalForm();
 
                 if (LANG_b) {
-                    FXML_name="/UI/pages/RO/History.fxml";
+                    FXML_name= "/UI/pages/RO/History.fxml";
                     CSS_lang = PageLoader.class.getResource("/UI/css/History/RO_hist.css").toExternalForm();
                 }
                 else {
-                    FXML_name="/UI/pages/ENG/History.fxml";
+                    FXML_name= "/UI/pages/ENG/History.fxml";
                     CSS_lang = PageLoader.class.getResource("/UI/css/History/EN_hist.css").toExternalForm();
                 }
 
@@ -96,11 +96,11 @@ public class PageLoader {
                 else CSS_theme = PageLoader.class.getResource("/UI/css/Settings/Blue_set.css").toExternalForm();
 
                 if (LANG_b) {
-                    FXML_name="/UI/pages/RO/Settings.fxml";
+                    FXML_name= "/UI/pages/RO/Settings.fxml";
                     CSS_lang = PageLoader.class.getResource("/UI/css/Settings/RO_set.css").toExternalForm();
                 }
                 else {
-                    FXML_name="/UI/pages/ENG/Settings.fxml";
+                    FXML_name= "/UI/pages/ENG/Settings.fxml";
                     CSS_lang = PageLoader.class.getResource("/UI/css/Settings/EN_set.css").toExternalForm();
                 }
 
@@ -111,10 +111,11 @@ public class PageLoader {
             }
             case DETECT_GPU -> {
                 FirstInit=false;
-                CSS_theme = PageLoader.class.getResource("/UI/css/DetectGPU/detect.css").toExternalForm();
                 if (LANG_b) {
+                    CSS_theme = PageLoader.class.getResource("/UI/css/DetectGPU/detect_ro.css").toExternalForm();
                     FXML_name= "/UI/pages/RO/GpuDet.fxml";
                 } else {
+                    CSS_theme = PageLoader.class.getResource("/UI/css/DetectGPU/detect.css").toExternalForm();
                     FXML_name= "/UI/pages/ENG/GpuDet.fxml";
                 }
             }
