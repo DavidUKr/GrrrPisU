@@ -142,6 +142,7 @@ public class PageLoader {
     public static void load(ActionEvent event, page_select page) throws IOException {
         //lastEvent=event;
 
+
         setPage(page);
         //setting up scene with its root
         loader=new FXMLLoader(PageLoader.class.getResource(FXML_name));
