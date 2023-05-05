@@ -49,10 +49,10 @@
 }
 
 #btnOpenCATFIGHT {
-    -fx-translate-x: 600;
-    -fx-translate-y: 500;
+    -fx-translate-x: 680;
+    -fx-translate-y: 400;
     -fx-pref-width: 200;
     -fx-pref-height: 100;
-    -fx-rotate: 30;
-    -fx-opacity: 0;
+    -fx-rotate: -30;
+    -fx-opacity: 1;
 }
