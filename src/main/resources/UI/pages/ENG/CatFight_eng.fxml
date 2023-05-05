@@ -13,26 +13,31 @@
             <Image url="@../../images/CatFight/Background_Blue.png" />
          </image>
       </ImageView>
+
       <ImageView fx:id="yellowBackround" fitHeight="400.0" fitWidth="300.0" layoutX="281.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/CatFight/Background_Yellow.png" />
          </image>
       </ImageView>
+
       <ImageView fx:id="blueCat" fitHeight="111.0" fitWidth="101.0" layoutX="90.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/CatFight/CatBlue.png" />
          </image>
       </ImageView>
+
       <ImageView fx:id="yellowCat" fitHeight="111.0" fitWidth="101.0" layoutX="377.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/CatFight/CatYellow.png" />
          </image>
       </ImageView>
+
       <ImageView fx:id="blueScore" fitHeight="85.0" fitWidth="170.0" layoutX="56.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/CatFight/Display_ScoreB(ENG).png" />
          </image>
       </ImageView>
+
       <ImageView fx:id="yellowScore" fitHeight="85.0" fitWidth="170.0" layoutX="334.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/CatFight/Display_ScoreY(ENG).png" />

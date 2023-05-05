@@ -23,39 +23,42 @@
                 <Image url="@../../images/InitialSetup_Settings/Language_background.png" />
             </image>
         </ImageView>
+
         <ImageView fx:id="imgLblSelCat" fitHeight="64.0" fitWidth="366.0" layoutX="173.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../images/InitialSetup_Settings/Text_SELECTCAT_RO.jpg" />
+                <Image url="@../../images/InitialSetup_Settings/SelectCatRO.png" />
             </image>
         </ImageView>
 
         <ImageView fx:id="imgLblSelLanguage" fitHeight="66.0" fitWidth="366.0" layoutX="738.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../images/InitialSetup_Settings/Text_SELECTLANGUAGE_RO.jpg" />
+                <Image url="@../../images/InitialSetup_Settings/SelectatiLimbaRO.png" />
             </image>
         </ImageView>
 
         <Button fx:id="btnToMAIN" mnemonicParsing="false" onAction="#gotoMain" />
 
         <Button fx:id="btnDetectGPU" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#detect_GPU" text="REDETECTATI GPU" />
-      <Button fx:id="btnSelEN" layoutX="642.0" layoutY="404.0" mnemonicParsing="false" onAction="#select_EN">
-         <graphic>
-            <ImageView fx:id="imgSelEn" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/InitialSetup_Settings/ENG_Unselected.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button fx:id="btnSelRO" layoutX="960.0" layoutY="404.0" mnemonicParsing="false" onAction="#select_RO">
-         <graphic>
-              <ImageView fx:id="imgSelRo" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                      <Image url="@../../images/InitialSetup_Settings/RO_Unselected.png" />
-                  </image>
-            </ImageView>
-         </graphic>
-      </Button>
+
+        <Button fx:id="btnSelEN" layoutX="642.0" layoutY="404.0" mnemonicParsing="false" onAction="#select_EN">
+             <graphic>
+                <ImageView fx:id="imgSelEn" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                   <image>
+                      <Image url="@../../images/InitialSetup_Settings/ENG_Unselected.png" />
+                   </image>
+                </ImageView>
+             </graphic>
+        </Button>
+
+        <Button fx:id="btnSelRO" layoutX="960.0" layoutY="404.0" mnemonicParsing="false" onAction="#select_RO">
+             <graphic>
+                  <ImageView fx:id="imgSelRo" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="@../../images/InitialSetup_Settings/RO_Unselected.png" />
+                      </image>
+                  </ImageView>
+             </graphic>
+        </Button>
 
     </children>
 </AnchorPane>

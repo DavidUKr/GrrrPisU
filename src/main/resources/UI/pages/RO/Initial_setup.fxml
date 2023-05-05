@@ -26,13 +26,13 @@
 
       <ImageView fx:id="imgLblSelCat" fitHeight="64.0" fitWidth="366.0" layoutX="140.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../images/InitialSetup_Settings/Text_SELECTCAT_RO.jpg" />
+            <Image url="@../../images/InitialSetup_Settings/SelectCatRO.png" />
          </image>
       </ImageView>
 
       <ImageView fx:id="imgLblSelLanguage" fitHeight="66.0" fitWidth="366.0" layoutX="735.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../images/InitialSetup_Settings/Text_SELECTLANGUAGE_RO.jpg" />
+            <Image url="@../../images/InitialSetup_Settings/SelectatiLimbaRO.png" />
          </image>
       </ImageView>
 
