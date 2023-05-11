@@ -41,18 +41,18 @@
 }
 
 #btnSTART_TEST {
-    -fx-translate-x: 560;
-    -fx-translate-y: 240;
-    -fx-pref-height: 10;
-    -fx-pref-width: 10;
+    -fx-translate-x: 480;
+    -fx-translate-y: 365;
+    -fx-pref-height: 100;
+    -fx-pref-width: 100;
     -fx-opacity: 0;
 }
 
 #btnOpenCATFIGHT {
-    -fx-translate-x: 720;
-    -fx-translate-y: 430;
+    -fx-translate-x: 680;
+    -fx-translate-y: 400;
+    -fx-pref-width: 200;
     -fx-pref-height: 100;
-    -fx-pref-width: 100;
     -fx-rotate: -30;
     -fx-opacity: 0;
 }

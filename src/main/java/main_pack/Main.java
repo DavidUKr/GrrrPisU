@@ -1,5 +1,6 @@
 package main_pack;
 
+import UI.Controllers.LoadingScreenController;
 import benchmark.rendering.Generator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class Main extends Application {
 
@@ -29,7 +32,7 @@ public class Main extends Application {
         launch(args);
     }
 
-    public static void loadRender(){
-        new Generator();
+    public static void loadRender(LoadingScreenController loadingController) throws IOException {
+        new Generator(loadingController);
     }
 }

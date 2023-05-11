@@ -1,14 +1,12 @@
 package UI.Controllers;
 
 import UI.SceneLoaders.PageLoader;
-
+import UI.SceneLoaders.page_select;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import main_pack.Main;
 
 import java.io.IOException;
 import java.net.URL;
@@ -16,11 +14,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.ResourceBundle;
 
-public class LoadingScreenController implements Initializable {
+public class LoadingScreenController implements Initializable,IController{
 
     @FXML
     private ImageView imgBar_Cat;
-    //private double progress=0;
     private ArrayList<Image> BLUE=new ArrayList<Image>();
     private ArrayList<Image> YELLOW= new ArrayList<Image>();
     private Iterator<Image> imIt;
@@ -63,26 +60,21 @@ public class LoadingScreenController implements Initializable {
     }
 
     public void increaseProg(ActionEvent event) throws IOException {
-        /*if(progress<1){
-            progress+=0.1;
-            loadingBar.setProgress(progress);
-        }*/
 
         if(imIt.hasNext()) imgBar_Cat.setImage(imIt.next());
         else {
             System.out.println("Loading finished");
-            Main.loadRender();
-            PageLoader.load(event, PageLoader.page_select.MENU);
+            PageLoader.load(event, page_select.MENU);
         }
     }
 
-    public void increaseProg(int steps){
+    public void increaseProg(int steps) throws IOException {
 
         for (int i=0; i<steps;i++) {
             if(imIt.hasNext()) imgBar_Cat.setImage(imIt.next());
             else {
                 System.out.println("Loading finished");
-                //start rendering
+                //PageLoader.load(PageLoader.getLastEvent(), page_select.MENU);
                 break;
             }
         }

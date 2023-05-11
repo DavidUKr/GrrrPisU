@@ -11,7 +11,7 @@
    <children>
       <Button fx:id="btnToMAIN" mnemonicParsing="false" onAction="#gotoMain"></Button>
 
-      <Label fx:id="label_hist" text="HISTORY"></Label>
+      <Label fx:id="label_hist" text="ISTORIC"></Label>
 
 
    </children>

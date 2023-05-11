@@ -18,12 +18,12 @@
         </ImageView>
         <ImageView fx:id="detgpuimg" fitHeight="82.0" fitWidth="985.0" layoutX="108.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../images/DetectGPU/Text_DETECTGPU(ENG).png" />
+                <Image url="@../../images/DetectGPU/Text_DETECTGPU(RO).png" />
             </image>
         </ImageView>
         <ImageView fitHeight="448.0" fitWidth="954.0" layoutX="152.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../images/DetectGPU/Display_CurrentGPU(ENG).png" />
+                <Image url="@../../images/DetectGPU/Display_CurrentGPU(RO).png" />
             </image>
         </ImageView>
         <Button fx:id="btnBACK" mnemonicParsing="false" prefHeight="42.0" prefWidth="76.0"/>
