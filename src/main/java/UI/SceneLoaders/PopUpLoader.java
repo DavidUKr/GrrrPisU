@@ -33,7 +33,7 @@ public class PopUpLoader {
 
         popup=new Popup();
 
-        if(PageLoader.getLANG_b()) info=new ImageView("/UI/images/Help/_New_PopUp_Help(RO).png");
+        if(PageLoader.getLANG_b()) info=new ImageView("/UI/images/Help/PopUp_Help(RO).png");
         else info=new ImageView("/UI/images/Help/PopUp_Help(ENG).png");
 
         info.setFitHeight(300);
