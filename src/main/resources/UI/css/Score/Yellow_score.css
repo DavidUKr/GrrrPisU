@@ -1,0 +1,7 @@
+#pane {
+    -fx-background-color: #F8FAAC;
+}
+
+#image {
+    -fx-image: url("../../images/Score/CatYellow.png");
+}
