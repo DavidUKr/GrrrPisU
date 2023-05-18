@@ -1,6 +1,8 @@
 package UI.Controllers;
 
-import javafx.beans.Observable;
+import UI.SceneLoaders.PageLoader;
+import javafx.scene.control.Button;
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleFloatProperty;
@@ -10,7 +12,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.net.URL;
@@ -35,6 +36,9 @@ public class TrialHist implements Initializable {
 
     @FXML
     private TableColumn<TableModel, Float> t_score;
+
+    @FXML
+    private Button b_go_back;
 
     ObservableList<TableModel> listview = FXCollections.observableArrayList();
 
@@ -67,5 +71,13 @@ public class TrialHist implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
+        b_go_back.setOnAction(event -> {
+            try {
+                PageLoader.load(event, PageLoader.page_select.MENU);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 }

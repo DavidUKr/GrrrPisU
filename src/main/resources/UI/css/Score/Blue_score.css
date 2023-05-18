@@ -1,3 +1,12 @@
+@font-face {
+    src: url("../../fonts/ChokoMilky.otf");
+}
+
+#l_congrats {
+    -fx-font-family: "Choko Milky";
+    -fx-font-size: 50px;
+}
+
 #pane {
     -fx-background-color: #D0EFF4;
 }
