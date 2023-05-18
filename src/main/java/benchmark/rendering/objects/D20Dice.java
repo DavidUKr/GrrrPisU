@@ -8,27 +8,23 @@ import java.awt.*;
 import java.awt.geom.Path2D;
 import java.util.ArrayList;
 
-public class TetrahedronDice implements IObject
+public class D20Dice implements IObject//DnD Dice
 {
     ArrayList<Triangle> TRIS = new ArrayList<>();
     ArrayList<Path2D> PATHS=new ArrayList<Path2D>();
 
-    public TetrahedronDice(){
+    public D20Dice(){
         Vertex vA = new Vertex(100, 100, 100);
         Vertex vB = new Vertex(-100, -100, 100);
         Vertex vC = new Vertex(-100, 100, -100);
         Vertex vD = new Vertex(100, -100, -100);
 
-        //ABC
         TRIS.add(new Triangle(vA, vB, vC, Color.WHITE));
 
-        //ABD
         TRIS.add(new Triangle(vA, vB, vD, Color.RED));
 
-        //ACD
         TRIS.add(new Triangle(vC, vD, vA, Color.GREEN));
 
-        //BCD
         TRIS.add(new Triangle(vC, vD, vB, Color.BLUE));
 
         for(Triangle t : TRIS)
