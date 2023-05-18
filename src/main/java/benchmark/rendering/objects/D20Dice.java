@@ -13,7 +13,7 @@ public class D20Dice implements IObject//DnD/D20/Icosahedron
     ArrayList<Triangle> TRIS = new ArrayList<>();
     ArrayList<Path2D> PATHS=new ArrayList<Path2D>();
 
-    public D20Dice(){
+    public D20Dice(){//20 faces - 12 vertices
         double phi = 100 * ((1 + Math.sqrt(5)) / 2);
 
         Vertex vA = new Vertex(-100, phi, 0);
