@@ -2,22 +2,26 @@ package benchmark.OpenGL;
 import com.jogamp.opengl.*;
 import com.jogamp.opengl.awt.GLCanvas;
 
-import javax.swing.*;
+import javax.swing.JFrame;
 
 public class JOGL implements GLEventListener, JOGLInterface {
-    public static void initFrameContent(JPanel jPanel) {
+
+    GLCanvas glCanvas;
+    public void renderGL(RenderFrame renderFrame) {
         GLProfile glProfile = GLProfile.getDefault();
         GLCapabilities glCapabilities = new GLCapabilities(glProfile);
-        GLCanvas glCanvas = new GLCanvas(glCapabilities);
+        glCanvas = new GLCanvas(glCapabilities);
         glCanvas.addGLEventListener(new JOGL());
 
         GLCapabilities caps = new GLCapabilities(GLProfile.getDefault());
         GLCanvas canvas = new GLCanvas(caps);
         GLContext context = canvas.getContext();
 
-        jPanel.add(glCanvas);
-        //jFrame.setSize(1000, 700);
-        //jFrame.setVisible(true);
+        //JFrame jFrame = renderFrame.getFrame();
+        JFrame jFrame=new JFrame("Render");
+        jFrame.getContentPane().add(glCanvas);
+        jFrame.setSize(640, 480);
+        jFrame.setVisible(true);
     }
 
     @Override
@@ -80,4 +84,8 @@ public class JOGL implements GLEventListener, JOGLInterface {
         // Resize code
     }
 
+
+    public GLCanvas getGlCanvas() {
+        return glCanvas;
+    }
 }

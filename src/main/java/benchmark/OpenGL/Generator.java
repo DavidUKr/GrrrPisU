@@ -7,26 +7,54 @@ import java.io.IOException;
 public class Generator implements Runnable{
 
     private RenderFrame renderFrame;
-    private RenderPanel renderPanel;
-
+    private JOGL jogl;
     private Thread genThread;
+    private boolean running;
     LoadingScreenController loadingScreenController;
     public Generator(LoadingScreenController loadingController) throws IOException {
-        //loadingScreenController=loadingController;
-        renderPanel = new RenderPanel();
-        //loadingScreenController.increaseProg(5);
-        renderFrame = new RenderFrame(renderPanel);
-        //loadingScreenController.increaseProg(6);
-        startGenerator();
+        loadingScreenController=loadingController;
+        renderFrame = new RenderFrame();
+        loadingScreenController.increaseProg(5);
+        jogl = new JOGL();
+        jogl.renderGL(renderFrame);
+        loadingScreenController.increaseProg(6);
+        start();
     }
 
-    public void startGenerator(){
+    public void start(){
         genThread=new Thread(this);
+        running=true;
         genThread.start();
+    }
+
+    public void stop(){
+        running=false;
     }
     @Override
     public void run() {
+        double timePerFrame = 1000000000.0/ 200; //1sec=1 billion (10^9) nanosecods
+        long lastFrame= System.nanoTime();
+        long now= System.nanoTime();
 
+        int frames=0;
+        long lastCheck=System.currentTimeMillis();
 
+        while(running){
+
+            now=System.nanoTime();
+
+            if(now - lastFrame>=timePerFrame){
+
+                jogl.getGlCanvas().repaint();
+                lastFrame = now;
+                frames++;
+            }
+
+            if(System.currentTimeMillis() - lastCheck>=1000){
+                lastCheck=System.currentTimeMillis();
+                System.out.println("FPS: "+frames);
+                frames=0;
+            }
+        }
     }
 }
