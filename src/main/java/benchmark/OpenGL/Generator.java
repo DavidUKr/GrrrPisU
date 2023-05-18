@@ -6,19 +6,17 @@ import java.io.IOException;
 
 public class Generator implements Runnable{
 
-    private RenderFrame renderFrame;
     private JOGL jogl;
     private Thread genThread;
     private boolean running;
     LoadingScreenController loadingScreenController;
     public Generator(LoadingScreenController loadingController) throws IOException {
-        loadingScreenController=loadingController;
-        renderFrame = new RenderFrame();
-        loadingScreenController.increaseProg(5);
+            loadingScreenController=loadingController;
         jogl = new JOGL();
-        jogl.renderGL(renderFrame);
-        loadingScreenController.increaseProg(6);
+            loadingScreenController.increaseProg(5);
+        jogl.renderGL();
         start();
+        loadingScreenController.increaseProg(6);
     }
 
     public void start(){
@@ -30,6 +28,7 @@ public class Generator implements Runnable{
     public void stop(){
         running=false;
     }
+
     @Override
     public void run() {
         double timePerFrame = 1000000000.0/ 200; //1sec=1 billion (10^9) nanosecods
