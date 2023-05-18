@@ -8,28 +8,28 @@ import java.awt.*;
 import java.awt.geom.Path2D;
 import java.util.ArrayList;
 
-public class D20Dice implements IObject//DnD Dice
+public class D20Dice implements IObject//DnD/D20/Icosahedron
 {
     ArrayList<Triangle> TRIS = new ArrayList<>();
     ArrayList<Path2D> PATHS=new ArrayList<Path2D>();
 
     public D20Dice(){
-        double phi = (1 + Math.sqrt(5)) / 2;
+        double phi = 100 * ((1 + Math.sqrt(5)) / 2);
 
-        Vertex vA = new Vertex(-1, phi, 0);
-        Vertex vB = new Vertex(1, phi, 0);
-        Vertex vC = new Vertex(-1, -phi, 0);
-        Vertex vD = new Vertex(1, -phi, 0);
+        Vertex vA = new Vertex(-100, phi, 0);
+        Vertex vB = new Vertex(100, phi, 0);
+        Vertex vC = new Vertex(-100, -phi, 0);
+        Vertex vD = new Vertex(100, -phi, 0);
 
-        Vertex vE = new Vertex(0, -1, phi);
-        Vertex vF = new Vertex(0, 1, phi);
-        Vertex vG = new Vertex(0, -1, -phi);
-        Vertex vH = new Vertex(0, 1, -phi);
+        Vertex vE = new Vertex(0, -100, phi);
+        Vertex vF = new Vertex(0, 100, phi);
+        Vertex vG = new Vertex(0, -100, -phi);
+        Vertex vH = new Vertex(0, 100, -phi);
 
-        Vertex vI = new Vertex(phi, 0, -1);
-        Vertex vJ = new Vertex(phi, 0, 1);
-        Vertex vK = new Vertex(-phi, 0, -1);
-        Vertex vL = new Vertex(-phi, 0, 1);
+        Vertex vI = new Vertex(phi, 0, -100);
+        Vertex vJ = new Vertex(phi, 0, 100);
+        Vertex vK = new Vertex(-phi, 0, -100);
+        Vertex vL = new Vertex(-phi, 0, 100);
 
         TRIS.add(new Triangle(vA, vB, vF, Color.RED));
         TRIS.add(new Triangle(vB, vA, vE, Color.RED));
