@@ -1,7 +1,7 @@
 package main_pack;
 
 import UI.Controllers.LoadingScreenController;
-import benchmark.rendering.Generator;
+import benchmark.OpenGL.Generator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

@@ -1,4 +1,4 @@
-package benchmark.rendering;
+package benchmark.OpenGL;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,6 +8,7 @@ public class RenderFrame {
 
     public RenderFrame(RenderPanel renderPanel){
         JFrame frame = new JFrame();
+        JOGL.initFrameContent(renderPanel);
 
         Container pane = frame.getContentPane();
         pane.setLayout(new BorderLayout());
