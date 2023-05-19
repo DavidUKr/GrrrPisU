@@ -8,11 +8,11 @@ import java.awt.event.WindowEvent;
 
 public class RenderFrame extends JFrame {
 
-    public RenderFrame(String title){
-        super("title");
+    public RenderFrame(){
+        super("Render");
 
         setSize(1000, 700);
-
+        setLocationRelativeTo(null);
         //overriding close sequence to stop loop
         //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         addWindowListener(new WindowAdapter() {

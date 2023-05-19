@@ -9,12 +9,14 @@ public class Generator implements Runnable{
     private JOGL jogl;
     private Thread genThread;
     private boolean running;
+    private obj object;
     LoadingScreenController loadingScreenController;
     public Generator(LoadingScreenController loadingController) throws IOException {
             loadingScreenController=loadingController;
+        setObject(obj.TETRAHEDRON);
         jogl = new JOGL();
             loadingScreenController.increaseProg(5);
-        jogl.renderGL();
+        jogl.renderGL(object);
         start();
         loadingScreenController.increaseProg(6);
     }
@@ -55,5 +57,13 @@ public class Generator implements Runnable{
                 frames=0;
             }
         }
+    }
+
+    public obj getObject() {
+        return object;
+    }
+
+    public void setObject(obj object) {
+        this.object = object;
     }
 }

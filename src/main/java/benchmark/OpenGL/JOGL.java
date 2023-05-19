@@ -13,8 +13,11 @@ public class JOGL implements GLEventListener, JOGLInterface {
 
     GLCanvas glCanvas;
     JFrame jFrame;
-    IObject object= new TetrahedronDice();
-    public void renderGL() {
+    IObject object;
+    obj OBJECT;
+    public void renderGL(obj OBJECT) {
+        this.OBJECT=OBJECT;
+
         GLProfile glProfile = GLProfile.getDefault();
         GLCapabilities glCapabilities = new GLCapabilities(glProfile);
         glCanvas = new GLCanvas(glCapabilities);
@@ -24,7 +27,7 @@ public class JOGL implements GLEventListener, JOGLInterface {
         GLCanvas canvas = new GLCanvas(caps);
         GLContext context = canvas.getContext();
 
-        jFrame=new RenderFrame("Render");
+        jFrame=new RenderFrame();
         jFrame.getContentPane().add(glCanvas);
 
         jFrame.setVisible(true);
@@ -81,7 +84,47 @@ public class JOGL implements GLEventListener, JOGLInterface {
 
     @Override
     public void display(GLAutoDrawable drawable) {
-        GL gl = drawable.getGL();
+        GL2 gl2 = drawable.getGL().getGL2();
+        // Clear the color and depth buffers
+        gl2.glClear(GL2.GL_COLOR_BUFFER_BIT | GL2.GL_DEPTH_BUFFER_BIT);
+        // Set up the view and projection matrices
+        gl2.glMatrixMode(GL2.GL_MODELVIEW);
+        gl2.glLoadIdentity();
+
+        // Apply transformations as needed (e.g., translate, rotate, etc.)
+
+        // Set up rendering properties (e.g., lighting, shading, etc.)
+        // Set up rendering properties
+
+        // Enable depth testing
+        gl2.glEnable(GL2.GL_DEPTH_TEST);
+
+        // Set the clear color
+        gl2.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+
+        // Enable lighting and light sources
+        gl2.glEnable(GL2.GL_LIGHTING);
+        gl2.glEnable(GL2.GL_LIGHT0);
+
+        // Set light position and color
+        float[] lightPosition = { 1.0f, 1.0f, 1.0f, 0.0f };
+        float[] lightColor = { 1.0f, 1.0f, 1.0f, 1.0f };
+        gl2.glLightfv(GL2.GL_LIGHT0, GL2.GL_POSITION, lightPosition, 0);
+        gl2.glLightfv(GL2.GL_LIGHT0, GL2.GL_DIFFUSE, lightColor, 0);
+
+        // Set material properties
+        float[] materialAmbient = { 0.2f, 0.2f, 0.2f, 1.0f };
+        float[] materialDiffuse = { 0.8f, 0.8f, 0.8f, 1.0f };
+        gl2.glMaterialfv(GL2.GL_FRONT, GL2.GL_AMBIENT, materialAmbient, 0);
+        gl2.glMaterialfv(GL2.GL_FRONT, GL2.GL_DIFFUSE, materialDiffuse, 0);
+
+        renderObj(gl2);
+
+
+        gl2.glDisable(GL2.GL_DEPTH_TEST);
+        gl2.glDisable(GL2.GL_LIGHTING);
+
+        drawable.swapBuffers();
     }
 
     @Override
@@ -89,8 +132,25 @@ public class JOGL implements GLEventListener, JOGLInterface {
         // Resize code
     }
 
-
     public GLCanvas getGlCanvas() {
         return glCanvas;
+    }
+
+    public void renderObj(GL2 gl2){
+
+        OBJECT=obj.TETRAHEDRON;
+
+        switch(OBJECT){
+            case TETRAHEDRON -> {
+                object=new TetrahedronDice(gl2);
+            }
+            case CUBE -> {}
+            case SPHERE -> {}
+            case D20 -> {}
+            default -> {
+                System.out.println("rendering default");
+                object=new TetrahedronDice(gl2);
+            }
+        }
     }
 }
