@@ -18,14 +18,14 @@ public class CubeDice implements IObject
     ArrayList<Vertex> VERTS=new ArrayList<>();
 
     public CubeDice(GL2 gl, float x, float y, float z){
-        Vertex vA = new Vertex(100.0f, 100.0f, 100.0f);
-        Vertex vB = new Vertex(100.0f, 100.0f, -100.0f);
-        Vertex vC = new Vertex(100.0f, -100.0f, -100.0f);
-        Vertex vD = new Vertex(100.0f, -100.0f, 100.0f);
-        Vertex vE = new Vertex(-100.0f, -100.0f, 100.0f);
-        Vertex vF = new Vertex(-100.0f, -100.0f, -100.0f);
-        Vertex vG = new Vertex(-100.0f, 100.0f, -100.0f);
-        Vertex vH = new Vertex(-100.0f, 100.0f, 100.0f);
+        Vertex vA = new Vertex(x+100.0f, y+100.0f, z+100.0f);
+        Vertex vB = new Vertex(x+100.0f, y+100.0f, z-100.0f);
+        Vertex vC = new Vertex(x+100.0f, y-100.0f, z-100.0f);
+        Vertex vD = new Vertex(x+100.0f, y-100.0f, z+100.0f);
+        Vertex vE = new Vertex(x-100.0f, y-100.0f, z+100.0f);
+        Vertex vF = new Vertex(x-100.0f, y-100.0f, z-100.0f);
+        Vertex vG = new Vertex(x-100.0f, y+100.0f, z-100.0f);
+        Vertex vH = new Vertex(x-100.0f, y+100.0f, z+100.0f);
 
         VERTS.addAll(List.of(vA,vB,vC,vD,
                             vE,vF,vG,vH));

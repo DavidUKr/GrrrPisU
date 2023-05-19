@@ -20,21 +20,21 @@ public class D20Dice implements IObject//DnD/D20/Icosahedron
         float ex = 100.0f;
         float phi = (float) ((1.0f + Math.sqrt(5)) / 2.0f);
 
-        Vertex vA = new Vertex(-ex, ex*phi, 0.0f);
-        Vertex vB = new Vertex(ex, ex*phi, 0.0f);
-        Vertex vC = new Vertex(0.0f, ex, ex*phi);
-        Vertex vD = new Vertex(0.0f, ex, -ex*phi);
+        Vertex vA = new Vertex(x-ex, y+ex*phi, z+0.0f);
+        Vertex vB = new Vertex(x+ex, y+ex*phi, z+0.0f);
+        Vertex vC = new Vertex(x+0.0f, y+ex, z+ex*phi);
+        Vertex vD = new Vertex(x+0.0f, y+ex, z-ex*phi);
 
-        Vertex vK = new Vertex(0.0f, -ex, ex*phi);
-        Vertex vH = new Vertex(ex, -ex*phi, 0.0f);
-        Vertex vL = new Vertex(-ex, -ex*phi, 0.0f);
-        Vertex vE = new Vertex(0.0f, -ex, -ex*phi);
+        Vertex vK = new Vertex(x+0.0f, y-ex, z+ex*phi);
+        Vertex vH = new Vertex(x+ex, y-ex*phi, z+0.0f);
+        Vertex vL = new Vertex(x-ex, y-ex*phi, z+0.0f);
+        Vertex vE = new Vertex(x+0.0f, y-ex, z-ex*phi);
 
-        Vertex vG = new Vertex(ex*phi, 0.0f, ex);
-        Vertex vJ = new Vertex(-ex*phi, 0.0f, ex);
+        Vertex vG = new Vertex(x+ex*phi, y+0.0f, z+ex);
+        Vertex vJ = new Vertex(x-ex*phi, y+0.0f, z+ex);
 
-        Vertex vF = new Vertex(ex*phi, 0.0f, -ex);
-        Vertex vI = new Vertex(-ex*phi, 0.0f, -ex);
+        Vertex vF = new Vertex(x+ex*phi, y+0.0f, z-ex);
+        Vertex vI = new Vertex(x-ex*phi, y+0.0f, z-ex);
 
         VERTS.addAll(List.of(vA,vB,vC,vD,
                             vE,vF,vG,vH,

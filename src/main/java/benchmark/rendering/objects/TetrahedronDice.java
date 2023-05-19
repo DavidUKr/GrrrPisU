@@ -17,10 +17,10 @@ public class TetrahedronDice implements IObject
     ArrayList<Vertex> VERTS = new ArrayList<>();
 
     public TetrahedronDice(GL2 gl, float x, float y, float z){
-        Vertex vA = new Vertex(100.0f, 100.0f, 100.0f);
-        Vertex vB = new Vertex(-100.0f, -100.0f, 100.0f);
-        Vertex vC = new Vertex(-100.0f, 100.0f, -100.0f);
-        Vertex vD = new Vertex(100.0f, -100.0f, -100.0f);
+        Vertex vA = new Vertex(x+100.0f, y+100.0f, z+100.0f);
+        Vertex vB = new Vertex(x-100.0f, y-100.0f, z+100.0f);
+        Vertex vC = new Vertex(x-100.0f, y+100.0f, z-100.0f);
+        Vertex vD = new Vertex(x+100.0f, y-100.0f, z-100.0f);
 
         VERTS.addAll(List.of(vA,vB,vC,vD));
         //ABC
