@@ -1,6 +1,7 @@
 package benchmark.rendering.objects;
 
 import benchmark.rendering.basicComponents.Square;
+import benchmark.rendering.basicComponents.Triangle;
 import benchmark.rendering.basicComponents.Vertex;
 import benchmark.rendering.objects.IObject;
 import com.jogamp.opengl.GL2;
@@ -9,11 +10,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Path2D;
 import java.util.ArrayList;
+import java.util.List;
 
 public class CubeDice implements IObject
 {
     ArrayList<Square> TRIS = new ArrayList<>();
-    ArrayList<Path2D> PATHS=new ArrayList<Path2D>();
+    ArrayList<Vertex> VERTS=new ArrayList<>();
 
     public CubeDice(GL2 gl, float x, float y, float z){
         Vertex vA = new Vertex(100.0f, 100.0f, 100.0f);
@@ -24,6 +26,9 @@ public class CubeDice implements IObject
         Vertex vF = new Vertex(-100.0f, -100.0f, -100.0f);
         Vertex vG = new Vertex(-100.0f, 100.0f, -100.0f);
         Vertex vH = new Vertex(-100.0f, 100.0f, 100.0f);
+
+        VERTS.addAll(List.of(vA,vB,vC,vD,
+                            vE,vF,vG,vH));
 
         //ABCD
         TRIS.add(new Square(vA, vB, vC, vD, Color.WHITE));
@@ -43,24 +48,21 @@ public class CubeDice implements IObject
         //EFGH
         TRIS.add(new Square(vE, vF, vG, vH, Color.ORANGE));
 
+        gl.glColor3i(200,100,34);
+
+        gl.glBegin(GL2.GL_TRIANGLES);
         for(Square s : TRIS)
         {
-            Path2D path = new Path2D.Double();
-            path.moveTo(s.v1.x, s.v1.y);
-            path.lineTo(s.v2.x, s.v2.y);
-            path.lineTo(s.v3.x, s.v3.y);
-            path.lineTo(s.v4.x, s.v4.y);
-            path.closePath();
-            PATHS.add(path);
+            for(Vertex v: s.getVERTS()){
+                gl.glVertex3d(v.x, v.y, v.z);
+            }
         }
-    }
-
-    public ArrayList<Path2D> getPATHS() {
-        return PATHS;
+        gl.glEnd();
     }
 
     @Override
-    public IObject getObject() {
+    public IObject getObject()
+    {
         return null;
     }
 }

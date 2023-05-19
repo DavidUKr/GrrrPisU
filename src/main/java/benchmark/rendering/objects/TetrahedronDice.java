@@ -14,7 +14,7 @@ import java.util.List;
 public class TetrahedronDice implements IObject
 {
     ArrayList<Triangle> TRIS = new ArrayList<>();
-    ArrayList<Vertex> VERTS=new ArrayList<>();
+    ArrayList<Vertex> VERTS = new ArrayList<>();
 
     public TetrahedronDice(GL2 gl, float x, float y, float z){
         Vertex vA = new Vertex(100.0f, 100.0f, 100.0f);
@@ -48,7 +48,8 @@ public class TetrahedronDice implements IObject
     }
 
     @Override
-    public IObject getObject() {
+    public IObject getObject()
+    {
         return this;
     }
 }
