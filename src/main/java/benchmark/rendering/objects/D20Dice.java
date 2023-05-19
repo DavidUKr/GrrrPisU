@@ -2,6 +2,7 @@ package benchmark.rendering.objects;
 
 import benchmark.rendering.basicComponents.Triangle;
 import benchmark.rendering.basicComponents.Vertex;
+import com.jogamp.opengl.GL2;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,26 +14,26 @@ public class D20Dice implements IObject//DnD/D20/Icosahedron
     ArrayList<Triangle> TRIS = new ArrayList<>();
     ArrayList<Path2D> PATHS=new ArrayList<Path2D>();
 
-    public D20Dice()
+    public D20Dice(GL2 gl, float x, float y, float z)
     {//20 faces - 12 vertices
-        double ex = 100;
-        double phi = ((1 + Math.sqrt(5)) / 2);
+        float ex = 100.0f;
+        float phi = (float) ((1.0f + Math.sqrt(5)) / 2.0f);
 
-        Vertex vA = new Vertex(-ex, ex*phi, 0);
-        Vertex vB = new Vertex(ex, ex*phi, 0);
-        Vertex vC = new Vertex(0, ex, ex*phi);
-        Vertex vD = new Vertex(0, ex, -ex*phi);
+        Vertex vA = new Vertex(-ex, ex*phi, 0.0f);
+        Vertex vB = new Vertex(ex, ex*phi, 0.0f);
+        Vertex vC = new Vertex(0.0f, ex, ex*phi);
+        Vertex vD = new Vertex(0.0f, ex, -ex*phi);
 
-        Vertex vK = new Vertex(0, -ex, ex*phi);
-        Vertex vH = new Vertex(ex, -ex*phi, 0);
-        Vertex vL = new Vertex(-ex, -ex*phi, 0);
-        Vertex vE = new Vertex(0, -ex, -ex*phi);
+        Vertex vK = new Vertex(0.0f, -ex, ex*phi);
+        Vertex vH = new Vertex(ex, -ex*phi, 0.0f);
+        Vertex vL = new Vertex(-ex, -ex*phi, 0.0f);
+        Vertex vE = new Vertex(0.0f, -ex, -ex*phi);
 
-        Vertex vG = new Vertex(ex*phi, 0, ex);
-        Vertex vJ = new Vertex(-ex*phi, 0, ex);
+        Vertex vG = new Vertex(ex*phi, 0.0f, ex);
+        Vertex vJ = new Vertex(-ex*phi, 0.0f, ex);
 
-        Vertex vF = new Vertex(ex*phi, 0, -ex);
-        Vertex vI = new Vertex(-ex*phi, 0, -ex);
+        Vertex vF = new Vertex(ex*phi, 0.0f, -ex);
+        Vertex vI = new Vertex(-ex*phi, 0.0f, -ex);
 
         TRIS.add(new Triangle(vA, vB, vC, Color.RED));//1-ABC
         TRIS.add(new Triangle(vA, vB, vD, Color.GREEN));//7-ABD

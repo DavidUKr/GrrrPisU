@@ -110,14 +110,16 @@ public class JOGL implements GLEventListener, JOGLInterface {
 
         switch(OBJECT){
             case TETRAHEDRON -> {
-                object=new TetrahedronDice(gl2);
+                //object=new TetrahedronDice(gl2);
+                object=new TetrahedronDice(gl2, 0.0f, 0.0f, 0.0f);
             }
             case CUBE -> {}
             case SPHERE -> {}
             case D20 -> {}
             default -> {
                 System.out.println("rendering default");
-                object=new TetrahedronDice(gl2);
+                //object=new TetrahedronDice(gl2);
+                object=new TetrahedronDice(gl2, 0.0f, 0.0f, 0.0f);
             }
         }
     }

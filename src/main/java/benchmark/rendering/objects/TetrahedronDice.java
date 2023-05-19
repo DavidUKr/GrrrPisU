@@ -16,11 +16,11 @@ public class TetrahedronDice implements IObject
     ArrayList<Triangle> TRIS = new ArrayList<>();
     ArrayList<Vertex> VERTS=new ArrayList<>();
 
-    public TetrahedronDice(GL2 gl){
-        Vertex vA = new Vertex(100, 100, 100);
-        Vertex vB = new Vertex(-100, -100, 100);
-        Vertex vC = new Vertex(-100, 100, -100);
-        Vertex vD = new Vertex(100, -100, -100);
+    public TetrahedronDice(GL2 gl, float x, float y, float z){
+        Vertex vA = new Vertex(100.0f, 100.0f, 100.0f);
+        Vertex vB = new Vertex(-100.0f, -100.0f, 100.0f);
+        Vertex vC = new Vertex(-100.0f, 100.0f, -100.0f);
+        Vertex vD = new Vertex(100.0f, -100.0f, -100.0f);
 
         VERTS.addAll(List.of(vA,vB,vC,vD));
         //ABC

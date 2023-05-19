@@ -3,6 +3,7 @@ package benchmark.rendering.objects;
 import benchmark.rendering.basicComponents.Square;
 import benchmark.rendering.basicComponents.Vertex;
 import benchmark.rendering.objects.IObject;
+import com.jogamp.opengl.GL2;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,15 +15,15 @@ public class CubeDice implements IObject
     ArrayList<Square> TRIS = new ArrayList<>();
     ArrayList<Path2D> PATHS=new ArrayList<Path2D>();
 
-    public CubeDice(){
-        Vertex vA = new Vertex(100, 100, 100);
-        Vertex vB = new Vertex(100, 100, -100);
-        Vertex vC = new Vertex(100, -100, -100);
-        Vertex vD = new Vertex(100, -100, 100);
-        Vertex vE = new Vertex(-100, -100, 100);
-        Vertex vF = new Vertex(-100, -100, -100);
-        Vertex vG = new Vertex(-100, 100, -100);
-        Vertex vH = new Vertex(-100, 100, 100);
+    public CubeDice(GL2 gl, float x, float y, float z){
+        Vertex vA = new Vertex(100.0f, 100.0f, 100.0f);
+        Vertex vB = new Vertex(100.0f, 100.0f, -100.0f);
+        Vertex vC = new Vertex(100.0f, -100.0f, -100.0f);
+        Vertex vD = new Vertex(100.0f, -100.0f, 100.0f);
+        Vertex vE = new Vertex(-100.0f, -100.0f, 100.0f);
+        Vertex vF = new Vertex(-100.0f, -100.0f, -100.0f);
+        Vertex vG = new Vertex(-100.0f, 100.0f, -100.0f);
+        Vertex vH = new Vertex(-100.0f, 100.0f, 100.0f);
 
         //ABCD
         TRIS.add(new Square(vA, vB, vC, vD, Color.WHITE));
