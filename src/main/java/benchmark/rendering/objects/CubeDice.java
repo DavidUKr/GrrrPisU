@@ -1,6 +1,6 @@
 package benchmark.rendering.objects;
 
-import benchmark.rendering.basicComponents.Square;
+//import benchmark.rendering.basicComponents.Square;
 import benchmark.rendering.basicComponents.Triangle;
 import benchmark.rendering.basicComponents.Vertex;
 import benchmark.rendering.objects.IObject;
@@ -14,7 +14,7 @@ import java.util.List;
 
 public class CubeDice implements IObject
 {
-    ArrayList<Square> TRIS = new ArrayList<>();
+    ArrayList<Triangle> TRIS = new ArrayList<>();
     ArrayList<Vertex> VERTS=new ArrayList<>();
 
     public CubeDice(GL2 gl, float x, float y, float z){
@@ -31,29 +31,41 @@ public class CubeDice implements IObject
                             vE,vF,vG,vH));
 
         //ABCD
-        TRIS.add(new Square(vA, vB, vC, vD, Color.WHITE));
+        //TRIS.add(new Square(vA, vB, vC, vD, Color.WHITE));
+        TRIS.add(new Triangle(vA, vB, vC, Color.WHITE));
+        TRIS.add(new Triangle(vA, vD, vC, Color.WHITE));
 
         //CDEF
-        TRIS.add(new Square(vC, vD, vE, vF, Color.RED));
+        //TRIS.add(new Square(vC, vD, vE, vF, Color.RED));
+        TRIS.add(new Triangle(vD, vC, vF, Color.RED));
+        TRIS.add(new Triangle(vD, vE, vF, Color.RED));
 
         //BCFG
-        TRIS.add(new Square(vB, vC, vF, vG, Color.YELLOW));
+        //TRIS.add(new Square(vB, vC, vF, vG, Color.YELLOW));
+        TRIS.add(new Triangle(vB, vC, vF, Color.YELLOW));
+        TRIS.add(new Triangle(vB, vG, vF, Color.YELLOW));
 
         //ADEH
-        TRIS.add(new Square(vA, vD, vE, vH, Color.BLUE));
+        //TRIS.add(new Square(vA, vD, vE, vH, Color.BLUE));
+        TRIS.add(new Triangle(vA, vD, vE, Color.BLUE));
+        TRIS.add(new Triangle(vA, vH, vE, Color.BLUE));
 
         //ABGH
-        TRIS.add(new Square(vA, vB, vG, vH, Color.GREEN));
+        //TRIS.add(new Square(vA, vB, vG, vH, Color.GREEN));
+        TRIS.add(new Triangle(vH, vG, vB, Color.GREEN));
+        TRIS.add(new Triangle(vH, vA, vB, Color.GREEN));
 
         //EFGH
-        TRIS.add(new Square(vE, vF, vG, vH, Color.ORANGE));
+        //TRIS.add(new Square(vE, vF, vG, vH, Color.ORANGE));
+        TRIS.add(new Triangle(vE, vF, vG, Color.ORANGE));
+        TRIS.add(new Triangle(vE, vH, vG, Color.ORANGE));
 
         gl.glColor3i(200,100,34);
 
         gl.glBegin(GL2.GL_TRIANGLES);
-        for(Square s : TRIS)
+        for(Triangle t : TRIS)
         {
-            for(Vertex v: s.getVERTS()){
+            for(Vertex v: t.getVERTS()){
                 gl.glVertex3d(v.x, v.y, v.z);
             }
         }
