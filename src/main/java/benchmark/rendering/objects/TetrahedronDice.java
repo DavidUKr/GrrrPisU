@@ -14,25 +14,22 @@ public class TetrahedronDice implements IObject
     ArrayList<Path2D> PATHS=new ArrayList<Path2D>();
 
     public TetrahedronDice(){
-        TRIS.add(new Triangle(new Vertex(100, 100, 100),
-                new Vertex(-100, -100, 100),
-                new Vertex(-100, 100, -100),
-                Color.WHITE));
+        Vertex vA = new Vertex(100, 100, 100);
+        Vertex vB = new Vertex(-100, -100, 100);
+        Vertex vC = new Vertex(-100, 100, -100);
+        Vertex vD = new Vertex(100, -100, -100);
 
-        TRIS.add(new Triangle(new Vertex(100, 100, 100),
-                new Vertex(-100, -100, 100),
-                new Vertex(100, -100, -100),
-                Color.RED));
+        //ABC
+        TRIS.add(new Triangle(vA, vB, vC, Color.WHITE));
 
-        TRIS.add(new Triangle(new Vertex(-100, 100, -100),
-                new Vertex(100, -100, -100),
-                new Vertex(100, 100, 100),
-                Color.GREEN));
+        //ABD
+        TRIS.add(new Triangle(vA, vB, vD, Color.RED));
 
-        TRIS.add(new Triangle(new Vertex(-100, 100, -100),
-                new Vertex(100, -100, -100),
-                new Vertex(-100, -100, 100),
-                Color.BLUE));
+        //ACD
+        TRIS.add(new Triangle(vC, vD, vA, Color.GREEN));
+
+        //BCD
+        TRIS.add(new Triangle(vC, vD, vB, Color.BLUE));
 
         for(Triangle t : TRIS)
         {
