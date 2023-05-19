@@ -31,7 +31,7 @@ public class Generator implements Runnable{
 
     @Override
     public void run() {
-        double timePerFrame = 1000000000.0/ 200; //1sec=1 billion (10^9) nanosecods
+        double timePerFrame = 1000000000.0/ 100000; //1sec=1 billion (10^9) nanosecods
         long lastFrame= System.nanoTime();
         long now= System.nanoTime();
 

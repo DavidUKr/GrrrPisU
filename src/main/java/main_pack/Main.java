@@ -13,6 +13,8 @@ import java.io.IOException;
 
 public class Main extends Application {
 
+    private static Generator generator;
+
  @Override
  public void start(Stage stage) throws Exception {
 
@@ -33,6 +35,10 @@ public class Main extends Application {
     }
 
     public static void loadRender(LoadingScreenController loadingController) throws IOException {
-        new Generator(loadingController);
+        generator=new Generator(loadingController);
+    }
+
+    public static Generator getGenerator() {
+        return generator;
     }
 }

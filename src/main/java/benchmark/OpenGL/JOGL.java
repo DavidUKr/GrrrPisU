@@ -3,6 +3,7 @@ import benchmark.rendering.objects.IObject;
 import benchmark.rendering.objects.TetrahedronDice;
 import com.jogamp.opengl.*;
 import com.jogamp.opengl.awt.GLCanvas;
+import main_pack.Main;
 
 import javax.swing.JFrame;
 import java.awt.*;
@@ -11,7 +12,7 @@ import java.awt.geom.Path2D;
 public class JOGL implements GLEventListener, JOGLInterface {
 
     GLCanvas glCanvas;
-
+    JFrame jFrame;
     IObject object= new TetrahedronDice();
     public void renderGL() {
         GLProfile glProfile = GLProfile.getDefault();
@@ -23,11 +24,8 @@ public class JOGL implements GLEventListener, JOGLInterface {
         GLCanvas canvas = new GLCanvas(caps);
         GLContext context = canvas.getContext();
 
-        JFrame jFrame=new JFrame("Render");
+        jFrame=new RenderFrame("Render");
         jFrame.getContentPane().add(glCanvas);
-
-        jFrame.setSize(1000, 700);
-        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         jFrame.setVisible(true);
     }
