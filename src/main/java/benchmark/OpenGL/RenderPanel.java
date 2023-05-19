@@ -1,15 +1,15 @@
-package benchmark.rendering;
+package benchmark.OpenGL;
 
-import benchmark.rendering.objects.IObject;
-import benchmark.rendering.objects.TetrahedronDice;
-
+import benchmark.rendering.objects.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Path2D;
 
 public class RenderPanel extends JPanel {
 
-    IObject object= new TetrahedronDice();
+    //IObject object= new TetrahedronDice();
+    //IObject object= new CubeDice();
+    IObject object = new D20Dice();
 
     @Override
     protected void paintComponent(Graphics g) {
@@ -20,7 +20,9 @@ public class RenderPanel extends JPanel {
         g2.translate(getWidth() / 2, getHeight() / 2);
         g2.setColor(Color.WHITE);
 
-        for(Path2D path : ((TetrahedronDice)object).getPATHS()){
+        //for(Path2D path : ((TetrahedronDice)object).getPATHS()){
+        //for(Path2D path : ((CubeDice)object).getPATHS()){
+        for(Path2D path : ((D20Dice)object).getPATHS()){
             g2.draw(path);
         }
     }

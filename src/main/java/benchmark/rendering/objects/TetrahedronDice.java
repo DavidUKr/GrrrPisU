@@ -2,55 +2,53 @@ package benchmark.rendering.objects;
 
 import benchmark.rendering.basicComponents.Triangle;
 import benchmark.rendering.basicComponents.Vertex;
+import com.jogamp.opengl.GL2;
+import com.jogamp.opengl.GLDrawable;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Path2D;
 import java.util.ArrayList;
+import java.util.List;
 
 public class TetrahedronDice implements IObject
 {
     ArrayList<Triangle> TRIS = new ArrayList<>();
-    ArrayList<Path2D> PATHS=new ArrayList<Path2D>();
+    ArrayList<Vertex> VERTS=new ArrayList<>();
 
-    public TetrahedronDice(){
-        TRIS.add(new Triangle(new Vertex(100, 100, 100),
-                new Vertex(-100, -100, 100),
-                new Vertex(-100, 100, -100),
-                Color.WHITE));
+    public TetrahedronDice(GL2 gl){
+        Vertex vA = new Vertex(100, 100, 100);
+        Vertex vB = new Vertex(-100, -100, 100);
+        Vertex vC = new Vertex(-100, 100, -100);
+        Vertex vD = new Vertex(100, -100, -100);
 
-        TRIS.add(new Triangle(new Vertex(100, 100, 100),
-                new Vertex(-100, -100, 100),
-                new Vertex(100, -100, -100),
-                Color.RED));
+        VERTS.addAll(List.of(vA,vB,vC,vD));
+        //ABC
+        TRIS.add(new Triangle(vA, vB, vC, Color.WHITE));
 
-        TRIS.add(new Triangle(new Vertex(-100, 100, -100),
-                new Vertex(100, -100, -100),
-                new Vertex(100, 100, 100),
-                Color.GREEN));
+        //ABD
+        TRIS.add(new Triangle(vA, vB, vD, Color.RED));
 
-        TRIS.add(new Triangle(new Vertex(-100, 100, -100),
-                new Vertex(100, -100, -100),
-                new Vertex(-100, -100, 100),
-                Color.BLUE));
+        //ACD
+        TRIS.add(new Triangle(vC, vD, vA, Color.GREEN));
 
+        //BCD
+        TRIS.add(new Triangle(vC, vD, vB, Color.BLUE));
+
+        gl.glColor3i(200,100,34);
+
+        gl.glBegin(GL2.GL_TRIANGLES);
         for(Triangle t : TRIS)
         {
-            Path2D path = new Path2D.Double();
-            path.moveTo(t.v1.x, t.v1.y);
-            path.lineTo(t.v2.x, t.v2.y);
-            path.lineTo(t.v3.x, t.v3.y);
-            path.closePath();
-            PATHS.add(path);
+            for(Vertex v: t.getVERTS()){
+                gl.glVertex3d(v.x, v.y, v.z);
+            }
         }
-    }
-
-    public ArrayList<Path2D> getPATHS() {
-        return PATHS;
+        gl.glEnd();
     }
 
     @Override
     public IObject getObject() {
-        return null;
+        return this;
     }
 }
