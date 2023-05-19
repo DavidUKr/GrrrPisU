@@ -91,40 +91,8 @@ public class JOGL implements GLEventListener, JOGLInterface {
         gl2.glMatrixMode(GL2.GL_MODELVIEW);
         gl2.glLoadIdentity();
 
-        // Apply transformations as needed (e.g., translate, rotate, etc.)
-
-        // Set up rendering properties (e.g., lighting, shading, etc.)
-        // Set up rendering properties
-
-        // Enable depth testing
-        gl2.glEnable(GL2.GL_DEPTH_TEST);
-
-        // Set the clear color
-        gl2.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-
-        // Enable lighting and light sources
-        gl2.glEnable(GL2.GL_LIGHTING);
-        gl2.glEnable(GL2.GL_LIGHT0);
-
-        // Set light position and color
-        float[] lightPosition = { 1.0f, 1.0f, 1.0f, 0.0f };
-        float[] lightColor = { 1.0f, 1.0f, 1.0f, 1.0f };
-        gl2.glLightfv(GL2.GL_LIGHT0, GL2.GL_POSITION, lightPosition, 0);
-        gl2.glLightfv(GL2.GL_LIGHT0, GL2.GL_DIFFUSE, lightColor, 0);
-
-        // Set material properties
-        float[] materialAmbient = { 0.2f, 0.2f, 0.2f, 1.0f };
-        float[] materialDiffuse = { 0.8f, 0.8f, 0.8f, 1.0f };
-        gl2.glMaterialfv(GL2.GL_FRONT, GL2.GL_AMBIENT, materialAmbient, 0);
-        gl2.glMaterialfv(GL2.GL_FRONT, GL2.GL_DIFFUSE, materialDiffuse, 0);
-
         renderObj(gl2);
 
-
-        gl2.glDisable(GL2.GL_DEPTH_TEST);
-        gl2.glDisable(GL2.GL_LIGHTING);
-
-        drawable.swapBuffers();
     }
 
     @Override
