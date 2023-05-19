@@ -1,4 +1,4 @@
-package benchmark.rendering;
+package benchmark.OpenGL;
 
 import benchmark.rendering.objects.*;
 import javax.swing.*;
