@@ -4,6 +4,7 @@ import benchmark.rendering.objects.TetrahedronDice;
 import com.jogamp.newt.opengl.GLWindow;
 import com.jogamp.opengl.*;
 import com.jogamp.opengl.awt.GLCanvas;
+import com.jogamp.opengl.util.FPSAnimator;
 import main_pack.Main;
 
 import javax.swing.JFrame;
@@ -16,7 +17,7 @@ public class JOGL implements JOGLInterface {
     private GLWindow window;
     private int ScreenWidth=1000;
     private int ScreenHeight=700;
-    private int unitsWide=10;
+    private float unitsWide=10;
 
     private EventListener eventListener;
     public void renderGL(obj OBJECT) {
@@ -28,12 +29,15 @@ public class JOGL implements JOGLInterface {
         //glCapabilities.setHardwareAccelerated(true);
 
         eventListener=new EventListener(this);
+        //FPSAnimator animator=new FPSAnimator(window, 60);
+        //animator.start();
 
         /*window=GLWindow.create(glCapabilities);
         window.setSize(ScreenWidth, ScreenHeight);
         window.setResizable(false);
         window.addGLEventListener(eventListener);
-        window.setFullscreen(true);
+
+        //window.setFullscreen(true);
         window.setVisible(true);*/
 
         glCanvas=new GLCanvas(glCapabilities);
@@ -111,7 +115,7 @@ public class JOGL implements JOGLInterface {
         ScreenHeight = screenHeight;
     }
 
-    public int getUnitsWide() {
+    public float getUnitsWide() {
         return unitsWide;
     }
 

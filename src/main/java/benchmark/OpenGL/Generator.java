@@ -9,6 +9,7 @@ public class Generator implements Runnable{
     private JOGL jogl;
     private Thread genThread;
     private boolean running;
+    private int cycle_count=0;
     private obj object;
     LoadingScreenController loadingScreenController;
     public Generator(LoadingScreenController loadingController) throws IOException {
@@ -56,6 +57,12 @@ public class Generator implements Runnable{
                 lastCheck=System.currentTimeMillis();
                 System.out.println("FPS: "+frames);
                 frames=0;
+                cycle_count++;
+            }
+
+            if (cycle_count==20) {
+                stop();
+                System.out.println("done rendering");
             }
         }
     }
