@@ -9,14 +9,17 @@ public class Generator implements Runnable{
     private JOGL jogl;
     private Thread genThread;
     private boolean running;
+    private int cycle_count=0;
+    private obj object;
     LoadingScreenController loadingScreenController;
     public Generator(LoadingScreenController loadingController) throws IOException {
             loadingScreenController=loadingController;
+        setObject(obj.TETRAHEDRON);
         jogl = new JOGL();
             loadingScreenController.increaseProg(5);
-        jogl.renderGL();
+        jogl.renderGL(object);
         start();
-        loadingScreenController.increaseProg(6);
+            loadingScreenController.increaseProg(6);
     }
 
     public void start(){
@@ -44,6 +47,7 @@ public class Generator implements Runnable{
 
             if(now - lastFrame>=timePerFrame){
 
+                //jogl.getWindow().display();
                 jogl.getGlCanvas().repaint();
                 lastFrame = now;
                 frames++;
@@ -53,7 +57,21 @@ public class Generator implements Runnable{
                 lastCheck=System.currentTimeMillis();
                 System.out.println("FPS: "+frames);
                 frames=0;
+                cycle_count++;
+            }
+
+            if (cycle_count==20) {
+                stop();
+                System.out.println("done rendering");
             }
         }
+    }
+
+    public obj getObject() {
+        return object;
+    }
+
+    public void setObject(obj object) {
+        this.object = object;
     }
 }
