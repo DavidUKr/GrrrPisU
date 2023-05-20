@@ -1,4 +1,7 @@
 package benchmark.OpenGL;
+
+//cpackage benchmark.OpenGL;
+import benchmark.OpenGL.JOGLInterface;
 import benchmark.rendering.objects.IObject;
 import benchmark.rendering.objects.TetrahedronDice;
 import com.jogamp.opengl.*;
