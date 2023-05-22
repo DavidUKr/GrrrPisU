@@ -1,6 +1,7 @@
 package benchmark.OpenGL;
 
 import UI.Controllers.LoadingScreenController;
+import com.jogamp.opengl.GLAutoDrawable;
 
 import java.io.IOException;
 
@@ -34,10 +35,11 @@ public class Generator implements Runnable{
 
     @Override
     public void run() {
-        double timePerFrame = 1000000000.0/ 200; //1sec=1 billion (10^9) nanosecods
+        double timePerFrame = 1000000000.0/ 100000; //1sec=1 billion (10^9) nanosecods
         long lastFrame= System.nanoTime();
         long now= System.nanoTime();
 
+        double frameSum=0;
         int frames=0;
         long lastCheck=System.currentTimeMillis();
 
@@ -46,15 +48,16 @@ public class Generator implements Runnable{
             now=System.nanoTime();
 
             if(now - lastFrame>=timePerFrame){
-
                 //jogl.getWindow().display();
                 jogl.getGlCanvas().repaint();
                 lastFrame = now;
+
                 frames++;
             }
 
             if(System.currentTimeMillis() - lastCheck>=1000){
                 lastCheck=System.currentTimeMillis();
+                frameSum+=frames;
                 System.out.println("FPS: "+frames);
                 frames=0;
                 cycle_count++;
@@ -65,6 +68,19 @@ public class Generator implements Runnable{
                 System.out.println("done rendering");
             }
         }
+        double arMean=frameSum/20;
+        getRenderingTime();
+    }
+
+    public void getRenderingTime() {
+        long startTime = 0;
+        long endTime = 0;
+
+        startTime = System.nanoTime();
+        run();
+        endTime = System.nanoTime();
+        long renderingTime = endTime - startTime;
+        System.out.print("\nRendering time "+renderingTime);
     }
 
     public obj getObject() {
