@@ -2,6 +2,7 @@ package UI.Controllers;
 
 import UI.SceneLoaders.PageLoader;
 import UI.SceneLoaders.PopUpLoader;
+import UI.SceneLoaders.page_select;
 import database.DBUtils_local;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -46,7 +47,7 @@ public class  ScoreController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 try {
-                    PageLoader.load(event, PageLoader.page_select.LOCAL_HIST);
+                    PageLoader.load(event, page_select.LOCAL_HIST);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -58,7 +59,7 @@ public class  ScoreController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 try {
-                    PageLoader.load(event, PageLoader.page_select.MENU);
+                    PageLoader.load(event, page_select.MENU);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
