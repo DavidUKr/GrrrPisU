@@ -1,6 +1,8 @@
 package UI.Controllers;
 
 import UI.SceneLoaders.PageLoader;
+import database.DBConnect;
+import database.TableModel;
 import javafx.scene.control.Button;
 
 import javafx.beans.property.SimpleStringProperty;
