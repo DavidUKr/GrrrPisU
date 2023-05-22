@@ -1,3 +1,16 @@
 #imgSelRo {
     -fx-image: url("../../images/InitialSetup_Settings/RO_Selected.png");
 }
+
+#btnDetectGPU {
+    -fx-translate-x: 500;
+    -fx-translate-y: 618;
+    -fx-pref-height: 37px;
+    -fx-pref-width: 220px;
+    -fx-background-radius: 30px;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-border-radius: 30px;
+}

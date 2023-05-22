@@ -1,11 +1,10 @@
 package UI.Controllers;
 
 import UI.SceneLoaders.PageLoader;
-
+import UI.SceneLoaders.page_select;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -15,11 +14,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.ResourceBundle;
 
-public class LoadingScreenController implements Initializable {
+public class LoadingScreenController implements Initializable,IController{
 
     @FXML
     private ImageView imgBar_Cat;
-    //private double progress=0;
     private ArrayList<Image> BLUE=new ArrayList<Image>();
     private ArrayList<Image> YELLOW= new ArrayList<Image>();
     private Iterator<Image> imIt;
@@ -38,17 +36,17 @@ public class LoadingScreenController implements Initializable {
         BLUE.add(new Image("/UI/images/Loading/Blue/LB_9.png"));
         BLUE.add(new Image("/UI/images/Loading/Blue/LB_End.png"));
 
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB1.png"));
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB2.png"));
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB3.png"));
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB4.png"));
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB5.png"));
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB6.png"));
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB7.png"));
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB8.png"));
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB9.png"));
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB10.png"));
-        YELLOW.add(new Image("UI/images/Loading/Yellow/LoadingB11.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB1.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB2.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB3.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB4.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB5.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB6.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB7.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB8.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB9.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB10.png"));
+        YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB11.png"));
 
         if(PageLoader.getTHEME_b()) {
             imIt=YELLOW.iterator();
@@ -62,28 +60,28 @@ public class LoadingScreenController implements Initializable {
     }
 
     public void increaseProg(ActionEvent event) throws IOException {
-        /*if(progress<1){
-            progress+=0.1;
-            loadingBar.setProgress(progress);
-        }*/
 
         if(imIt.hasNext()) imgBar_Cat.setImage(imIt.next());
         else {
             System.out.println("Loading finished");
-            PageLoader.load(event, PageLoader.page_select.SCORE);
+            PageLoader.load(event, page_select.SCORE);
         }
     }
 
-    public void increaseProg(int steps){
+    public void increaseProg(int steps) throws IOException {
 
         for (int i=0; i<steps;i++) {
             if(imIt.hasNext()) imgBar_Cat.setImage(imIt.next());
             else {
                 System.out.println("Loading finished");
-                //start rendering
+                //PageLoader.load(PageLoader.getLastEvent(), page_select.MENU);
                 break;
             }
         }
 
+    }
+
+    public LoadingScreenController getController(){
+        return this;
     }
 }

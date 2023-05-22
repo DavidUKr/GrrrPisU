@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
 <AnchorPane fx:id="pane" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.InitialSet_SettingsController">
     <children>
@@ -24,29 +23,42 @@
                 <Image url="@../../images/InitialSetup_Settings/Language_background.png" />
             </image>
         </ImageView>
-        <ImageView fx:id="imgSelEn" fitHeight="150.0" fitWidth="200.0" layoutX="650.0" layoutY="408.0" onMouseClicked="#select_EN" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../../images/InitialSetup_Settings/ENG_Unselected.png" />
-            </image></ImageView>
-        <ImageView fx:id="imgSelRo" fitHeight="150.0" fitWidth="200.0" layoutX="968.0" layoutY="408.0" onMouseClicked="#select_RO" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../../images/InitialSetup_Settings/RO_Unselected.png" />
-            </image></ImageView>
+
         <ImageView fx:id="imgLblSelCat" fitHeight="64.0" fitWidth="366.0" layoutX="173.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../images/InitialSetup_Settings/Text_SELECTCAT.png" />
+                <Image url="@../../images/InitialSetup_Settings/SelectCatRO.png" />
             </image>
         </ImageView>
 
         <ImageView fx:id="imgLblSelLanguage" fitHeight="66.0" fitWidth="366.0" layoutX="738.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../images/InitialSetup_Settings/Text_SELECTLANGUAGE.png" />
+                <Image url="@../../images/InitialSetup_Settings/SelectatiLimbaRO.png" />
             </image>
         </ImageView>
 
-        <Button fx:id="btnToMAIN" mnemonicParsing="false" onAction="#gotoMain"></Button>
+        <Button fx:id="btnToMAIN" mnemonicParsing="false" onAction="#gotoMain" />
 
-        <Button fx:id="btnDetectGPU" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#detect_GPU" text="REDETECT GPU"></Button>
+        <Button fx:id="btnDetectGPU" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#detect_GPU" text="REDETECTATI GPU" />
+
+        <Button fx:id="btnSelEN" layoutX="642.0" layoutY="404.0" mnemonicParsing="false" onAction="#select_EN">
+             <graphic>
+                <ImageView fx:id="imgSelEn" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                   <image>
+                      <Image url="@../../images/InitialSetup_Settings/ENG_Unselected.png" />
+                   </image>
+                </ImageView>
+             </graphic>
+        </Button>
+
+        <Button fx:id="btnSelRO" layoutX="960.0" layoutY="404.0" mnemonicParsing="false" onAction="#select_RO">
+             <graphic>
+                  <ImageView fx:id="imgSelRo" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="@../../images/InitialSetup_Settings/RO_Unselected.png" />
+                      </image>
+                  </ImageView>
+             </graphic>
+        </Button>
 
     </children>
 </AnchorPane>

@@ -23,6 +23,7 @@ public class PopUpLoader {
     private static Stage stage;
     private static Popup popup;
     private static ImageView info;
+    private static String CSS_theme;
 
     private static final Object lock=new Object();
 
@@ -32,7 +33,7 @@ public class PopUpLoader {
 
         popup=new Popup();
 
-        if(PageLoader.getLANG_b()) info=new ImageView("/UI/images/Help/_New_PopUp_Help(RO).png");
+        if(PageLoader.getLANG_b()) info=new ImageView("/UI/images/Help/PopUp_Help(RO).png");
         else info=new ImageView("/UI/images/Help/PopUp_Help(ENG).png");
 
         info.setFitHeight(300);
@@ -65,6 +66,8 @@ public class PopUpLoader {
         // Set the scene on the stage
         Scene scene = new Scene(root);
         popupStage.setScene(scene);
+        CSS_theme = PageLoader.class.getResource("/UI/css/CatFight/fight.css").toExternalForm();
+        scene.getStylesheets().add(CSS_theme);
 
         //add css
         scene.getStylesheets().add("/UI/css/CatFight/fight.css");
