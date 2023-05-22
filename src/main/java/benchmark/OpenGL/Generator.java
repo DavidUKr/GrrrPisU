@@ -12,6 +12,8 @@ public class Generator implements Runnable{
     private int cycle_count=0;
     private obj object;
     LoadingScreenController loadingScreenController;
+
+    private int FPS=100000;
     public Generator(LoadingScreenController loadingController) throws IOException {
             loadingScreenController=loadingController;
         setObject(obj.TETRAHEDRON);
@@ -34,7 +36,7 @@ public class Generator implements Runnable{
 
     @Override
     public void run() {
-        double timePerFrame = 1000000000.0/ 200; //1sec=1 billion (10^9) nanosecods
+        double timePerFrame = 1000000000.0/ FPS; //1sec=1 billion (10^9) nanosecods
         long lastFrame= System.nanoTime();
         long now= System.nanoTime();
 
