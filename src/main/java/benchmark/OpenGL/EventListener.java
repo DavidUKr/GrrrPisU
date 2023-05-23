@@ -1,5 +1,7 @@
 package benchmark.OpenGL;
 
+import benchmark.rendering.objects.CubeDice;
+import benchmark.rendering.objects.D20Dice;
 import benchmark.rendering.objects.IObject;
 import benchmark.rendering.objects.TetrahedronDice;
 import com.jogamp.opengl.GL;
@@ -9,19 +11,22 @@ import com.jogamp.opengl.GLEventListener;
 import com.jogamp.opengl.awt.GLCanvas;
 import com.jogamp.opengl.glu.GLU;
 
-public class EventListener implements GLEventListener {
+public class EventListener implements GLEventListener
+{
     private obj OBJECT;
     private IObject object;
 
     private JOGL jogl;
     private static GL2 gl;
 
-    public EventListener(JOGL jogl){
+    public EventListener(JOGL jogl)
+    {
         super();
         this.jogl=jogl;
     }
     @Override
-    public void init(GLAutoDrawable drawable) {
+    public void init(GLAutoDrawable drawable)
+    {
         gl=drawable.getGL().getGL2();
         gl.glClearColor(0,0,0,1);
 
@@ -37,12 +42,14 @@ public class EventListener implements GLEventListener {
     }
 
     @Override
-    public void dispose(GLAutoDrawable glAutoDrawable) {
+    public void dispose(GLAutoDrawable glAutoDrawable)
+    {
 
     }
 
     @Override
-    public void display(GLAutoDrawable glAutoDrawable) {
+    public void display(GLAutoDrawable glAutoDrawable)
+    {
         //Clear the color and depth buffers
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
 
@@ -111,20 +118,28 @@ public class EventListener implements GLEventListener {
         //gl.glLoadIdentity();
     }
 
-    public void renderObj(GL2 gl2){
+    public void renderObj(GL2 gl2)
+    {
 
         OBJECT=obj.TETRAHEDRON;
 
-        switch(OBJECT){
+        switch(OBJECT)
+        {
             case TETRAHEDRON -> {
-                object=new TetrahedronDice(gl2);
+                object=new TetrahedronDice(gl2, 0 ,0, 0);
             }
-            case CUBE -> {}
-            case SPHERE -> {}
-            case D20 -> {}
+            case CUBE -> {
+                object=new CubeDice(gl2, 0 ,0, 0);
+            }
+            /*case SPHERE -> {
+
+            }*/
+            case D20 -> {
+                object=new D20Dice(gl2, 0, 0, 0);
+            }
             default -> {
                 System.out.println("rendering default");
-                object=new TetrahedronDice(gl2);
+                object=new TetrahedronDice(gl2, 0, 0, 0);
             }
         }
     }

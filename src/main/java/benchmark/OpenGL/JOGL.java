@@ -128,7 +128,6 @@ public class JOGL implements JOGLInterface {
         ScreenHeight = screenHeight;
     }
 
-//<<<<<<< 3d_rendering
     public float getUnitsWide()
     {
         return unitsWide;
@@ -138,7 +137,9 @@ public class JOGL implements JOGLInterface {
     {
         this.unitsWide = unitsWide;
     }
-    /*public void renderObj(GL2 gl2){
+
+    /*public void renderObj(GL2 gl2)
+    {
 
         OBJECT=obj.TETRAHEDRON;
 
@@ -156,7 +157,5 @@ public class JOGL implements JOGLInterface {
                 object=new TetrahedronDice(gl2, 0.0f, 0.0f, 0.0f);
             }
         }
-//>>>>>>> 3d_newrender
-    */
-    }
+    }*/
 }
