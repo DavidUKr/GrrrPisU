@@ -55,7 +55,7 @@ public class EventListener implements GLEventListener
 
         gl.glRotatef(-1, 1,1,0);
 
-        float size=2;
+        float size=1;
         //gl.glColor4f(0,1,0,1);
         gl.glBegin(GL2.GL_QUADS);
             //Front face
@@ -80,7 +80,7 @@ public class EventListener implements GLEventListener
             gl.glVertex3f(-size, size, -size);
 
             // Right face
-            gl.glColor3f(0,1,1); //turqois
+            gl.glColor3f(0,1,1); //turquoise
             gl.glVertex3f(size, -size, size);
             gl.glVertex3f(size, -size, -size);
             gl.glVertex3f(size, size, -size);
@@ -105,7 +105,8 @@ public class EventListener implements GLEventListener
     }
 
     @Override
-    public void reshape(GLAutoDrawable glAutoDrawable, int i, int i1, int i2, int i3) {
+    public void reshape(GLAutoDrawable glAutoDrawable, int i, int i1, int i2, int i3)
+    {
         gl.glMatrixMode(GL2.GL_PROJECTION);
         gl.glLoadIdentity();
 
