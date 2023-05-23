@@ -64,7 +64,7 @@ public class LoadingScreenController implements Initializable,IController{
         if(imIt.hasNext()) imgBar_Cat.setImage(imIt.next());
         else {
             System.out.println("Loading finished");
-            PageLoader.load(event, page_select.SCORE);
+            PageLoader.load(event, page_select.MENU);
         }
     }
 
