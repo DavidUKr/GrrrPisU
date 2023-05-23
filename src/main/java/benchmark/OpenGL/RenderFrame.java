@@ -8,12 +8,11 @@ import java.awt.event.WindowEvent;
 
 public class RenderFrame extends JFrame {
 
-    public RenderFrame(JOGL jogl){
+    public RenderFrame(){
         super("Render");
 
-        setSize(jogl.getScreenWidth(), jogl.getScreenHeight());
+        setSize(1000, 700);
         setLocationRelativeTo(null);
-        setResizable(false);
         //overriding close sequence to stop loop
         //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
