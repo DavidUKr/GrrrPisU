@@ -1,49 +1,66 @@
 package benchmark.OpenGL;
+
+//cpackage benchmark.OpenGL;
+import benchmark.OpenGL.JOGLInterface;
 import benchmark.rendering.objects.IObject;
 import benchmark.rendering.objects.TetrahedronDice;
+import com.jogamp.newt.opengl.GLWindow;
 import com.jogamp.opengl.*;
 import com.jogamp.opengl.awt.GLCanvas;
+import com.jogamp.opengl.util.FPSAnimator;
 import main_pack.Main;
 
 import javax.swing.JFrame;
 import java.awt.*;
 import java.awt.geom.Path2D;
 
-public class JOGL implements GLEventListener, JOGLInterface {
+public class JOGL implements JOGLInterface {
 
-    GLCanvas glCanvas;
-    JFrame jFrame;
-    IObject object;
-    obj OBJECT;
+    private GLCanvas glCanvas;
+    private GLWindow window;
+    private int ScreenWidth=1000;
+    private int ScreenHeight=700;
+    private float unitsWide=10;
+
+    private EventListener eventListener;
     public void renderGL(obj OBJECT) {
-        this.OBJECT=OBJECT;
+        GLProfile.initSingleton();
+        GLProfile glProfile = GLProfile.get(GLProfile.GL2);
 
-        GLProfile glProfile = GLProfile.getDefault();
         GLCapabilities glCapabilities = new GLCapabilities(glProfile);
-        glCanvas = new GLCanvas(glCapabilities);
-        glCanvas.addGLEventListener(new JOGL());
+        //glCapabilities.setDoubleBuffered(true); //to resolve de fps cap
+        //glCapabilities.setHardwareAccelerated(true);
 
-        GLCapabilities caps = new GLCapabilities(GLProfile.getDefault());
-        GLCanvas canvas = new GLCanvas(caps);
-        GLContext context = canvas.getContext();
+        eventListener=new EventListener(this);
+        //FPSAnimator animator=new FPSAnimator(window, 60);
+        //animator.start();
 
-        jFrame=new RenderFrame();
-        jFrame.getContentPane().add(glCanvas);
+        /*window=GLWindow.create(glCapabilities);
+        window.setSize(ScreenWidth, ScreenHeight);
+        window.setResizable(false);
+        window.addGLEventListener(eventListener);
 
-        jFrame.setVisible(true);
+        //window.setFullscreen(true);
+        window.setVisible(true);*/
+
+        glCanvas=new GLCanvas(glCapabilities);
+        glCanvas.addGLEventListener(eventListener);
+
+        RenderFrame renderFrame=new RenderFrame(this);
+        renderFrame.getContentPane().add(glCanvas);
+        renderFrame.setVisible(true);
     }
 
-    @Override
     public void init(GLAutoDrawable drawable) { //Query the vendor and version of the benchmark.OpenGL
         // Initialization code
-
         GL gl = drawable.getGL();
 
+        //INFO
         String vendor = gl.glGetString(GL.GL_VENDOR);
         String version = gl.glGetString(GL.GL_VERSION);
         System.out.println("benchmark.OpenGL Vendor: " + vendor);
         System.out.println("benchmark.OpenGL Version: " + version);
-        String extensions = gl.glGetString(GL.GL_EXTENSIONS);
+        //String extensions = gl.glGetString(GL.GL_EXTENSIONS);
         //System.out.println("Supported Extensions: " + extensions);
         getResolution(drawable);
         getFrameRate(drawable);
@@ -77,34 +94,38 @@ public class JOGL implements GLEventListener, JOGLInterface {
 
     }
 
-    @Override
-    public void dispose(GLAutoDrawable drawable) {
-        // Cleanup code
+    public GLWindow getWindow() {
+        return window;
     }
 
-    @Override
-    public void display(GLAutoDrawable drawable) {
-        GL2 gl2 = drawable.getGL().getGL2();
-        // Clear the color and depth buffers
-        gl2.glClear(GL2.GL_COLOR_BUFFER_BIT | GL2.GL_DEPTH_BUFFER_BIT);
-        // Set up the view and projection matrices
-        gl2.glMatrixMode(GL2.GL_MODELVIEW);
-        gl2.glLoadIdentity();
-
-        renderObj(gl2);
-
-    }
-
-    @Override
-    public void reshape(GLAutoDrawable drawable, int x, int y, int width, int height) {
-        // Resize code
-    }
-
-    public GLCanvas getGlCanvas() {
+    public GLCanvas getGlCanvas(){
         return glCanvas;
     }
 
-    public void renderObj(GL2 gl2){
+    public int getScreenWidth() {
+        return ScreenWidth;
+    }
+
+    public void setScreenWidth(int screenWidth) {
+        ScreenWidth = screenWidth;
+    }
+
+    public int getScreenHeight() {
+        return ScreenHeight;
+    }
+
+    public void setScreenHeight(int screenHeight) {
+        ScreenHeight = screenHeight;
+    }
+
+//<<<<<<< 3d_rendering
+    public float getUnitsWide() {
+        return unitsWide;
+    }
+
+    public void setUnitsWide(int unitsWide) {
+        this.unitsWide = unitsWide;
+    /*public void renderObj(GL2 gl2){
 
         OBJECT=obj.TETRAHEDRON;
 
@@ -122,5 +143,6 @@ public class JOGL implements GLEventListener, JOGLInterface {
                 object=new TetrahedronDice(gl2, 0.0f, 0.0f, 0.0f);
             }
         }
-    }
+//>>>>>>> 3d_newrender
+    }*/
 }
