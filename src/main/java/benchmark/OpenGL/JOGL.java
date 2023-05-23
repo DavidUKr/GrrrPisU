@@ -118,11 +118,31 @@ public class JOGL implements JOGLInterface {
         ScreenHeight = screenHeight;
     }
 
+//<<<<<<< 3d_rendering
     public float getUnitsWide() {
         return unitsWide;
     }
 
     public void setUnitsWide(int unitsWide) {
         this.unitsWide = unitsWide;
-    }
+    /*public void renderObj(GL2 gl2){
+
+        OBJECT=obj.TETRAHEDRON;
+
+        switch(OBJECT){
+            case TETRAHEDRON -> {
+                //object=new TetrahedronDice(gl2);
+                object=new TetrahedronDice(gl2, 0.0f, 0.0f, 0.0f);
+            }
+            case CUBE -> {}
+            case SPHERE -> {}
+            case D20 -> {}
+            default -> {
+                System.out.println("rendering default");
+                //object=new TetrahedronDice(gl2);
+                object=new TetrahedronDice(gl2, 0.0f, 0.0f, 0.0f);
+            }
+        }
+//>>>>>>> 3d_newrender
+    }*/
 }

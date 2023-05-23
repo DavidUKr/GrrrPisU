@@ -1,4 +1,4 @@
-package benchmark.OpenGL;
+/*package benchmark.OpenGL;
 
 import benchmark.rendering.objects.*;
 import javax.swing.*;
@@ -9,7 +9,7 @@ public class RenderPanel extends JPanel {
 
     //IObject object= new TetrahedronDice();
     //IObject object= new CubeDice();
-    IObject object = new D20Dice();
+    //IObject object = new D20Dice();
 
     @Override
     protected void paintComponent(Graphics g) {
@@ -27,3 +27,4 @@ public class RenderPanel extends JPanel {
         }
     }
 }
+*/

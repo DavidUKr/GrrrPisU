@@ -2,37 +2,43 @@ package benchmark.rendering.objects;
 
 import benchmark.rendering.basicComponents.Triangle;
 import benchmark.rendering.basicComponents.Vertex;
+import com.jogamp.opengl.GL2;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Path2D;
 import java.util.ArrayList;
+import java.util.List;
 
 public class D20Dice implements IObject//DnD/D20/Icosahedron
 {
     ArrayList<Triangle> TRIS = new ArrayList<>();
-    ArrayList<Path2D> PATHS=new ArrayList<Path2D>();
+    ArrayList<Vertex> VERTS=new ArrayList<>();
 
-    public D20Dice()
+    public D20Dice(GL2 gl, float x, float y, float z)
     {//20 faces - 12 vertices
-        double ex = 100;
-        double phi = ((1 + Math.sqrt(5)) / 2);
+        float ex = 100.0f;
+        float phi = (float) ((1.0f + Math.sqrt(5)) / 2.0f);
 
-        Vertex vA = new Vertex(-ex, ex*phi, 0);
-        Vertex vB = new Vertex(ex, ex*phi, 0);
-        Vertex vC = new Vertex(0, ex, ex*phi);
-        Vertex vD = new Vertex(0, ex, -ex*phi);
+        Vertex vA = new Vertex(x-ex, y+ex*phi, z+0.0f);
+        Vertex vB = new Vertex(x+ex, y+ex*phi, z+0.0f);
+        Vertex vC = new Vertex(x+0.0f, y+ex, z+ex*phi);
+        Vertex vD = new Vertex(x+0.0f, y+ex, z-ex*phi);
 
-        Vertex vK = new Vertex(0, -ex, ex*phi);
-        Vertex vH = new Vertex(ex, -ex*phi, 0);
-        Vertex vL = new Vertex(-ex, -ex*phi, 0);
-        Vertex vE = new Vertex(0, -ex, -ex*phi);
+        Vertex vK = new Vertex(x+0.0f, y-ex, z+ex*phi);
+        Vertex vH = new Vertex(x+ex, y-ex*phi, z+0.0f);
+        Vertex vL = new Vertex(x-ex, y-ex*phi, z+0.0f);
+        Vertex vE = new Vertex(x+0.0f, y-ex, z-ex*phi);
 
-        Vertex vG = new Vertex(ex*phi, 0, ex);
-        Vertex vJ = new Vertex(-ex*phi, 0, ex);
+        Vertex vG = new Vertex(x+ex*phi, y+0.0f, z+ex);
+        Vertex vJ = new Vertex(x-ex*phi, y+0.0f, z+ex);
 
-        Vertex vF = new Vertex(ex*phi, 0, -ex);
-        Vertex vI = new Vertex(-ex*phi, 0, -ex);
+        Vertex vF = new Vertex(x+ex*phi, y+0.0f, z-ex);
+        Vertex vI = new Vertex(x-ex*phi, y+0.0f, z-ex);
+
+        VERTS.addAll(List.of(vA,vB,vC,vD,
+                            vE,vF,vG,vH,
+                            vI,vJ,vK,vL));
 
         TRIS.add(new Triangle(vA, vB, vC, Color.RED));//1-ABC
         TRIS.add(new Triangle(vA, vB, vD, Color.GREEN));//7-ABD
@@ -64,23 +70,19 @@ public class D20Dice implements IObject//DnD/D20/Icosahedron
         TRIS.add(new Triangle(vJ, vK, vL, Color.BLUE));//6-JKL
         TRIS.add(new Triangle(vG, vH, vK, Color.ORANGE));//4-GHK
 
+        gl.glBegin(GL2.GL_TRIANGLES);
         for(Triangle t : TRIS)
         {
-            Path2D path = new Path2D.Double();
-            path.moveTo(t.v1.x, t.v1.y);
-            path.lineTo(t.v2.x, t.v2.y);
-            path.lineTo(t.v3.x, t.v3.y);
-            path.closePath();
-            PATHS.add(path);
+            for(Vertex v: t.getVERTS()){
+                gl.glVertex3d(v.x, v.y, v.z);
+            }
         }
-    }
-
-    public ArrayList<Path2D> getPATHS() {
-        return PATHS;
+        gl.glEnd();
     }
 
     @Override
-    public IObject getObject() {
+    public IObject getObject()
+    {
         return null;
     }
 }
