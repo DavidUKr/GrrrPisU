@@ -127,11 +127,19 @@ public class PageLoader {
                     CSS_theme = PageLoader.class.getResource("/UI/css/Score/Yellow_score.css").toExternalForm();
                 else CSS_theme = PageLoader.class.getResource("/UI/css/Score/Blue_score.css").toExternalForm();
 
-                FXML_name="/UI/pages/ENG/Score.fxml";
+                if (LANG_b) {
+                    FXML_name="/UI/pages/RO/Score.fxml";
+                } else {
+                    FXML_name="/UI/pages/ENG/Score.fxml";
+                }
             }
 
             case LOCAL_HIST -> {
-                FXML_name="/UI/pages/ENG/local_history.fxml";
+                if (LANG_b) {
+                    FXML_name="/UI/pages/RO/local_history.fxml";
+                } else {
+                    FXML_name="/UI/pages/ENG/local_history.fxml";
+                }
             }
         }
 
