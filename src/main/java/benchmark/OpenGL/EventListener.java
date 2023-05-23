@@ -1,15 +1,15 @@
 package benchmark.OpenGL;
 
-import benchmark.rendering.objects.CubeDice;
-import benchmark.rendering.objects.D20Dice;
-import benchmark.rendering.objects.IObject;
-import benchmark.rendering.objects.TetrahedronDice;
+import benchmark.rendering.basicComponents.*;
+import benchmark.rendering.objects.*;
 import com.jogamp.opengl.GL;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLEventListener;
 import com.jogamp.opengl.awt.GLCanvas;
 import com.jogamp.opengl.glu.GLU;
+
+import java.util.ArrayList;
 
 public class EventListener implements GLEventListener
 {
@@ -55,53 +55,9 @@ public class EventListener implements GLEventListener
 
         gl.glRotatef(-1, 1,1,0);
 
-        float size=1;
         //gl.glColor4f(0,1,0,1);
-        gl.glBegin(GL2.GL_QUADS);
-            //Front face
-            gl.glColor3f(1,0.5f,0.5f); //red
-            gl.glVertex3f(-size, -size, size);
-            gl.glVertex3f(size, -size, size);
-            gl.glVertex3f(size, size, size);
-            gl.glVertex3f(-size, size, size);
 
-            // Back face
-            gl.glColor3f(1,1,0); //yellow
-            gl.glVertex3f(size, -size, -size);
-            gl.glVertex3f(-size, -size, -size);
-            gl.glVertex3f(-size, size, -size);
-            gl.glVertex3f(size, size, -size);
-
-            // Left face
-            gl.glColor3f(1,1,1); //white
-            gl.glVertex3f(-size, -size, -size);
-            gl.glVertex3f(-size, -size, size);
-            gl.glVertex3f(-size, size, size);
-            gl.glVertex3f(-size, size, -size);
-
-            // Right face
-            gl.glColor3f(0,1,1); //turquoise
-            gl.glVertex3f(size, -size, size);
-            gl.glVertex3f(size, -size, -size);
-            gl.glVertex3f(size, size, -size);
-            gl.glVertex3f(size, size, size);
-
-            // Top face
-            gl.glColor3f(0,0,1); // blue
-            gl.glVertex3f(-size, size, size);
-            gl.glVertex3f(size, size, size);
-            gl.glVertex3f(size, size, -size);
-            gl.glVertex3f(-size, size, -size);
-
-            // Bottom face
-            gl.glColor3f(1,0,1); //magenta
-            gl.glVertex3f(-size, -size, -size);
-            gl.glVertex3f(size, -size, -size);
-            gl.glVertex3f(size, -size, size);
-            gl.glVertex3f(-size, -size, size);
-        gl.glEnd();
-
-        //renderObj(gl);
+        renderObj(gl);
     }
 
     @Override
@@ -121,16 +77,133 @@ public class EventListener implements GLEventListener
 
     public void renderObj(GL2 gl2)
     {
+        float size=1;
 
-        OBJECT=obj.TETRAHEDRON;
+        //OBJECT=obj.TETRAHEDRON;
+        OBJECT=obj.CUBE;
+        //OBJECT=obj.D20;
 
         switch(OBJECT)
         {
             case TETRAHEDRON -> {
                 object=new TetrahedronDice(gl2, 0 ,0, 0);
+                ArrayList<Vertex> VERTS = object.getVERTS();
+
+                Vertex vA = VERTS.get(0);
+                Vertex vB = VERTS.get(1);
+                Vertex vC = VERTS.get(2);
+                Vertex vD = VERTS.get(3);
+
+                gl.glBegin(GL2.GL_TRIANGLES);
+
+                //ABC
+                gl.glColor3f(1,0.5f,0.5f); //red
+                gl.glVertex3f(vA.getX(), vA.getY(), vA.getZ());
+                gl.glVertex3f(vB.getX(), vB.getY(), vB.getZ());
+                gl.glVertex3f(vC.getX(), vC.getY(), vC.getZ());
+
+                //ABD
+                gl.glColor3f(1,1,0); //yellow
+                gl.glVertex3f(vA.getX(), vA.getY(), vA.getZ());
+                gl.glVertex3f(vB.getX(), vB.getY(), vB.getZ());
+                gl.glVertex3f(vD.getX(), vD.getY(), vD.getZ());
+
+                //CDA
+                gl.glColor3f(1,1,1); //white
+                gl.glVertex3f(vC.getX(), vC.getY(), vC.getZ());
+                gl.glVertex3f(vD.getX(), vD.getY(), vD.getZ());
+                gl.glVertex3f(vA.getX(), vA.getY(), vA.getZ());
+
+                // Right face
+                gl.glColor3f(0,1,1); //turquoise
+                gl.glVertex3f(vC.getX(), vC.getY(), vC.getZ());
+                gl.glVertex3f(vD.getX(), vD.getY(), vD.getZ());
+                gl.glVertex3f(vB.getX(), vB.getY(), vB.getZ());
+
+                gl.glEnd();
             }
             case CUBE -> {
                 object=new CubeDice(gl2, 0 ,0, 0);
+                ArrayList<Vertex> VERTS = object.getVERTS();
+
+                Vertex vA = VERTS.get(0);
+                Vertex vB = VERTS.get(1);
+                Vertex vC = VERTS.get(2);
+                Vertex vD = VERTS.get(3);
+                Vertex vE = VERTS.get(4);
+                Vertex vF = VERTS.get(5);
+                Vertex vG = VERTS.get(6);
+                Vertex vH = VERTS.get(7);
+
+                gl.glBegin(GL2.GL_TRIANGLES);
+
+                //ABC + ADC
+                gl.glColor3f(1,0.5f,0.5f); //red
+                gl.glVertex3f(vA.getX(), vA.getY(), vA.getZ());
+                gl.glVertex3f(vB.getX(), vB.getY(), vB.getZ());
+                gl.glVertex3f(vC.getX(), vC.getY(), vC.getZ());
+
+                gl.glColor3f(1,0.5f,0.5f); //red
+                gl.glVertex3f(vA.getX(), vA.getY(), vA.getZ());
+                gl.glVertex3f(vD.getX(), vD.getY(), vD.getZ());
+                gl.glVertex3f(vC.getX(), vC.getY(), vC.getZ());
+
+                //DCF + DEF
+                gl.glColor3f(1,1,0); //yellow
+                gl.glVertex3f(vD.getX(), vD.getY(), vD.getZ());
+                gl.glVertex3f(vC.getX(), vC.getY(), vC.getZ());
+                gl.glVertex3f(vF.getX(), vF.getY(), vF.getZ());
+
+                gl.glColor3f(1,1,0); //yellow
+                gl.glVertex3f(vD.getX(), vD.getY(), vD.getZ());
+                gl.glVertex3f(vE.getX(), vE.getY(), vE.getZ());
+                gl.glVertex3f(vF.getX(), vF.getY(), vF.getZ());
+
+                //BCF + BGF
+                gl.glColor3f(1,1,1); //white
+                gl.glVertex3f(vB.getX(), vB.getY(), vB.getZ());
+                gl.glVertex3f(vC.getX(), vC.getY(), vC.getZ());
+                gl.glVertex3f(vF.getX(), vF.getY(), vF.getZ());
+
+                gl.glColor3f(1,1,1); //white
+                gl.glVertex3f(vB.getX(), vB.getY(), vB.getZ());
+                gl.glVertex3f(vG.getX(), vG.getY(), vG.getZ());
+                gl.glVertex3f(vF.getX(), vF.getY(), vF.getZ());
+
+                //ADE + AHE
+                gl.glColor3f(0,1,1); //turquoise
+                gl.glVertex3f(vA.getX(), vA.getY(), vA.getZ());
+                gl.glVertex3f(vD.getX(), vD.getY(), vD.getZ());
+                gl.glVertex3f(vE.getX(), vE.getY(), vE.getZ());
+
+                gl.glColor3f(0,1,1); //turquoise
+                gl.glVertex3f(vA.getX(), vA.getY(), vA.getZ());
+                gl.glVertex3f(vH.getX(), vH.getY(), vH.getZ());
+                gl.glVertex3f(vE.getX(), vE.getY(), vE.getZ());
+
+                //HGB + HAB
+                gl.glColor3f(0,0,1); //blue
+                gl.glVertex3f(vH.getX(), vH.getY(), vH.getZ());
+                gl.glVertex3f(vG.getX(), vG.getY(), vG.getZ());
+                gl.glVertex3f(vB.getX(), vB.getY(), vB.getZ());
+
+                gl.glColor3f(0,0,1); //blue
+                gl.glVertex3f(vH.getX(), vH.getY(), vH.getZ());
+                gl.glVertex3f(vA.getX(), vA.getY(), vA.getZ());
+                gl.glVertex3f(vB.getX(), vB.getY(), vB.getZ());
+
+                //EFG + EHG
+                gl.glColor3f(1,0,1); //magenta
+                gl.glVertex3f(vE.getX(), vE.getY(), vE.getZ());
+                gl.glVertex3f(vF.getX(), vF.getY(), vF.getZ());
+                gl.glVertex3f(vG.getX(), vG.getY(), vG.getZ());
+
+                gl.glColor3f(1,0,1); //magenta
+                gl.glVertex3f(vE.getX(), vE.getY(), vE.getZ());
+                gl.glVertex3f(vH.getX(), vH.getY(), vH.getZ());
+                gl.glVertex3f(vG.getX(), vG.getY(), vG.getZ());
+
+                gl.glEnd();
             }
             /*case SPHERE -> {
 
