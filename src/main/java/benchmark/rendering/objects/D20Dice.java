@@ -25,17 +25,14 @@ public class D20Dice implements IObject//DnD/D20/Icosahedron
         Vertex vB = new Vertex(+ex, +ex*phi, 0.0f);
         Vertex vC = new Vertex(0.0f, +ex, +ex*phi);
         Vertex vD = new Vertex(0.0f, +ex, -ex*phi);
-
-        Vertex vK = new Vertex(0.0f, -ex, +ex*phi);
-        Vertex vH = new Vertex(+ex, -ex*phi, 0.0f);
-        Vertex vL = new Vertex(-ex, -ex*phi, 0.0f);
         Vertex vE = new Vertex(0.0f, -ex, -ex*phi);
-
-        Vertex vG = new Vertex(+ex*phi, 0.0f, +ex);
-        Vertex vJ = new Vertex(-ex*phi, 0.0f, +ex);
-
         Vertex vF = new Vertex(+ex*phi, 0.0f, -ex);
+        Vertex vG = new Vertex(+ex*phi, 0.0f, +ex);
+        Vertex vH = new Vertex(+ex, -ex*phi, 0.0f);
         Vertex vI = new Vertex(-ex*phi, 0.0f, -ex);
+        Vertex vJ = new Vertex(-ex*phi, 0.0f, +ex);
+        Vertex vK = new Vertex(0.0f, -ex, +ex*phi);
+        Vertex vL = new Vertex(-ex, -ex*phi, 0.0f);
 
         VERTS.addAll(List.of(vA,vB,vC,vD,
                             vE,vF,vG,vH,
