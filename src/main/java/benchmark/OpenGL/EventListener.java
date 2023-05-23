@@ -86,7 +86,7 @@ public class EventListener implements GLEventListener
         switch(OBJECT)
         {
             case TETRAHEDRON -> {
-                object=new TetrahedronDice(gl2, 0 ,0, 0);
+                object = new TetrahedronDice(gl2, 0 ,0, 0);
                 ArrayList<Vertex> VERTS = object.getVERTS();
 
                 Vertex vA = VERTS.get(0);
@@ -123,7 +123,7 @@ public class EventListener implements GLEventListener
                 gl.glEnd();
             }
             case CUBE -> {
-                object=new CubeDice(gl2, 0 ,0, 0);
+                object = new CubeDice(gl2, 0 ,0, 0);
                 ArrayList<Vertex> VERTS = object.getVERTS();
 
                 Vertex vA = VERTS.get(0);
@@ -209,7 +209,7 @@ public class EventListener implements GLEventListener
 
             }*/
             case D20 -> {
-                object=new D20Dice(gl2, 0, 0, 0);
+                object = new D20Dice(gl2, 0, 0, 0);
                 ArrayList<Vertex> VERTS = object.getVERTS();
 
                 Vertex vA = VERTS.get(0);
