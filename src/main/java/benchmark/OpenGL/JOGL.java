@@ -23,7 +23,8 @@ public class JOGL implements JOGLInterface {
     private float unitsWide=10;
 
     private EventListener eventListener;
-    public void renderGL(obj OBJECT) {
+    public void renderGL(obj OBJECT)
+    {
         GLProfile.initSingleton();
         GLProfile glProfile = GLProfile.get(GLProfile.GL2);
 
@@ -51,7 +52,8 @@ public class JOGL implements JOGLInterface {
         renderFrame.setVisible(true);
     }
 
-    public void init(GLAutoDrawable drawable) { //Query the vendor and version of the benchmark.OpenGL
+    public void init(GLAutoDrawable drawable)//Query the vendor and version of the benchmark.OpenGL
+    {
         // Initialization code
         GL gl = drawable.getGL();
 
@@ -67,7 +69,8 @@ public class JOGL implements JOGLInterface {
     }
 
     @Override
-    public void getResolution(GLAutoDrawable drawable){
+    public void getResolution(GLAutoDrawable drawable)
+    {
         GLContext context = drawable.getContext(); //access the context from which we extract the inf
         int[] viewportDimensions = new int[4];
         context.getGL().glGetIntegerv(GL2.GL_VIEWPORT, viewportDimensions, 0);
@@ -76,7 +79,8 @@ public class JOGL implements JOGLInterface {
         System.out.println("Viewport resolution: " + viewportWidth + "x" + viewportHeight);
     }
     @Override
-    public void getFrameRate(GLAutoDrawable drawable){
+    public void getFrameRate(GLAutoDrawable drawable)
+    {
         int frameCount = 0;
         long startTime = System.currentTimeMillis();
 
@@ -94,37 +98,46 @@ public class JOGL implements JOGLInterface {
 
     }
 
-    public GLWindow getWindow() {
+    public GLWindow getWindow()
+    {
         return window;
     }
 
-    public GLCanvas getGlCanvas(){
+    public GLCanvas getGlCanvas()
+    {
         return glCanvas;
     }
 
-    public int getScreenWidth() {
+    public int getScreenWidth()
+    {
         return ScreenWidth;
     }
 
-    public void setScreenWidth(int screenWidth) {
+    public void setScreenWidth(int screenWidth)
+    {
         ScreenWidth = screenWidth;
     }
 
-    public int getScreenHeight() {
+    public int getScreenHeight()
+    {
         return ScreenHeight;
     }
 
-    public void setScreenHeight(int screenHeight) {
+    public void setScreenHeight(int screenHeight)
+    {
         ScreenHeight = screenHeight;
     }
 
 //<<<<<<< 3d_rendering
-    public float getUnitsWide() {
+    public float getUnitsWide()
+    {
         return unitsWide;
     }
 
-    public void setUnitsWide(int unitsWide) {
+    public void setUnitsWide(int unitsWide)
+    {
         this.unitsWide = unitsWide;
+    }
     /*public void renderObj(GL2 gl2){
 
         OBJECT=obj.TETRAHEDRON;
@@ -144,5 +157,6 @@ public class JOGL implements JOGLInterface {
             }
         }
 //>>>>>>> 3d_newrender
-    }*/
+    */
+    }
 }
