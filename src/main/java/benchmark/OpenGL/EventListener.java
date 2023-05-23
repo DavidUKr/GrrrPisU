@@ -79,7 +79,7 @@ public class EventListener implements GLEventListener
     {
         float size=1;
 
-        //OBJECT=obj.TETRAHEDRON;
+        //OBJECT = obj.TETRAHEDRON;
         //OBJECT=obj.CUBE;
         OBJECT=obj.D20;
 
