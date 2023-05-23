@@ -1,5 +1,7 @@
 package benchmark.OpenGL;
 
+import benchmark.rendering.objects.CubeDice;
+import benchmark.rendering.objects.D20Dice;
 import benchmark.rendering.objects.IObject;
 import benchmark.rendering.objects.TetrahedronDice;
 import com.jogamp.opengl.GL;
@@ -9,7 +11,8 @@ import com.jogamp.opengl.GLEventListener;
 import com.jogamp.opengl.awt.GLCanvas;
 import com.jogamp.opengl.glu.GLU;
 
-public class EventListener implements GLEventListener {
+public class EventListener implements GLEventListener
+{
     private obj OBJECT;
     private IObject object;
 
@@ -18,12 +21,14 @@ public class EventListener implements GLEventListener {
     private double totalTime ;
     private int numIterations ;
 
-    public EventListener(JOGL jogl){
+    public EventListener(JOGL jogl)
+    {
         super();
         this.jogl=jogl;
     }
     @Override
-    public void init(GLAutoDrawable drawable) {
+    public void init(GLAutoDrawable drawable)
+    {
         gl=drawable.getGL().getGL2();
         gl.glClearColor(0,0,0,1);
 
@@ -40,20 +45,25 @@ public class EventListener implements GLEventListener {
     }
 
     @Override
-    public void dispose(GLAutoDrawable glAutoDrawable) {
+    public void dispose(GLAutoDrawable glAutoDrawable)
+    {
 
     }
 
     @Override
-    public void display(GLAutoDrawable glAutoDrawable) {
+    public void display(GLAutoDrawable glAutoDrawable)
+    {
         //Clear the color and depth buffers
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
 
         gl.glRotatef(-1, 1,1,0);
 
+
         float size=2;
         long startTime = System.nanoTime();
-        //gl.glColor4f(0,1,0,1);
+
+
+         //gl.glColor4f(0,1,0,1);
         gl.glBegin(GL2.GL_QUADS);
             //Front face
             gl.glColor3f(1,0.5f,0.5f); //red
@@ -77,7 +87,7 @@ public class EventListener implements GLEventListener {
             gl.glVertex3f(-size, size, -size);
 
             // Right face
-            gl.glColor3f(0,1,1); //turqois
+            gl.glColor3f(0,1,1); //turquoise
             gl.glVertex3f(size, -size, size);
             gl.glVertex3f(size, -size, -size);
             gl.glVertex3f(size, size, -size);
@@ -117,7 +127,8 @@ public class EventListener implements GLEventListener {
     }
 
     @Override
-    public void reshape(GLAutoDrawable glAutoDrawable, int i, int i1, int i2, int i3) {
+    public void reshape(GLAutoDrawable glAutoDrawable, int i, int i1, int i2, int i3)
+    {
         gl.glMatrixMode(GL2.GL_PROJECTION);
         gl.glLoadIdentity();
 
@@ -130,19 +141,28 @@ public class EventListener implements GLEventListener {
         //gl.glLoadIdentity();
     }
 
+
     public void renderObj(GL2 gl2){
+
         OBJECT=obj.TETRAHEDRON;
 
-        switch(OBJECT){
+        switch(OBJECT)
+        {
             case TETRAHEDRON -> {
-                object=new TetrahedronDice(gl2);
+                object=new TetrahedronDice(gl2, 0 ,0, 0);
             }
-            case CUBE -> {}
-            case SPHERE -> {}
-            case D20 -> {}
+            case CUBE -> {
+                object=new CubeDice(gl2, 0 ,0, 0);
+            }
+            /*case SPHERE -> {
+
+            }*/
+            case D20 -> {
+                object=new D20Dice(gl2, 0, 0, 0);
+            }
             default -> {
                 System.out.println("rendering default");
-                object=new TetrahedronDice(gl2);
+                object=new TetrahedronDice(gl2, 0, 0, 0);
             }
         }
     }
