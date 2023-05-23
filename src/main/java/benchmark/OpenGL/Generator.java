@@ -12,7 +12,11 @@ public class Generator implements Runnable{
     private boolean running;
     private int cycle_count=0;
     private obj object;
+
+    private double FPSMean=0;
     LoadingScreenController loadingScreenController;
+
+    private int FPS=100000;
     public Generator(LoadingScreenController loadingController) throws IOException {
             loadingScreenController=loadingController;
         setObject(obj.TETRAHEDRON);
@@ -33,9 +37,14 @@ public class Generator implements Runnable{
         running=false;
     }
 
+
     @Override
     public void run() {
+
         double timePerFrame = 1000000000.0/ 100000; //1sec=1 billion (10^9) nanosecods
+
+       // double timePerFrame = 1000000000.0/ FPS; //1sec=1 billion (10^9) nanosecods
+
         long lastFrame= System.nanoTime();
         long now= System.nanoTime();
 
@@ -58,7 +67,7 @@ public class Generator implements Runnable{
             if(System.currentTimeMillis() - lastCheck>=1000){
                 lastCheck=System.currentTimeMillis();
                 frameSum+=frames;
-                System.out.println("FPS: "+frames);
+                //System.out.println("FPS: "+frames);
                 frames=0;
                 cycle_count++;
             }
@@ -68,11 +77,16 @@ public class Generator implements Runnable{
                 System.out.println("done rendering");
             }
         }
-        double arMean=frameSum/20;
-        getRenderingTime();
+        FPSMean=frameSum/20;
+        System.out.println("The mean of fps is "+FPSMean);
+
     }
 
-    public void getRenderingTime() {
+    public double getFPSMean() {
+        return FPSMean;
+    }
+
+    /** public void getRenderingTime() {
         long startTime = 0;
         long endTime = 0;
 
@@ -81,7 +95,7 @@ public class Generator implements Runnable{
         endTime = System.nanoTime();
         long renderingTime = endTime - startTime;
         System.out.print("\nRendering time "+renderingTime);
-    }
+    }*/
 
     public obj getObject() {
         return object;

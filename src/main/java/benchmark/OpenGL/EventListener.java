@@ -15,6 +15,8 @@ public class EventListener implements GLEventListener {
 
     private JOGL jogl;
     private static GL2 gl;
+    private double totalTime ;
+    private int numIterations ;
 
     public EventListener(JOGL jogl){
         super();
@@ -34,6 +36,7 @@ public class EventListener implements GLEventListener {
         //System.out.println("Supported Extensions: " + extensions);
         jogl.getResolution(drawable);
         jogl.getFrameRate(drawable);
+
     }
 
     @Override
@@ -49,6 +52,7 @@ public class EventListener implements GLEventListener {
         gl.glRotatef(-1, 1,1,0);
 
         float size=2;
+        long startTime = System.nanoTime();
         //gl.glColor4f(0,1,0,1);
         gl.glBegin(GL2.GL_QUADS);
             //Front face
@@ -94,7 +98,22 @@ public class EventListener implements GLEventListener {
             gl.glVertex3f(-size, -size, size);
         gl.glEnd();
 
-        //renderObj(gl);
+        long endTime = System.nanoTime();
+        long elapsedTime = endTime - startTime;
+        double elapsedMilliseconds = elapsedTime / 1000000.0;
+        totalTime = totalTime+elapsedMilliseconds;
+        numIterations++;
+
+        // renderObj(gl);
+    }
+
+    public void computeMeanRenderingTime() {
+        if (numIterations > 0) {
+            double meanRenderingTime = totalTime / numIterations;
+            System.out.println("Mean rendering time: " + meanRenderingTime + " ms");
+        } else {
+            System.out.println("No rendering iterations performed.");
+        }
     }
 
     @Override
@@ -112,7 +131,6 @@ public class EventListener implements GLEventListener {
     }
 
     public void renderObj(GL2 gl2){
-
         OBJECT=obj.TETRAHEDRON;
 
         switch(OBJECT){
