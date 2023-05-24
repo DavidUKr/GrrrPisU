@@ -1,4 +1,4 @@
-package benchmark.OpenGL;
+/**package benchmark.OpenGL;
 
 import benchmark.rendering.objects.IObject;
 import benchmark.rendering.objects.TetrahedronDice;
@@ -25,3 +25,4 @@ public class RenderPanel extends JPanel {
         }
     }
 }
+*/
