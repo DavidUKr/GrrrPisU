@@ -17,15 +17,16 @@ public class CubeDice implements IObject
     ArrayList<Triangle> TRIS = new ArrayList<>();
     ArrayList<Vertex> VERTS=new ArrayList<>();
 
-    public CubeDice(GL2 gl, float x, float y, float z){
-        Vertex vA = new Vertex(x+100.0f, y+100.0f, z+100.0f);
-        Vertex vB = new Vertex(x+100.0f, y+100.0f, z-100.0f);
-        Vertex vC = new Vertex(x+100.0f, y-100.0f, z-100.0f);
-        Vertex vD = new Vertex(x+100.0f, y-100.0f, z+100.0f);
-        Vertex vE = new Vertex(x-100.0f, y-100.0f, z+100.0f);
-        Vertex vF = new Vertex(x-100.0f, y-100.0f, z-100.0f);
-        Vertex vG = new Vertex(x-100.0f, y+100.0f, z-100.0f);
-        Vertex vH = new Vertex(x-100.0f, y+100.0f, z+100.0f);
+    public CubeDice(GL2 gl, float x, float y, float z)
+    {
+        Vertex vA = new Vertex(+1.0f, +1.0f, +1.0f);
+        Vertex vB = new Vertex(+1.0f, +1.0f, -1.0f);
+        Vertex vC = new Vertex(+1.0f, -1.0f, -1.0f);
+        Vertex vD = new Vertex(+1.0f, -1.0f, +1.0f);
+        Vertex vE = new Vertex(-1.0f, -1.0f, +1.0f);
+        Vertex vF = new Vertex(-1.0f, -1.0f, -1.0f);
+        Vertex vG = new Vertex(-1.0f, +1.0f, -1.0f);
+        Vertex vH = new Vertex(-1.0f, +1.0f, +1.0f);
 
         VERTS.addAll(List.of(vA,vB,vC,vD,
                             vE,vF,vG,vH));
@@ -59,22 +60,16 @@ public class CubeDice implements IObject
         //TRIS.add(new Square(vE, vF, vG, vH, Color.ORANGE));
         TRIS.add(new Triangle(vE, vF, vG, Color.ORANGE));
         TRIS.add(new Triangle(vE, vH, vG, Color.ORANGE));
-
-        gl.glColor3i(200,100,34);
-
-        gl.glBegin(GL2.GL_TRIANGLES);
-        for(Triangle t : TRIS)
-        {
-            for(Vertex v: t.getVERTS()){
-                gl.glVertex3d(v.x, v.y, v.z);
-            }
-        }
-        gl.glEnd();
     }
 
     @Override
     public IObject getObject()
     {
         return null;
+    }
+
+    public ArrayList<Vertex> getVERTS()
+    {
+        return VERTS;
     }
 }

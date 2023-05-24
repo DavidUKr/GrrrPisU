@@ -46,7 +46,7 @@ public class DemoViewer {
                         new Vertex(-100, -100, 100),
                         Color.BLUE));*/
 
-                double ex = 100;
+                double ex = 100.0f;
                 double phi = ((1 + Math.sqrt(5)) / 2);
                 List<Triangle> TRIS = new ArrayList<>();
 
@@ -65,6 +65,22 @@ public class DemoViewer {
 
                 Vertex vF = new Vertex(ex*phi, 0, -ex);
                 Vertex vI = new Vertex(-ex*phi, 0, -ex);
+
+                /*Vertex vA = new Vertex(-1.0f, +phi, 0.0f);
+                Vertex vB = new Vertex(+1.0f, +phi, 0.0f);
+                Vertex vC = new Vertex(0.0f, +1.0f, +phi);
+                Vertex vD = new Vertex(0.0f, +1.0f, -phi);
+
+                Vertex vK = new Vertex(0.0f, -1.0f, +phi);
+                Vertex vH = new Vertex(+1.0f, -phi, 0.0f);
+                Vertex vL = new Vertex(-1.0f, -phi, 0.0f);
+                Vertex vE = new Vertex(0.0f, -1.0f, -phi);
+
+                Vertex vG = new Vertex(+phi, 0.0f, +1.0f);
+                Vertex vJ = new Vertex(-phi, 0.0f, +1.0f);
+
+                Vertex vF = new Vertex(+phi, 0.0f, -1.0f);
+                Vertex vI = new Vertex(-phi, 0.0f, -1.0f);*/
 
                 TRIS.add(new Triangle(vA, vB, vC, Color.RED));//1-ABC
                 TRIS.add(new Triangle(vA, vB, vD, Color.GREEN));//7-ABD
