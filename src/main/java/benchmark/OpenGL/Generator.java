@@ -1,7 +1,9 @@
 package benchmark.OpenGL;
 
 import UI.Controllers.LoadingScreenController;
+import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
+import com.jogamp.opengl.GLContext;
 
 import java.io.IOException;
 
@@ -12,7 +14,7 @@ public class Generator implements Runnable{
     private boolean running;
     private int cycle_count=0;
     private obj object;
-
+    private EventListener eventL;
     private double FPSMean=0;
     LoadingScreenController loadingScreenController;
 
@@ -21,6 +23,7 @@ public class Generator implements Runnable{
             loadingScreenController=loadingController;
         setObject(obj.TETRAHEDRON);
         jogl = new JOGL();
+        eventL=new EventListener(jogl);
             loadingScreenController.increaseProg(5);
         jogl.renderGL(object);
         start();
@@ -35,6 +38,18 @@ public class Generator implements Runnable{
 
     public void stop(){
         running=false;
+    }
+
+    public double getScore(){
+        double score=0;
+        double FPSMean=getFPSMean();
+        double resolution=jogl.getResolutionValue();
+        double time=eventL.computeMeanRenderingTime();
+        if(time!=0)
+           score=(FPSMean*resolution)/time;
+        else
+            return -1;
+        return score;
     }
 
 
@@ -74,7 +89,8 @@ public class Generator implements Runnable{
 
             if (cycle_count==20) {
                 stop();
-                System.out.println("done rendering");
+                double s=getScore();
+                System.out.println("done rendering "+s);
             }
         }
         FPSMean=frameSum/20;

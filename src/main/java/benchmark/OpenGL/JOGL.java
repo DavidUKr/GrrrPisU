@@ -9,6 +9,8 @@ public class JOGL implements JOGLInterface{
 
     private GLCanvas glCanvas;
     private GLWindow window;
+
+    private double resolution;
     private int ScreenWidth=1000;
     private int ScreenHeight=700;
     private float unitsWide=10;
@@ -61,16 +63,19 @@ public class JOGL implements JOGLInterface{
     }
 
     @Override
-
-    public double getResolution(GLAutoDrawable drawable){
+    public void getResolution(GLAutoDrawable drawable){
 
         GLContext context = drawable.getContext(); //access the context from which we extract the inf
         int[] viewportDimensions = new int[4];
         context.getGL().glGetIntegerv(GL2.GL_VIEWPORT, viewportDimensions, 0);
         int viewportWidth = viewportDimensions[2];
         int viewportHeight = viewportDimensions[3]; //width and height of viewport in pixels
-        double resolution=(viewportWidth+viewportHeight)/2;
-        //System.out.println("Viewport resolution: " + viewportWidth + "x" + viewportHeight);
+        resolution=(viewportWidth+viewportHeight)/2;
+        System.out.println("Viewport resolution: " + resolution);
+       // return resolution;
+    }
+
+    public double getResolutionValue() {
         return resolution;
     }
 

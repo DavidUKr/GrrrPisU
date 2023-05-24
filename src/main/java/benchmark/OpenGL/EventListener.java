@@ -117,12 +117,14 @@ public class EventListener implements GLEventListener
         // renderObj(gl);
     }
 
-    public void computeMeanRenderingTime() {
+    public double computeMeanRenderingTime() {
         if (numIterations > 0) {
             double meanRenderingTime = totalTime / numIterations;
-            System.out.println("Mean rendering time: " + meanRenderingTime + " ms");
+           // System.out.println("Mean rendering time: " + meanRenderingTime + " ms");
+            return  meanRenderingTime;
         } else {
-            System.out.println("No rendering iterations performed.");
+            // System.out.println("No rendering iterations performed.");
+            return 0;
         }
     }
 
