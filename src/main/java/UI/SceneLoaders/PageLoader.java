@@ -35,10 +35,6 @@ public class PageLoader {
         LANG_b=language;
     }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> fff277aa7f1584d12c7c9dad91b23ce66f40cb4d
     private static void setPage(page_select page){
 
         switch (page) {
