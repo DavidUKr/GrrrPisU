@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.CatFightController">
    <children>
-      <ImageView fx:id="blueBackround" fitHeight="400.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="backgroundblue" fitHeight="400.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/CatFight/Background_Blue.png" />
          </image>
@@ -46,10 +46,8 @@
 
       <Label fx:id="labelHelp" text="Press X to exit the Cat Fight" />
 
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="181.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../images/CatFight/Text_Blue(ENG).png" />
-         </image>
-      </ImageView>
+      <Label fx:id="blue_score" layoutX="127.0" layoutY="200.0" text="Label" />
+      <Label fx:id="yellow_score" layoutX="405.0" layoutY="200.0" text="Label" />
+      <Label fx:id="winner" layoutX="222.0" layoutY="281.0" prefHeight="17.0" prefWidth="123.0" text="Label" />
    </children>
 </AnchorPane>
