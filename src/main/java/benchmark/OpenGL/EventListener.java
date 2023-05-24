@@ -18,14 +18,16 @@ public class EventListener implements GLEventListener
 
     private JOGL jogl;
     private static GL2 gl;
-    private double totalTime;
-    private int numIterations;
+    private double totalTime=0;
+    private int numIterations=0;
+
+    GLAutoDrawable drawable;
 
     public EventListener(JOGL jogl)
     {
         super();
-        totalTime=0;
-        numIterations=0;
+        //totalTime=0;
+        //numIterations=0;
         this.jogl=jogl;
     }
     @Override
@@ -42,6 +44,7 @@ public class EventListener implements GLEventListener
         System.out.println("benchmark.OpenGL Vendor: " + vendor);
         System.out.println("benchmark.OpenGL Version: " + version);
         String extensions = gl.glGetString(GL.GL_EXTENSIONS);
+
         //System.out.println("Supported Extensions: " + extensions);
         jogl.getResolution(drawable);
         jogl.getFrameRate(drawable);
@@ -59,7 +62,6 @@ public class EventListener implements GLEventListener
     {
         //Clear the color and depth buffers
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
-
         gl.glRotatef(-1, 1,1,0);
 
         float size=2;
@@ -108,21 +110,24 @@ public class EventListener implements GLEventListener
             gl.glVertex3f(size, -size, -size);
             gl.glVertex3f(size, -size, size);
             gl.glVertex3f(-size, -size, size);
-        gl.glEnd();
 
+        gl.glEnd();
+        numIterations++;
         long endTime = System.nanoTime();
         long elapsedTime = endTime - startTime;
-        long elapsedMilliseconds = elapsedTime / 1000000;
-        totalTime = totalTime+elapsedMilliseconds;
-        numIterations++;
 
-        System.out.println("start: "+startTime+ " end: "+endTime+ ": total: "+totalTime);
+        totalTime = totalTime+elapsedTime;
+
+        System.out.println("start: "+numIterations + " end: "+endTime+ ": total: "+totalTime);
 
         // renderObj(gl);
     }
 
     public double computeMeanRenderingTime(double totalTime, int numIterations) {
-        System.out.println("debug:total time+"+totalTime);
+
+        totalTime=getTotalTime();
+        numIterations=getNumIterations();
+        System.out.println("debug:time+"+numIterations);
         if (numIterations > 0) {
             double meanRenderingTime = totalTime / numIterations;
            // System.out.println("Mean rendering time: " + meanRenderingTime + " ms");
@@ -134,6 +139,7 @@ public class EventListener implements GLEventListener
     }
 
     public double getTotalTime() {
+        display(drawable);
         return totalTime;
     }
 
@@ -154,6 +160,7 @@ public class EventListener implements GLEventListener
 
         gl.glMatrixMode(GL2.GL_MODELVIEW);
         //gl.glLoadIdentity();
+
     }
 
 

@@ -14,18 +14,18 @@ public class Generator implements Runnable{
     private boolean running;
     private int cycle_count=0;
     private obj object;
-    private EventListener eventL;
+    private EventListener eventL=new EventListener(jogl);
     private double FPSMean=0;
     LoadingScreenController loadingScreenController;
 
 
-    private int FPS=3;
+    private int FPS=5;
 
     public Generator(LoadingScreenController loadingController) throws IOException {
             loadingScreenController=loadingController;
+        //EventListener eventL
         setObject(obj.TETRAHEDRON);
         jogl = new JOGL();
-        eventL=new EventListener(jogl);
             loadingScreenController.increaseProg(5);
         jogl.renderGL(object);
         start();
@@ -47,9 +47,16 @@ public class Generator implements Runnable{
         double FPSMean=getFPSMean();
         double totalTime= eventL.getTotalTime();
         int numIteration= eventL.getNumIterations();
+
+        //long timeMilliseconds = (long) (totalTime / 1000000);
+
         double resolution=jogl.getResolutionValue();
+        double numitor=FPSMean*resolution;
+        System.out.println("Res "+resolution);
+
+       System.out.println("Product "+numitor);
         double time=eventL.computeMeanRenderingTime(totalTime, numIteration);
-        //System.out.println("debug:time+"+time);
+
         if(time!=0)
            score=(FPSMean*resolution)/time;
         else
@@ -92,10 +99,10 @@ public class Generator implements Runnable{
                 cycle_count++;
             }
 
-            if (cycle_count==3) {
+            if (cycle_count==5) {
                 stop();
                 double s=getScore();
-                System.out.println("done rendering "+s);
+                System.out.println("Score is "+s);
             }
         }
         FPSMean=frameSum/20;
@@ -104,6 +111,7 @@ public class Generator implements Runnable{
     }
 
     public double getFPSMean() {
+        System.out.println("FPS "+FPSMean);
         return FPSMean;
     }
 
