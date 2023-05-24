@@ -18,17 +18,21 @@ public class EventListener implements GLEventListener
 
     private JOGL jogl;
     private static GL2 gl;
-    private double totalTime ;
-    private int numIterations ;
+    private double totalTime;
+    private int numIterations;
 
     public EventListener(JOGL jogl)
     {
         super();
+        totalTime=0;
+        numIterations=0;
         this.jogl=jogl;
     }
     @Override
     public void init(GLAutoDrawable drawable)
     {
+        //totalTime=0;
+        //numIterations=0;
         gl=drawable.getGL().getGL2();
         gl.glClearColor(0,0,0,1);
 
@@ -112,10 +116,13 @@ public class EventListener implements GLEventListener
         totalTime = totalTime+elapsedMilliseconds;
         numIterations++;
 
+        System.out.println("start: "+startTime+ " end: "+endTime+ ": total: "+totalTime);
+
         // renderObj(gl);
     }
 
-    public double computeMeanRenderingTime() {
+    public double computeMeanRenderingTime(double totalTime, int numIterations) {
+        System.out.println("debug:total time+"+totalTime);
         if (numIterations > 0) {
             double meanRenderingTime = totalTime / numIterations;
            // System.out.println("Mean rendering time: " + meanRenderingTime + " ms");
@@ -124,6 +131,14 @@ public class EventListener implements GLEventListener
             // System.out.println("No rendering iterations performed.");
             return 0;
         }
+    }
+
+    public double getTotalTime() {
+        return totalTime;
+    }
+
+    public int getNumIterations() {
+        return numIterations;
     }
 
     @Override

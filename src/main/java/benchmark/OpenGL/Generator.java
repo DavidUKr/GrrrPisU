@@ -18,7 +18,9 @@ public class Generator implements Runnable{
     private double FPSMean=0;
     LoadingScreenController loadingScreenController;
 
-    private int FPS=60;
+
+    private int FPS=3;
+
     public Generator(LoadingScreenController loadingController) throws IOException {
             loadingScreenController=loadingController;
         setObject(obj.TETRAHEDRON);
@@ -43,8 +45,11 @@ public class Generator implements Runnable{
     public double getScore(){
         double score=0;
         double FPSMean=getFPSMean();
+        double totalTime= eventL.getTotalTime();
+        int numIteration= eventL.getNumIterations();
         double resolution=jogl.getResolutionValue();
-        double time=eventL.computeMeanRenderingTime();
+        double time=eventL.computeMeanRenderingTime(totalTime, numIteration);
+        //System.out.println("debug:time+"+time);
         if(time!=0)
            score=(FPSMean*resolution)/time;
         else
@@ -56,7 +61,7 @@ public class Generator implements Runnable{
     @Override
     public void run() {
 
-        double timePerFrame = 1000000000.0/ 100000; //1sec=1 billion (10^9) nanosecods
+        double timePerFrame = 1000000000.0/ FPS; //1sec=1 billion (10^9) nanosecods
 
        // double timePerFrame = 1000000000.0/ FPS; //1sec=1 billion (10^9) nanosecods
 
@@ -87,7 +92,7 @@ public class Generator implements Runnable{
                 cycle_count++;
             }
 
-            if (cycle_count==20) {
+            if (cycle_count==3) {
                 stop();
                 double s=getScore();
                 System.out.println("done rendering "+s);
