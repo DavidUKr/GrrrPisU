@@ -1,6 +1,9 @@
 package UI.Controllers;
 
 import UI.SceneLoaders.PageLoader;
+import UI.SceneLoaders.page_select;
+import database.DBConnect;
+import database.TableModel;
 import javafx.scene.control.Button;
 
 import javafx.beans.property.SimpleStringProperty;
@@ -74,7 +77,7 @@ public class TrialHist implements Initializable {
 
         b_go_back.setOnAction(event -> {
             try {
-                PageLoader.load(event, PageLoader.page_select.MENU);
+                PageLoader.load(event, page_select.MENU);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

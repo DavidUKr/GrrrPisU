@@ -35,7 +35,10 @@ public class PageLoader {
         LANG_b=language;
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fff277aa7f1584d12c7c9dad91b23ce66f40cb4d
     private static void setPage(page_select page){
 
         switch (page) {
@@ -161,12 +164,12 @@ public class PageLoader {
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         //css styling
-        if(page!=page_select.LOADING && page!=page_select.LOCAL_HIST){
+
+        if(page!=page_select.LOADING && page!=page_select.LOCAL_HIST && page!=page_select.SCORE){
             scene.getStylesheets().add(CSS_theme);
             scene.getStylesheets().add(CSS_lang);
         }
-
-        if(page==page_select.SCORE) {
+        if(page==page_select.SCORE && page==page_select.LOCAL_HIST) {
             scene.getStylesheets().add(CSS_theme);
         }
         //loading stage

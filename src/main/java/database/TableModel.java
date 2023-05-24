@@ -1,4 +1,4 @@
-package UI.Controllers;
+package database;
 
 public class TableModel {
     String name, color;

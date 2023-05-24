@@ -1,4 +1,4 @@
-package UI.Controllers;
+package database;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;

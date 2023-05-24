@@ -2,19 +2,20 @@ package UI.Controllers;
 
 import UI.SceneLoaders.PageLoader;
 import UI.SceneLoaders.PopUpLoader;
+import UI.SceneLoaders.page_select;
+import database.DBUtils_local;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ScoreController implements Initializable {
+public class  ScoreController implements Initializable {
 
     @FXML
     private Label l_name;
@@ -46,7 +47,7 @@ public class ScoreController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 try {
-                    PageLoader.load(event, PageLoader.page_select.LOCAL_HIST);
+                    PageLoader.load(event, page_select.LOCAL_HIST);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -58,7 +59,7 @@ public class ScoreController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 try {
-                    PageLoader.load(event, PageLoader.page_select.MENU);
+                    PageLoader.load(event, page_select.MENU);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
