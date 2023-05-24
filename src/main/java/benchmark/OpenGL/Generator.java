@@ -18,7 +18,7 @@ public class Generator implements Runnable{
     private double FPSMean=0;
     LoadingScreenController loadingScreenController;
 
-    private int FPS=100000;
+    private int FPS=60;
     public Generator(LoadingScreenController loadingController) throws IOException {
             loadingScreenController=loadingController;
         setObject(obj.TETRAHEDRON);

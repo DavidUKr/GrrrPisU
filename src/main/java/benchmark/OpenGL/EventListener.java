@@ -58,10 +58,8 @@ public class EventListener implements GLEventListener
 
         gl.glRotatef(-1, 1,1,0);
 
-
         float size=2;
         long startTime = System.nanoTime();
-
 
          //gl.glColor4f(0,1,0,1);
         gl.glBegin(GL2.GL_QUADS);
@@ -110,7 +108,7 @@ public class EventListener implements GLEventListener
 
         long endTime = System.nanoTime();
         long elapsedTime = endTime - startTime;
-        double elapsedMilliseconds = elapsedTime / 1000000.0;
+        long elapsedMilliseconds = elapsedTime / 1000000;
         totalTime = totalTime+elapsedMilliseconds;
         numIterations++;
 
