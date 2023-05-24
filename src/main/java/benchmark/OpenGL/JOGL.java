@@ -1,23 +1,16 @@
 package benchmark.OpenGL;
 
 //cpackage benchmark.OpenGL;
-import benchmark.OpenGL.JOGLInterface;
-import benchmark.rendering.objects.IObject;
-import benchmark.rendering.objects.TetrahedronDice;
 import com.jogamp.newt.opengl.GLWindow;
 import com.jogamp.opengl.*;
 import com.jogamp.opengl.awt.GLCanvas;
-import com.jogamp.opengl.util.FPSAnimator;
-import main_pack.Main;
 
-import javax.swing.JFrame;
-import java.awt.*;
-import java.awt.geom.Path2D;
-
-public class JOGL implements JOGLInterface {
+public class JOGL implements JOGLInterface{
 
     private GLCanvas glCanvas;
     private GLWindow window;
+
+    private double resolution;
     private int ScreenWidth=1000;
     private int ScreenHeight=700;
     private float unitsWide=10;
@@ -66,18 +59,27 @@ public class JOGL implements JOGLInterface {
         //System.out.println("Supported Extensions: " + extensions);
         getResolution(drawable);
         getFrameRate(drawable);
+
     }
 
     @Override
-    public void getResolution(GLAutoDrawable drawable)
-    {
+    public void getResolution(GLAutoDrawable drawable){
+
         GLContext context = drawable.getContext(); //access the context from which we extract the inf
         int[] viewportDimensions = new int[4];
         context.getGL().glGetIntegerv(GL2.GL_VIEWPORT, viewportDimensions, 0);
         int viewportWidth = viewportDimensions[2];
-        int viewportHeight = viewportDimensions[3];
-        System.out.println("Viewport resolution: " + viewportWidth + "x" + viewportHeight);
+        int viewportHeight = viewportDimensions[3]; //width and height of viewport in pixels
+        resolution=(viewportWidth+viewportHeight)/2;
+        System.out.println("Viewport resolution: " + resolution);
+       // return resolution;
     }
+
+    public double getResolutionValue() {
+        return resolution;
+    }
+
+
     @Override
     public void getFrameRate(GLAutoDrawable drawable)
     {
