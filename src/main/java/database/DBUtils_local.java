@@ -6,7 +6,7 @@ import javafx.scene.control.Alert;
 import java.sql.*;
 
 public class DBUtils_local {
-    public static void score(ActionEvent event, String name, int input, String color, float score) {
+    public static void score(ActionEvent event, String name, String input, String color, float score) {
         Connection connection = null;
         PreparedStatement psInsert = null;
         try {
@@ -17,7 +17,7 @@ public class DBUtils_local {
 
             psInsert = connection.prepareStatement("INSERT INTO grrrpisu (name, input, color, score) VALUES (?, ?, ?, ?)");
             psInsert.setString(1, name);
-            psInsert.setInt(2, input);
+            psInsert.setString(2, input);
             psInsert.setString(3, color);
             psInsert.setFloat(4, score);
             psInsert.executeUpdate();

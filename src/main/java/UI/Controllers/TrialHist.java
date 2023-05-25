@@ -32,7 +32,7 @@ public class TrialHist implements Initializable {
     private TableColumn<TableModel, String> t_name;
 
     @FXML
-    private TableColumn<TableModel, Integer> t_input;
+    private TableColumn<TableModel, String> t_input;
 
     @FXML
     private TableColumn<TableModel, String> t_color;
@@ -48,7 +48,7 @@ public class TrialHist implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         t_name.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getName()));
-        t_input.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getInput()).asObject());
+        t_input.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getInput()));
         t_color.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getColor()));
         t_score.setCellValueFactory(cellData -> new SimpleFloatProperty(cellData.getValue().getScore()).asObject());
 
@@ -64,7 +64,7 @@ public class TrialHist implements Initializable {
             while(r.next()) {
                 listview.add(new TableModel(
                     r.getString("name"),
-                    r.getInt("input"),
+                    r.getString("input"),
                     r.getString("color"),
                     r.getFloat("score")
                 ));
