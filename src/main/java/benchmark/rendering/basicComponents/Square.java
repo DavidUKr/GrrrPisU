@@ -1,6 +1,7 @@
 package benchmark.rendering.basicComponents;
 
 import java.awt.*;
+import java.util.List;
 
 public class Square
 {
@@ -17,5 +18,10 @@ public class Square
         this.v3 = v3;
         this.v4 = v4;
         this.color = color;
+    }
+
+    public java.util.List<Vertex> getVERTS()
+    {
+        return List.of(v1,v2,v3);
     }
 }

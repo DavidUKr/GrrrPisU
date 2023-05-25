@@ -18,7 +18,8 @@ public class Triangle
         this.color = color;
     }
 
-    public List<Vertex> getVERTS(){
+    public List<Vertex> getVERTS()
+    {
         return List.of(v1,v2,v3);
     }
 }
