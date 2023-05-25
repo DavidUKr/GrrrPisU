@@ -4,6 +4,7 @@ import UI.Controllers.LoadingScreenController;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLContext;
+import main_pack.Main;
 
 import java.io.IOException;
 
@@ -108,7 +109,9 @@ public class Generator implements Runnable{
             }
         }
         FPSMean=frameSum/20;
-        System.out.println("Score:"+getScore());
+        double score=getScore();
+        System.out.println("Score:"+score);
+        Main.setScore(score);
     }
 
     public double getFPSMean() {

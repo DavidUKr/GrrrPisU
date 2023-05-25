@@ -1,6 +1,7 @@
 package main_pack;
 
 import UI.Controllers.LoadingScreenController;
+import UI.Controllers.ScoreController;
 import benchmark.OpenGL.Generator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +13,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Main extends Application {
+    private static double score;
 
     private static Generator generator;
     @Override
@@ -39,5 +41,13 @@ public class Main extends Application {
 
     public static Generator getGenerator() {
         return generator;
+    }
+
+    public static double getScore() {
+        return score;
+    }
+
+    public static void setScore(double score) {
+        Main.score = score;
     }
 }

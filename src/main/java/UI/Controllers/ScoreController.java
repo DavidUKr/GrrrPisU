@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import main_pack.Main;
 
 import java.io.IOException;
 import java.net.URL;
@@ -42,6 +43,7 @@ public class  ScoreController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         DBUtils_local.score(null, l_name.getText(), Integer.parseInt(l_input.getText()), l_color.getText(), Float.parseFloat(l_score.getText()));
 
+        setScore(Main.getScore());
         b_hist.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
@@ -77,5 +79,9 @@ public class  ScoreController implements Initializable {
                 }
             }
         });
+    }
+
+    public void setScore(double score){
+        l_score.setText(String.valueOf(score));
     }
 }
