@@ -31,6 +31,7 @@ public class CubeDice implements IObject
         VERTS.addAll(List.of(vA,vB,vC,vD,
                             vE,vF,vG,vH));
 
+
         //ABCD
         //TRIS.add(new Square(vA, vB, vC, vD, Color.WHITE));
         TRIS.add(new Triangle(vA, vB, vC, Color.WHITE));

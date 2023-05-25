@@ -18,7 +18,7 @@ public class MainMenuController implements IController{
         closePopups();
         PageLoader.load(event, page_select.HISTORY);
     }
-    public void startTest(ActionEvent event) throws IOException {
+    public void startTest(ActionEvent event) throws IOException, InterruptedException {
         closePopups();
         PageLoader.load(event, page_select.LOADING);
         Main.loadRender((LoadingScreenController) PageLoader.getController());

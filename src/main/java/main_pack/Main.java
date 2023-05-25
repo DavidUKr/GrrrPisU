@@ -14,9 +14,8 @@ import java.io.IOException;
 public class Main extends Application {
 
     private static Generator generator;
-
- @Override
- public void start(Stage stage) throws Exception {
+    @Override
+    public void start(Stage stage) throws Exception {
 
         Parent root= FXMLLoader.load(getClass().getResource("/UI/pages/ENG/Initial_Setup.fxml"));
         Scene scene=new Scene(root);
@@ -34,7 +33,7 @@ public class Main extends Application {
         launch(args);
     }
 
-    public static void loadRender(LoadingScreenController loadingController) throws IOException {
+    public static void loadRender(LoadingScreenController loadingController) throws IOException, InterruptedException {
         generator=new Generator(loadingController);
     }
 

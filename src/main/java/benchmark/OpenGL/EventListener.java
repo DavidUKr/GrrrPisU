@@ -18,6 +18,11 @@ public class EventListener implements GLEventListener
 
     private JOGL jogl;
     private static GL2 gl;
+    private double totalTime=0;
+    private int numIterations=0;
+
+    GLAutoDrawable drawable;
+
 
     public EventListener(JOGL jogl)
     {
@@ -36,9 +41,11 @@ public class EventListener implements GLEventListener
         System.out.println("benchmark.OpenGL Vendor: " + vendor);
         System.out.println("benchmark.OpenGL Version: " + version);
         String extensions = gl.glGetString(GL.GL_EXTENSIONS);
+
         //System.out.println("Supported Extensions: " + extensions);
         jogl.getResolution(drawable);
         jogl.getFrameRate(drawable);
+
     }
 
     @Override
@@ -52,12 +59,45 @@ public class EventListener implements GLEventListener
     {
         //Clear the color and depth buffers
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
-
         gl.glRotatef(-1, 1,1,0);
 
-        //gl.glColor4f(0,1,0,1);
+        float size=2;
+        long startTime = System.nanoTime();
 
         renderObj(gl);
+
+        numIterations++;
+        long endTime = System.nanoTime();
+        long elapsedTime = endTime - startTime;
+
+        totalTime = totalTime+elapsedTime;
+
+        //System.out.println("start: "+numIterations + " end: "+endTime+ ": total: "+totalTime + "; Thread"+Thread.currentThread().getName());
+
+    }
+
+    public double computeMeanRenderingTime(double totalTime, int numIterations) {
+
+        totalTime=getTotalTime();
+        numIterations=getNumIterations();
+        //System.out.println("debug:itNum:"+numIterations+":totalTime:"+totalTime);
+        if (numIterations > 0) {
+            double meanRenderingTime = totalTime / numIterations;
+            //System.out.println("Mean rendering time: " + meanRenderingTime + " ms");
+            return  meanRenderingTime;
+        } else {
+            // System.out.println("No rendering iterations performed.");
+            return 0;
+        }
+    }
+
+    public double getTotalTime() {
+        display(drawable);
+        return totalTime;
+    }
+
+    public int getNumIterations() {
+        return numIterations;
     }
 
     @Override
