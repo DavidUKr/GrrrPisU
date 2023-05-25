@@ -122,6 +122,11 @@ public class PageLoader {
                 }
             }
 
+            case CHOOSE_TEST -> {
+
+                FXML_name="/UI/pages/ENG/ChooseTest.fxml";
+            }
+
             case SCORE -> {
                 if (THEME_b)
                     CSS_theme = PageLoader.class.getResource("/UI/css/Score/Yellow_score.css").toExternalForm();

@@ -20,8 +20,10 @@ public class MainMenuController implements IController{
     }
     public void startTest(ActionEvent event) throws IOException {
         closePopups();
-        PageLoader.load(event, page_select.LOADING);
-        Main.loadRender((LoadingScreenController) PageLoader.getController());
+        PageLoader.load(event,page_select.CHOOSE_TEST);
+        /**PageLoader.load(event, page_select.LOADING);
+        Main.loadRender((LoadingScreenController) PageLoader.getController());*/
+
     }
 
     public void openCatFight(ActionEvent event) throws InterruptedException, IOException {

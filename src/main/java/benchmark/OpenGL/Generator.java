@@ -110,11 +110,6 @@ public class Generator implements Runnable {
                 cycle_count++;
             }
 
-            if (cycle_count == 5) {
-                stop();
-                double s = getScore();
-                System.out.println("Score is " + s);
-
                 if (cycle_count == 20) {
                     stop();
                     double s = getScore();
@@ -126,7 +121,7 @@ public class Generator implements Runnable {
             System.out.println("The mean of fps is " + FPSMean);
 
         }
-    }
+
 
     public double getFPSMean () {
         System.out.println("FPS " + FPSMean);

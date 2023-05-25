@@ -35,21 +35,16 @@ public class EventListener implements GLEventListener
     public EventListener(JOGL jogl)
     {
         super();
-<<<<<<< HEAD
         //totalTime=0;
         //numIterations=0;
-=======
->>>>>>> 980091e9ce8164cabda1391eb657309abc18eaad
         this.jogl=jogl;
     }
     @Override
     public void init(GLAutoDrawable drawable)
     {
-<<<<<<< HEAD
         //totalTime=0;
         //numIterations=0;
-=======
->>>>>>> 980091e9ce8164cabda1391eb657309abc18eaad
+
         gl=drawable.getGL().getGL2();
         gl.glClearColor(0,0,0,1);
 
@@ -59,17 +54,17 @@ public class EventListener implements GLEventListener
         System.out.println("benchmark.OpenGL Vendor: " + vendor);
         System.out.println("benchmark.OpenGL Version: " + version);
         String extensions = gl.glGetString(GL.GL_EXTENSIONS);
-<<<<<<< HEAD
+
 
         //System.out.println("Supported Extensions: " + extensions);
         jogl.getResolution(drawable);
         jogl.getFrameRate(drawable);
 
-=======
+
         //System.out.println("Supported Extensions: " + extensions);
         jogl.getResolution(drawable);
         jogl.getFrameRate(drawable);
->>>>>>> 980091e9ce8164cabda1391eb657309abc18eaad
+
     }
 
     @Override
@@ -83,7 +78,7 @@ public class EventListener implements GLEventListener
     {
         //Clear the color and depth buffers
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
-<<<<<<< HEAD
+
         gl.glRotatef(-1, 1,1,0);
 
         float size=2;
@@ -168,12 +163,11 @@ public class EventListener implements GLEventListener
     public int getNumIterations() {
         return numIterations;
 
-
-        gl.glRotatef(-1, 1,1,0);
+        //gl.glRotatef(-1, 1,1,0);
 
         //gl.glColor4f(0,1,0,1);
 
-        renderObj(gl);
+        //renderObj(gl);
     }
 
     @Override
