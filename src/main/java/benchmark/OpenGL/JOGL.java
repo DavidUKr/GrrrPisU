@@ -13,6 +13,9 @@ import main_pack.Main;
 import javax.swing.JFrame;
 import java.awt.*;
 import java.awt.geom.Path2D;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class JOGL implements JOGLInterface {
 
@@ -92,6 +95,28 @@ public class JOGL implements JOGLInterface {
             startTime = currentTime;
         }
 
+    }
+
+    public static void main(String[] args){
+        try{
+            String filePath="C:\\Users\\Rici\\Desktop\\Facultate\\CO project materials\\testGPU.txt";
+            ProcessBuilder pb=new ProcessBuilder("cmd.exe", "/c", "dxdiag", "/t", filePath);
+            System.out.println("Executing dxdiag command");
+            Process p=pb.start();
+            p.waitFor();
+
+            BufferedReader br=new BufferedReader(new FileReader(filePath));
+            String line;
+            System.out.println(String.format("Printing %1$1s info", filePath));
+            while((line=br.readLine())!=null){
+                if(line.trim().startsWith("Card name:") || line.trim().startsWith("Current mode:")){
+                    System.out.println(line.trim());
+                }
+            }
+
+        }catch(IOException | InterruptedException ex){
+            ex.printStackTrace();
+        }
     }
 
     public GLWindow getWindow() {
