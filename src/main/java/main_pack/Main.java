@@ -14,7 +14,6 @@ import java.io.IOException;
 public class Main extends Application {
 
     private static Generator generator;
-
     @Override
     public void start(Stage stage) throws Exception {
 

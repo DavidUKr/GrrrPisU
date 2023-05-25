@@ -35,8 +35,8 @@ public class D20Dice implements IObject//DnD/D20/Icosahedron
         Vertex vL = new Vertex(-ex, -ex*phi, 0.0f);
 
         VERTS.addAll(List.of(vA,vB,vC,vD,
-                vE,vF,vG,vH,
-                vI,vJ,vK,vL));
+                            vE,vF,vG,vH,
+                            vI,vJ,vK,vL));
 
         TRIS.add(new Triangle(vA, vB, vC, Color.RED));//1-ABC
         TRIS.add(new Triangle(vA, vB, vD, Color.GREEN));//7-ABD

@@ -16,24 +16,24 @@ public class Generator implements Runnable{
     private boolean running;
     private int cycle_count=0;
     private obj object;
+
     private EventListener eventL=new EventListener(jogl);
     private double FPSMean=0;
     LoadingScreenController loadingScreenController;
-
-
     private int FPS=100000;
 
     public Generator(LoadingScreenController loadingController) throws IOException, InterruptedException {
             loadingScreenController=loadingController;
         //EventListener eventL
+
         setObject(obj.TETRAHEDRON);
         jogl = new JOGL();
+        eventL=new EventListener(jogl);
             loadingScreenController.increaseProg(5);
         jogl.renderGL(object);
         start();
         loadingScreenController.increaseProg(6);
-        //wait();
-        //getScore();
+
     }
 
     public void start(){
@@ -103,7 +103,7 @@ public class Generator implements Runnable{
                 cycle_count++;
             }
 
-            if (cycle_count==5) {
+            if (cycle_count==20) {
                 stop();
             }
         }

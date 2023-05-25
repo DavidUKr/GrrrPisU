@@ -29,7 +29,8 @@ public class CubeDice implements IObject
         Vertex vH = new Vertex(-1.0f, +1.0f, +1.0f);
 
         VERTS.addAll(List.of(vA,vB,vC,vD,
-                vE,vF,vG,vH));
+                            vE,vF,vG,vH));
+
 
         //ABCD
         //TRIS.add(new Square(vA, vB, vC, vD, Color.WHITE));

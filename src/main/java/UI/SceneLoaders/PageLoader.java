@@ -35,8 +35,6 @@ public class PageLoader {
         LANG_b=language;
     }
 
-    ;
-
     private static void setPage(page_select page){
 
         switch (page) {
@@ -123,6 +121,18 @@ public class PageLoader {
                     FXML_name= "/UI/pages/ENG/GpuDet.fxml";
                 }
             }
+
+            case SCORE -> {
+                if (THEME_b)
+                    CSS_theme = PageLoader.class.getResource("/UI/css/Score/Yellow_score.css").toExternalForm();
+                else CSS_theme = PageLoader.class.getResource("/UI/css/Score/Blue_score.css").toExternalForm();
+
+                FXML_name="/UI/pages/ENG/Score.fxml";
+            }
+
+            case LOCAL_HIST -> {
+                FXML_name="/UI/pages/ENG/local_history.fxml";
+            }
         }
 
     }
@@ -150,12 +160,14 @@ public class PageLoader {
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         //css styling
-        if(page!=page_select.LOADING && page!=page_select.DETECT_GPU){
+
+        if(page!=page_select.LOADING && page!=page_select.LOCAL_HIST && page!=page_select.SCORE){
             scene.getStylesheets().add(CSS_theme);
             scene.getStylesheets().add(CSS_lang);
         }
-        if(page==page_select.DETECT_GPU) scene.getStylesheets().add(CSS_lang);
-
+        if(page==page_select.SCORE && page==page_select.LOCAL_HIST) {
+            scene.getStylesheets().add(CSS_theme);
+        }
         //loading stage
         stage.setScene(scene);
         stage.show();
