@@ -2,14 +2,29 @@ package benchmark.rendering.basicComponents;
 
 public class Vertex
 {
-    public double x;
-    public double y;
-    public double z;
+    public float x;
+    public float y;
+    public float z;
 
-    public Vertex(double x, double y, double z)
+    public Vertex(float x, float y, float z)
     {
         this.x = x;
         this.y = y;
         this.z = z;
+    }
+
+    public float getX()
+    {
+        return x;
+    }
+
+    public float getY()
+    {
+        return y;
+    }
+
+    public float getZ()
+    {
+        return z;
     }
 }

@@ -1,7 +1,9 @@
+
 package benchmark.rendering.objects;
 
 import benchmark.rendering.basicComponents.Triangle;
 import benchmark.rendering.basicComponents.Vertex;
+import benchmark.rendering.objects.IObject;
 import com.jogamp.opengl.GL2;
 
 import javax.swing.*;

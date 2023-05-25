@@ -15,6 +15,7 @@ public class Main extends Application {
 
     private static Generator generator;
 
+<<<<<<< HEAD
     @Override
     public void start(Stage stage) throws Exception {
 
@@ -36,7 +37,10 @@ public class Main extends Application {
 
     public static void loadRender(LoadingScreenController loadingController) throws IOException {
         generator=new Generator(loadingController);
+<<<<<<< HEAD
+=======
     }
+
 
     public static Generator getGenerator() {
         return generator;

@@ -28,7 +28,7 @@ public class DemoViewer {
                 g2.setColor(Color.BLACK);
                 g2.fillRect(0, 0, getWidth(), getHeight());
 
-                List<Triangle> tris = new ArrayList<>();
+                /*List<Triangle> tris = new ArrayList<>();
                 tris.add(new Triangle(new Vertex(100, 100, 100),
                         new Vertex(-100, -100, 100),
                         new Vertex(-100, 100, -100),
@@ -44,11 +44,77 @@ public class DemoViewer {
                 tris.add(new Triangle(new Vertex(-100, 100, -100),
                         new Vertex(100, -100, -100),
                         new Vertex(-100, -100, 100),
-                        Color.BLUE));
+                        Color.BLUE));*/
 
-                for (int i = 0; i < 4; i++) {
+                double ex = 100.0f;
+                double phi = ((1 + Math.sqrt(5)) / 2);
+                List<Triangle> TRIS = new ArrayList<>();
+
+                Vertex vA = new Vertex(-ex, ex*phi, 0);
+                Vertex vB = new Vertex(ex, ex*phi, 0);
+                Vertex vC = new Vertex(0, ex, ex*phi);
+                Vertex vD = new Vertex(0, ex, -ex*phi);
+
+                Vertex vK = new Vertex(0, -ex, ex*phi);
+                Vertex vH = new Vertex(ex, -ex*phi, 0);
+                Vertex vL = new Vertex(-ex, -ex*phi, 0);
+                Vertex vE = new Vertex(0, -ex, -ex*phi);
+
+                Vertex vG = new Vertex(ex*phi, 0, ex);
+                Vertex vJ = new Vertex(-ex*phi, 0, ex);
+
+                Vertex vF = new Vertex(ex*phi, 0, -ex);
+                Vertex vI = new Vertex(-ex*phi, 0, -ex);
+
+                /*Vertex vA = new Vertex(-1.0f, +phi, 0.0f);
+                Vertex vB = new Vertex(+1.0f, +phi, 0.0f);
+                Vertex vC = new Vertex(0.0f, +1.0f, +phi);
+                Vertex vD = new Vertex(0.0f, +1.0f, -phi);
+
+                Vertex vK = new Vertex(0.0f, -1.0f, +phi);
+                Vertex vH = new Vertex(+1.0f, -phi, 0.0f);
+                Vertex vL = new Vertex(-1.0f, -phi, 0.0f);
+                Vertex vE = new Vertex(0.0f, -1.0f, -phi);
+
+                Vertex vG = new Vertex(+phi, 0.0f, +1.0f);
+                Vertex vJ = new Vertex(-phi, 0.0f, +1.0f);
+
+                Vertex vF = new Vertex(+phi, 0.0f, -1.0f);
+                Vertex vI = new Vertex(-phi, 0.0f, -1.0f);*/
+
+                TRIS.add(new Triangle(vA, vB, vC, Color.RED));//1-ABC
+                TRIS.add(new Triangle(vA, vB, vD, Color.GREEN));//7-ABD
+
+                TRIS.add(new Triangle(vH, vK, vL, Color.GREEN));//14-HKL
+                TRIS.add(new Triangle(vE, vH, vL, Color.RED));//20-EHL
+
+                TRIS.add(new Triangle(vC, vG, vK, Color.YELLOW));//11-CGK
+                TRIS.add(new Triangle(vC, vJ, vK, Color.MAGENTA));//9-CJK
+
+                TRIS.add(new Triangle(vB, vC, vG, Color.BLUE));//13-BCG
+                TRIS.add(new Triangle(vA, vC, vJ, Color.ORANGE));//19-ACJ
+
+                TRIS.add(new Triangle(vB, vD, vF, Color.ORANGE));//15-BDF
+                TRIS.add(new Triangle(vA, vD, vI, Color.BLUE));//17-ADI
+
+                TRIS.add(new Triangle(vA, vI, vJ, Color.WHITE));//3-AIJ
+                TRIS.add(new Triangle(vB, vF, vG, Color.WHITE));//5-BFG
+
+                TRIS.add(new Triangle(vD, vE, vI, Color.YELLOW));//10-DEI
+                TRIS.add(new Triangle(vD, vE, vF, Color.MAGENTA));//12-DEF
+
+                TRIS.add(new Triangle(vI, vJ, vL, Color.CYAN));//16-IJL
+                TRIS.add(new Triangle(vF, vG, vH, Color.CYAN));//18-FGH
+
+                TRIS.add(new Triangle(vE, vF, vH, Color.BLUE));//2-EFH
+                TRIS.add(new Triangle(vE, vI, vL, Color.ORANGE));//8-EIL
+
+                TRIS.add(new Triangle(vJ, vK, vL, Color.BLUE));//6-JKL
+                TRIS.add(new Triangle(vG, vH, vK, Color.ORANGE));//4-GHK
+
+                /*for (int i = 0; i < 4; i++) {
                     tris = inflate(tris);
-                }
+                }*/
 
                 double heading = Math.toRadians(headingSlider.getValue());
                 Matrix3 headingTransform = new Matrix3(new double[] {
@@ -72,7 +138,8 @@ public class DemoViewer {
                     zBuffer[q] = Double.NEGATIVE_INFINITY;
                 }
 
-                for (Triangle t : tris) {
+                //for (Triangle t : tris) {
+                for (Triangle t : TRIS) {
                     Vertex v1 = transform.transform(t.v1);
                     v1.x += getWidth() / 2;
                     v1.y += getHeight() / 2;
@@ -146,7 +213,7 @@ public class DemoViewer {
         return new Color(red, green, blue);
     }
 
-    public static List<Triangle> inflate(List<Triangle> tris) {
+    /*public static List<Triangle> inflate(List<Triangle> tris) {
         List<Triangle> result = new ArrayList<>();
         for (Triangle t : tris) {
             Vertex m1 = new Vertex((t.v1.x + t.v2.x)/2, (t.v1.y + t.v2.y)/2, (t.v1.z + t.v2.z)/2);
@@ -166,7 +233,7 @@ public class DemoViewer {
             }
         }
         return result;
-    }
+    }*/
 }
 
 class Vertex {
