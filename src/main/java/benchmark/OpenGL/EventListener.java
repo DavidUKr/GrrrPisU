@@ -118,7 +118,7 @@ public class EventListener implements GLEventListener
 
         totalTime = totalTime+elapsedTime;
 
-        System.out.println("start: "+numIterations + " end: "+endTime+ ": total: "+totalTime);
+        //System.out.println("start: "+numIterations + " end: "+endTime+ ": total: "+totalTime + "; Thread"+Thread.currentThread().getName());
 
         // renderObj(gl);
     }
@@ -127,10 +127,10 @@ public class EventListener implements GLEventListener
 
         totalTime=getTotalTime();
         numIterations=getNumIterations();
-        System.out.println("debug:time+"+numIterations);
+        //System.out.println("debug:itNum:"+numIterations+":totalTime:"+totalTime);
         if (numIterations > 0) {
             double meanRenderingTime = totalTime / numIterations;
-           // System.out.println("Mean rendering time: " + meanRenderingTime + " ms");
+            //System.out.println("Mean rendering time: " + meanRenderingTime + " ms");
             return  meanRenderingTime;
         } else {
             // System.out.println("No rendering iterations performed.");

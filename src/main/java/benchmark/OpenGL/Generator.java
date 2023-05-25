@@ -7,6 +7,8 @@ import com.jogamp.opengl.GLContext;
 
 import java.io.IOException;
 
+import static java.lang.String.join;
+
 public class Generator implements Runnable{
 
     private JOGL jogl;
@@ -19,9 +21,9 @@ public class Generator implements Runnable{
     LoadingScreenController loadingScreenController;
 
 
-    private int FPS=5;
+    private int FPS=100000;
 
-    public Generator(LoadingScreenController loadingController) throws IOException {
+    public Generator(LoadingScreenController loadingController) throws IOException, InterruptedException {
             loadingScreenController=loadingController;
         //EventListener eventL
         setObject(obj.TETRAHEDRON);
@@ -29,7 +31,9 @@ public class Generator implements Runnable{
             loadingScreenController.increaseProg(5);
         jogl.renderGL(object);
         start();
-            loadingScreenController.increaseProg(6);
+        loadingScreenController.increaseProg(6);
+        //wait();
+        //getScore();
     }
 
     public void start(){
@@ -52,9 +56,9 @@ public class Generator implements Runnable{
 
         double resolution=jogl.getResolutionValue();
         double numitor=FPSMean*resolution;
-        System.out.println("Res "+resolution);
+        //System.out.println("Res "+resolution);
 
-       System.out.println("Product "+numitor);
+       //System.out.println("Product "+numitor);
         double time=eventL.computeMeanRenderingTime(totalTime, numIteration);
 
         if(time!=0)
@@ -101,17 +105,13 @@ public class Generator implements Runnable{
 
             if (cycle_count==5) {
                 stop();
-                double s=getScore();
-                System.out.println("Score is "+s);
             }
         }
         FPSMean=frameSum/20;
-        System.out.println("The mean of fps is "+FPSMean);
-
+        System.out.println("Score:"+getScore());
     }
 
     public double getFPSMean() {
-        System.out.println("FPS "+FPSMean);
         return FPSMean;
     }
 

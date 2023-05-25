@@ -34,7 +34,7 @@ public class Main extends Application {
         launch(args);
     }
 
-    public static void loadRender(LoadingScreenController loadingController) throws IOException {
+    public static void loadRender(LoadingScreenController loadingController) throws IOException, InterruptedException {
         generator=new Generator(loadingController);
     }
 
