@@ -50,7 +50,7 @@ public class  ScoreController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        DBUtils_local.score(null, l_name.getText(), Integer.parseInt(l_input.getText()), l_color.getText(), Float.parseFloat(l_score.getText()));
+        DBUtils_local.score(null, l_name.getText(), l_input.getText(), l_color.getText(), Float.parseFloat(l_score.getText()));
 
         l_name.setText(GPUDetector.getGPU());
         setL_input();

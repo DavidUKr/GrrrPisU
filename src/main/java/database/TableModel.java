@@ -1,11 +1,10 @@
 package database;
 
 public class TableModel {
-    String name, color;
-    int input;
+    String name, color, input;
     float score;
 
-    public TableModel(String name, int input, String color, float score) {
+    public TableModel(String name, String input, String color, float score) {
         this.name = name;
         this.input = input;
         this.color = color;
@@ -28,11 +27,11 @@ public class TableModel {
         this.color = color;
     }
 
-    public int getInput() {
+    public String getInput() {
         return input;
     }
 
-    public void setInput(int input) {
+    public void setInput(String input) {
         this.input = input;
     }
 

@@ -41,8 +41,8 @@
 }
 
 #btnSTART_TEST {
-    -fx-translate-x: 480;
-    -fx-translate-y: 365;
+    -fx-translate-x: 500;
+    -fx-translate-y: 200;
     -fx-pref-height: 100;
     -fx-pref-width: 100;
     -fx-opacity: 0;
