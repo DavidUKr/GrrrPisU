@@ -43,12 +43,17 @@ public class  ScoreController implements Initializable {
     @FXML
     private Button b_cat_fight;
 
+    public void setScore(double score){
+        l_score.setText(String.format(String.valueOf(score), "%.2f"));
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        DBUtils_local.score(null, l_name.getText(), l_input.getText(), l_color.getText(), Float.parseFloat(l_score.getText()));
-
 
         setScore(Main.getScore());
+
+        DBUtils_local.score(null, l_name.getText(), l_input.getText(), l_color.getText(), Float.parseFloat(l_score.getText()));
+
         b_hist.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
@@ -84,9 +89,5 @@ public class  ScoreController implements Initializable {
                 }
             }
         });
-    }
-
-    public void setScore(double score){
-        l_score.setText(String.format(String.valueOf(score), "%.2f"));
     }
 }
