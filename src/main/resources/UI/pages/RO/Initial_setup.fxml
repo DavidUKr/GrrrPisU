@@ -36,9 +36,9 @@
          </image>
       </ImageView>
 
-      <Button fx:id="btnToMain" layoutX="505.0" layoutY="600.0" mnemonicParsing="false" onAction="#gotoMain" prefHeight="48.0" prefWidth="191.0" text="Incepe!" />
+      <Button fx:id="btnToMain" layoutX="505.0" layoutY="600.0" mnemonicParsing="false" onAction="#gotoMain" prefHeight="48.0" prefWidth="191.0" text="Începe!" />
 
-      <Button fx:id="btnDetectGPU" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="920.0" layoutY="600.0" mnemonicParsing="false" onAction="#detect_GPU" text="Detectati GPU" />
+      <Button fx:id="btnDetectGPU" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="920.0" layoutY="600.0" mnemonicParsing="false" onAction="#detect_GPU" text="Detectați GPU" />
       <Button fx:id="btnSelEN" layoutX="642.0" layoutY="346.0" mnemonicParsing="false" onAction="#select_EN">
          <graphic>
             <ImageView fx:id="imgSelEn" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
