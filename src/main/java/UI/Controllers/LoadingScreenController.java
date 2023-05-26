@@ -5,9 +5,11 @@ import UI.SceneLoaders.page_select;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -15,6 +17,11 @@ import java.util.Iterator;
 import java.util.ResourceBundle;
 
 public class LoadingScreenController implements Initializable,IController{
+
+    private boolean doneRendering;
+
+    @FXML
+    Label lblAdvice;
 
     @FXML
     private ImageView imgBar_Cat;
@@ -48,24 +55,25 @@ public class LoadingScreenController implements Initializable,IController{
         YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB10.png"));
         YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB11.png"));
 
-        if(PageLoader.getTHEME_b()) {
-            imIt=YELLOW.iterator();
-        }
-        else {
-            imIt=BLUE.iterator();
-        }
+        initIterator();
 
         if(imIt.hasNext()) imgBar_Cat.setImage(imIt.next());
         else System.out.println("Loading bar images null");
     }
 
-    public void increaseProg(ActionEvent event) throws IOException {
+    public void increaseProg() throws IOException {
 
         if(imIt.hasNext()) imgBar_Cat.setImage(imIt.next());
         else {
-            System.out.println("Loading finished");
-            PageLoader.load(event, page_select.SCORE);
+            //System.out.println("Loading finished");
+            //PageLoader.load(event, page_select.SCORE);
+            initIterator();
         }
+    }
+
+    public void increaseProg(ActionEvent event) throws IOException {
+        if(doneRendering)PageLoader.load(event, page_select.SCORE);
+        else lblAdvice.setText("Not yet");
     }
 
     public void increaseProg(int steps) throws IOException {
@@ -81,7 +89,30 @@ public class LoadingScreenController implements Initializable,IController{
 
     }
 
+    private void initIterator(){
+
+        if(PageLoader.getTHEME_b()) {
+            imIt=YELLOW.iterator();
+        }
+        else {
+            imIt=BLUE.iterator();
+        }
+    }
+
+    /*public void toScore() throws IOException {
+        PageLoader.load(PageLoader.getLastEvent(), page_select.SCORE);
+    }*/
+
     public LoadingScreenController getController(){
         return this;
+    }
+
+
+    public void setDoneRendering(boolean doneRendering) {
+        this.doneRendering = doneRendering;
+    }
+
+    public void setLblAdvice(String text){
+        lblAdvice.setText(text);
     }
 }

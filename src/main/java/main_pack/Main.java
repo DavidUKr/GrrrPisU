@@ -17,7 +17,7 @@ public class Main extends Application {
     private static double score;
 
     private static Generator generator;
-
+    private static obj objectS;
     @Override
     public void start(Stage stage) throws Exception {
 
@@ -38,6 +38,7 @@ public class Main extends Application {
     }
 
     public static void loadRender(LoadingScreenController loadingController, obj object) throws IOException, InterruptedException {
+        objectS=object;
         generator=new Generator(loadingController, object);
     }
 
@@ -51,5 +52,9 @@ public class Main extends Application {
 
     public static void setScore(double score) {
         Main.score = score;
+    }
+
+    public static obj getObjectS() {
+        return objectS;
     }
 }

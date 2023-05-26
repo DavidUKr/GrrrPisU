@@ -5,6 +5,8 @@ import main_pack.Main;
 
 import java.io.IOException;
 
+import static java.lang.String.join;
+
 public class Generator implements Runnable{
 
     private JOGL jogl;
@@ -21,14 +23,14 @@ public class Generator implements Runnable{
 
     public Generator(LoadingScreenController loadingController, obj object) throws IOException, InterruptedException {
         loadingScreenController=loadingController;
+        loadingController.setDoneRendering(false);
         jogl = new JOGL();
-        loadingScreenController.increaseProg(5);
+        //loadingScreenController.increaseProg(5);
         this.object=object;
         jogl.renderGL(object);
         eventL = jogl.getEventListener();
         start();
-        loadingScreenController.increaseProg(6);
-
+        //loadingScreenController.increaseProg(6);
     }
 
 
@@ -90,12 +92,20 @@ public class Generator implements Runnable{
                 frameSum += frames;
                 //System.out.println("FPS: "+frames);
                 frames = 0;
+                try {
+                    loadingScreenController.increaseProg();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
                 cycle_count++;
             }
 
             if (cycle_count==20) {
                 stop();
+                loadingScreenController.setDoneRendering(true);
+                //loadingScreenController.setLblAdvice("Now:) Wait a bit after pressing");
             }
+
             FPSMean = frameSum / 20;
             //System.out.println("The mean of fps is " + FPSMean);
 
