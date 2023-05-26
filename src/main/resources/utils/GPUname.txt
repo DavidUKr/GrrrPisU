@@ -1,7 +1,7 @@
 ------------------
 System Information
 ------------------
-      Time of this report: 5/26/2023, 11:35:22
+      Time of this report: 5/26/2023, 11:54:13
              Machine name: ROG-BKD
                Machine Id: {9C9D14BC-BF2F-4C65-B681-549864E4FDFB}
          Operating System: Windows 10 Pro 64-bit (10.0, Build 19045) (19041.vb_release.191206-1406)
@@ -12,7 +12,7 @@ System Information
                 Processor: 11th Gen Intel(R) Core(TM) i7-11700 @ 2.50GHz (16 CPUs), ~2.5GHz
                    Memory: 16384MB RAM
       Available OS Memory: 16220MB RAM
-                Page File: 18992MB used, 2603MB available
+                Page File: 20595MB used, 2935MB available
               Windows Dir: C:\WINDOWS
           DirectX Version: DirectX 12
       DX Setup Parameters: Not found
@@ -629,7 +629,7 @@ PS/2 Devices
 Disk & DVD/CD-ROM Drives
 ------------------------
       Drive: C:
- Free Space: 155.4 GB
+ Free Space: 153.4 GB
 Total Space: 575.5 GB
 File System: NTFS
       Model: WDC PC SN530 SDBPNPZ-1T00-1002
