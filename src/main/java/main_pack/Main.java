@@ -1,7 +1,9 @@
 package main_pack;
 
 import UI.Controllers.LoadingScreenController;
-import benchmark.rendering.Generator;
+import UI.Controllers.ScoreController;
+import benchmark.OpenGL.Generator;
+import benchmark.OpenGL.obj;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,9 +14,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Main extends Application {
+    private static double score;
 
- @Override
- public void start(Stage stage) throws Exception {
+    private static Generator generator;
+
+    @Override
+    public void start(Stage stage) throws Exception {
 
         Parent root= FXMLLoader.load(getClass().getResource("/UI/pages/ENG/Initial_Setup.fxml"));
         Scene scene=new Scene(root);
@@ -32,7 +37,19 @@ public class Main extends Application {
         launch(args);
     }
 
-    public static void loadRender(LoadingScreenController loadingController) throws IOException {
-        new Generator(loadingController);
+    public static void loadRender(LoadingScreenController loadingController, obj object) throws IOException, InterruptedException {
+        generator=new Generator(loadingController, object);
+    }
+
+    public static Generator getGenerator() {
+        return generator;
+    }
+
+    public static double getScore() {
+        return score;
+    }
+
+    public static void setScore(double score) {
+        Main.score = score;
     }
 }

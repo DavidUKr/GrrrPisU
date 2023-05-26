@@ -1,6 +1,7 @@
 package benchmark.rendering.basicComponents;
 
 import java.awt.*;
+import java.util.List;
 
 public class Triangle
 {
@@ -15,5 +16,10 @@ public class Triangle
         this.v2 = v2;
         this.v3 = v3;
         this.color = color;
+    }
+
+    public List<Vertex> getVERTS()
+    {
+        return List.of(v1,v2,v3);
     }
 }

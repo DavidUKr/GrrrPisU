@@ -2,52 +2,38 @@ package benchmark.rendering.objects;
 
 import benchmark.rendering.basicComponents.Triangle;
 import benchmark.rendering.basicComponents.Vertex;
+import com.jogamp.opengl.GL2;
+import com.jogamp.opengl.GLDrawable;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Path2D;
 import java.util.ArrayList;
+import java.util.List;
 
 public class TetrahedronDice implements IObject
 {
     ArrayList<Triangle> TRIS = new ArrayList<>();
-    ArrayList<Path2D> PATHS=new ArrayList<Path2D>();
+    ArrayList<Vertex> VERTS = new ArrayList<>();
 
-    public TetrahedronDice(){
-        Vertex vA = new Vertex(100, 100, 100);
-        Vertex vB = new Vertex(-100, -100, 100);
-        Vertex vC = new Vertex(-100, 100, -100);
-        Vertex vD = new Vertex(100, -100, -100);
+    public TetrahedronDice(GL2 gl, float x, float y, float z)
+    {
+        Vertex vA = new Vertex(+1.0f, +1.0f, +1.0f);
+        Vertex vB = new Vertex(-1.0f, -1.0f, +1.0f);
+        Vertex vC = new Vertex(-1.0f, +1.0f, -1.0f);
+        Vertex vD = new Vertex(+1.0f, -1.0f, -1.0f);
 
-        //ABC
-        TRIS.add(new Triangle(vA, vB, vC, Color.WHITE));
-
-        //ABD
-        TRIS.add(new Triangle(vA, vB, vD, Color.RED));
-
-        //ACD
-        TRIS.add(new Triangle(vC, vD, vA, Color.GREEN));
-
-        //BCD
-        TRIS.add(new Triangle(vC, vD, vB, Color.BLUE));
-
-        for(Triangle t : TRIS)
-        {
-            Path2D path = new Path2D.Double();
-            path.moveTo(t.v1.x, t.v1.y);
-            path.lineTo(t.v2.x, t.v2.y);
-            path.lineTo(t.v3.x, t.v3.y);
-            path.closePath();
-            PATHS.add(path);
-        }
-    }
-
-    public ArrayList<Path2D> getPATHS() {
-        return PATHS;
+        VERTS.addAll(List.of(vA,vB,vC,vD));
     }
 
     @Override
-    public IObject getObject() {
-        return null;
+    public IObject getObject()
+    {
+        return this;
+    }
+
+    public ArrayList<Vertex> getVERTS()
+    {
+        return VERTS;
     }
 }
