@@ -69,14 +69,17 @@ public class D20Dice implements IObject//DnD/D20/Icosahedron
         TRIS.add(new Triangle(vJ, vK, vL, Color.BLUE));//6-JKL
         TRIS.add(new Triangle(vG, vH, vK, Color.ORANGE));//4-GHK
 
-        /*gl.glBegin(GL2.GL_TRIANGLES);
+        gl.glColor3i(200,100,34);
+
         for(Triangle t : TRIS)
         {
+            gl.glColor4f(t.color.getRed(), t.color.getGreen(), t.color.getBlue(), 1);
+            gl.glBegin(GL2.GL_TRIANGLES);
             for(Vertex v: t.getVERTS()){
                 gl.glVertex3d(v.x, v.y, v.z);
             }
+            gl.glEnd();
         }
-        gl.glEnd();*/
     }
 
     @Override
