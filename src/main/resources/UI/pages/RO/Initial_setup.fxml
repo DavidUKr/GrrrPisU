@@ -4,7 +4,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="1024" maxWidth="1441.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.InitialSet_SettingsController">
+<AnchorPane maxHeight="1024" maxWidth="1441.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.InitialSet_SettingsController">
    <children>
       <ImageView fx:id="imgSelBLUE" fitHeight="667.0" fitWidth="350.0" onMouseClicked="#select_Blue" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -20,9 +20,8 @@
 
       <ImageView fx:id="imgLanguageBackground" fitHeight="667.0" fitWidth="602.0" layoutX="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../images/InitialSetup_Settings/Language_background.png" />
-         </image>
-      </ImageView>
+            <Image url="@../../images/InitialSetup_Settings/verde.jpg" />
+         </image></ImageView>
 
       <ImageView fx:id="imgLblSelCat" fitHeight="64.0" fitWidth="366.0" layoutX="140.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
          <image>

@@ -72,8 +72,20 @@ public class CatFightController implements Initializable, IController{
                 }
             }
 
-            b_score = blue_sum/blue_counter;
-            y_score = yellow_sum/yellow_counter;
+            if(blue_counter == 0) {
+                b_score = 0;
+            }
+            else {
+                b_score = blue_sum/blue_counter;
+            }
+
+            if(yellow_counter == 0) {
+                y_score = 0;
+            }
+            else {
+                y_score = yellow_sum/yellow_counter;
+            }
+
             System.out.println("Blue: " + blue_sum + " " + blue_counter + " " + b_score);
             System.out.println("Yellow: " + yellow_sum + " " + yellow_counter + " " + y_score);
         } catch (SQLException e) {

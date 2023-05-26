@@ -18,7 +18,7 @@
 }
 
 #imgLanguageBackground {
-    -fx-image: url("../../images/InitialSetup_Settings/Language_Background.png");
+    -fx-image: url("../../images/InitialSetup_Settings/verde.jpg");
 }
 
 #btnDetectGPU {

@@ -56,6 +56,9 @@ public class  ScoreController implements Initializable {
         setL_input();
         setL_color();
         setScore(Main.getScore());
+
+        DBUtils_local.score(null, l_name.getText(), l_input.getText(), l_color.getText(), Float.parseFloat(l_score.getText()));
+
         b_hist.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override

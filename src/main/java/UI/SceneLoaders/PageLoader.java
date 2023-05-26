@@ -124,8 +124,13 @@ public class PageLoader {
             }
 
             case CHOOSE_TEST -> {
+                if (LANG_b) {
+                    FXML_name="/UI/pages/RO/ChooseTest.fxml";
+                } else {
+                    FXML_name="/UI/pages/ENG/ChooseTest.fxml";
+                }
 
-                FXML_name="/UI/pages/ENG/ChooseTest.fxml";
+                CSS_lang= PageLoader.class.getResource("/UI/css/ChooseTest/choose_test.css").toExternalForm();
             }
 
             case SCORE -> {
@@ -174,11 +179,11 @@ public class PageLoader {
         scene=new Scene(root);
         //css styling
 
-        if(page!=page_select.LOADING && page!=page_select.LOCAL_HIST && page!=page_select.SCORE){
+        if(page!=page_select.LOADING && page!=page_select.LOCAL_HIST && page!=page_select.CHOOSE_TEST){
             scene.getStylesheets().add(CSS_theme);
             scene.getStylesheets().add(CSS_lang);
         }
-        if(page==page_select.DETECT_GPU || page==page_select.SCORE) scene.getStylesheets().add(CSS_lang);
+        if(page==page_select.DETECT_GPU || page==page_select.CHOOSE_TEST) scene.getStylesheets().add(CSS_lang);
 
         //loading stage
         stage.setScene(scene);

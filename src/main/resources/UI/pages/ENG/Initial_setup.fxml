@@ -20,7 +20,7 @@
 
       <ImageView fx:id="imgLanguageBackground" fitHeight="667.0" fitWidth="602.0" layoutX="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../images/InitialSetup_Settings/Language_background.png" />
+            <Image url="@../../images/InitialSetup_Settings/verde.jpg" />
          </image>
       </ImageView>
 

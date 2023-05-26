@@ -35,10 +35,10 @@
                </font></Button>
          </children>
       </GridPane>
-      <GridPane fx:id="g_information" layoutX="229.0" layoutY="247.0" prefHeight="220.0" prefWidth="287.0" style="-fx-font-size: 15px;">
+      <GridPane fx:id="g_information" layoutX="229.0" layoutY="249.0" prefHeight="218.0" prefWidth="551.0" style="-fx-font-size: 15px;">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="10.0" prefWidth="123.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="428.0" minWidth="10.0" prefWidth="428.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -51,7 +51,7 @@
             <Label text="Input:" GridPane.rowIndex="1" />
             <Label text="Team:" GridPane.rowIndex="2" />
             <Label text="Score:" GridPane.rowIndex="3" />
-            <Label fx:id="l_name" text="...." GridPane.columnIndex="1" />
+            <Label fx:id="l_name" prefHeight="21.0" prefWidth="436.0" text="...." GridPane.columnIndex="1" />
             <Label fx:id="l_input" text="aaaa" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label fx:id="l_color" text="blue" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label fx:id="l_score" text="3.7" GridPane.columnIndex="1" GridPane.rowIndex="3" />
