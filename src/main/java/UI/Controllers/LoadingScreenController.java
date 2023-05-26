@@ -54,7 +54,7 @@ public class LoadingScreenController implements Initializable,IController{
         else System.out.println("Loading bar images null");
     }
 
-    public void increaseProg(ActionEvent event) throws IOException {
+    public void increaseProg() throws IOException {
 
         if(imIt.hasNext()) imgBar_Cat.setImage(imIt.next());
         else {

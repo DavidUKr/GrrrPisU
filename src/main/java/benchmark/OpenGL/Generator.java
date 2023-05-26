@@ -22,12 +22,12 @@ public class Generator implements Runnable{
     public Generator(LoadingScreenController loadingController, obj object) throws IOException, InterruptedException {
         loadingScreenController=loadingController;
         jogl = new JOGL();
-        loadingScreenController.increaseProg(5);
+        //loadingScreenController.increaseProg(5);
         this.object=object;
         jogl.renderGL(object);
         eventL = jogl.getEventListener();
         start();
-        loadingScreenController.increaseProg(6);
+        //loadingScreenController.increaseProg(6);
 
     }
 
@@ -90,6 +90,11 @@ public class Generator implements Runnable{
                 frameSum += frames;
                 //System.out.println("FPS: "+frames);
                 frames = 0;
+                try {
+                    loadingScreenController.increaseProg();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
                 cycle_count++;
             }
 
