@@ -10,6 +10,8 @@ import com.jogamp.opengl.GLEventListener;
 
 import java.util.ArrayList;
 
+import static com.jogamp.opengl.GL.GL_DEPTH_TEST;
+
 public class EventListener implements GLEventListener
 {
     private obj OBJECT;
@@ -34,6 +36,7 @@ public class EventListener implements GLEventListener
     {
         gl=drawable.getGL().getGL2();
         gl.glClearColor(0,0,0,1);
+        gl.glEnable(GL2.GL_DEPTH_TEST);
 
         //INFO
         String vendor = gl.glGetString(GL.GL_VENDOR);
@@ -59,6 +62,7 @@ public class EventListener implements GLEventListener
     {
         //Clear the color and depth buffers
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
+        gl.glClear(GL2.GL_DEPTH_BUFFER_BIT);
         gl.glRotatef(-1, 1,1,0);
 
         float size=2;
