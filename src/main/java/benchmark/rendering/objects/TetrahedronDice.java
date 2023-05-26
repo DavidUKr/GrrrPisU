@@ -24,6 +24,30 @@ public class TetrahedronDice implements IObject
         Vertex vD = new Vertex(+1.0f, -1.0f, -1.0f);
 
         VERTS.addAll(List.of(vA,vB,vC,vD));
+
+        //ABC
+        TRIS.add(new Triangle(vA, vB, vC, Color.WHITE));
+
+        //ABD
+        TRIS.add(new Triangle(vA, vB, vD, Color.RED));
+
+        //ACD
+        TRIS.add(new Triangle(vC, vD, vA, Color.GREEN));
+
+        //BCD
+        TRIS.add(new Triangle(vC, vD, vB, Color.BLUE));
+
+        gl.glColor3i(200,100,34);
+
+        for(Triangle t : TRIS)
+        {
+            gl.glColor4f(t.color.getRed(), t.color.getGreen(), t.color.getBlue(), 1);
+            gl.glBegin(GL2.GL_TRIANGLES);
+            for(Vertex v: t.getVERTS()){
+                gl.glVertex3d(v.x, v.y, v.z);
+            }
+            gl.glEnd();
+        }
     }
 
     @Override

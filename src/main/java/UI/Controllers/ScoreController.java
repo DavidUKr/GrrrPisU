@@ -111,11 +111,13 @@ public class  ScoreController implements Initializable {
 
     public void setL_color(){
         if(PageLoader.getTHEME_b()) {
-            l_color.setText("Yellow");
+            if(PageLoader.getLANG_b())l_color.setText("Galben");
+            else l_color.setText("Yellow");
             img_Cat.setImage(new Image("/UI/images/CatFight/CatYellow.png"));
         }
         else {
-            l_color.setText("Blue");
+            if(PageLoader.getLANG_b())l_color.setText("Albastru");
+            else l_color.setText("Blue");
             img_Cat.setImage(new Image("/UI/images/CatFight/CatBlue.png"));
         }
     }
