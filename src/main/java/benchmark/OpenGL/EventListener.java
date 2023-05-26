@@ -7,8 +7,6 @@ import com.jogamp.opengl.GL;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLEventListener;
-import com.jogamp.opengl.awt.GLCanvas;
-import com.jogamp.opengl.glu.GLU;
 
 import java.util.ArrayList;
 
@@ -20,7 +18,7 @@ public class EventListener implements GLEventListener
     private JOGL jogl;
     private static GL2 gl;
 
-    private double totalTime=0;
+    private long totalTime=0;
     private int numIterations=0;
 
     GLAutoDrawable drawable;
@@ -78,17 +76,15 @@ public class EventListener implements GLEventListener
 
     }
 
-    public double computeMeanRenderingTime(double totalTime, int numIterations) {
+    public long computeMeanRenderingTime() {
 
-        totalTime=getTotalTime();
-        numIterations=getNumIterations();
-        //System.out.println("debug:itNum:"+numIterations+":totalTime:"+totalTime);
+        //totalTime=getTotalTime();
+        //numIterations=getNumIterations();
         if (numIterations > 0) {
-            double meanRenderingTime = totalTime / numIterations;
             //System.out.println("Mean rendering time: " + meanRenderingTime + " ms");
-            return  meanRenderingTime;
+            return (long)(totalTime / numIterations);
         } else {
-            // System.out.println("No rendering iterations performed.");
+            System.out.println("No rendering iterations performed.");
             return 0;
         }
     }
@@ -117,15 +113,12 @@ public class EventListener implements GLEventListener
         //gl.glLoadIdentity();
     }
 
+    public void setOBJECT(obj OBJECT){
+        this.OBJECT=OBJECT;
+    }
 
     public void renderObj(GL2 gl2)
     {
-        float size=1;
-
-        //OBJECT = obj.TETRAHEDRON;
-        //OBJECT=obj.CUBE;
-        OBJECT=obj.D20;
-
         switch(OBJECT)
         {
             case TETRAHEDRON -> {

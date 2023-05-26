@@ -1,14 +1,9 @@
 package benchmark.OpenGL;
 
 import UI.Controllers.LoadingScreenController;
-import com.jogamp.opengl.GL2;
-import com.jogamp.opengl.GLAutoDrawable;
-import com.jogamp.opengl.GLContext;
 import main_pack.Main;
 
 import java.io.IOException;
-
-import static java.lang.String.join;
 
 public class Generator implements Runnable{
 
@@ -18,21 +13,19 @@ public class Generator implements Runnable{
     private int cycle_count = 0;
     private obj object;
 
-    private EventListener eventL=new EventListener(jogl);
+    private EventListener eventL;
     private double FPSMean=0;
 
     LoadingScreenController loadingScreenController;
     private int FPS=100000;
 
-    public Generator(LoadingScreenController loadingController) throws IOException, InterruptedException {
-            loadingScreenController=loadingController;
-        //EventListener eventL
-
-        setObject(obj.TETRAHEDRON);
+    public Generator(LoadingScreenController loadingController, obj object) throws IOException, InterruptedException {
+        loadingScreenController=loadingController;
         jogl = new JOGL();
-        eventL = new EventListener(jogl);
         loadingScreenController.increaseProg(5);
+        this.object=object;
         jogl.renderGL(object);
+        eventL = jogl.getEventListener();
         start();
         loadingScreenController.increaseProg(6);
 
@@ -53,27 +46,16 @@ public class Generator implements Runnable{
     public double getScore(){
         double score=0;
         double FPSMean=getFPSMean();
-        double totalTime= eventL.getTotalTime();
-        int numIteration= eventL.getNumIterations();
-
-        //long timeMilliseconds = (long) (totalTime / 1000000);
-
         double resolution=jogl.getResolutionValue();
         double numitor=FPSMean*resolution;
-        //System.out.println("Res "+resolution);
 
-       //System.out.println("Product "+numitor);
-        double time=eventL.computeMeanRenderingTime(totalTime, numIteration);
+        long time=eventL.computeMeanRenderingTime();
 
         if(time!=0)
            score=(FPSMean*resolution)/time;
         else
             return -1;
         return score;
-    }
-
-    public void setObject (obj object){
-        this.object = object;
     }
 
 
@@ -115,7 +97,7 @@ public class Generator implements Runnable{
                 stop();
             }
             FPSMean = frameSum / 20;
-            System.out.println("The mean of fps is " + FPSMean);
+            //System.out.println("The mean of fps is " + FPSMean);
 
         }
         FPSMean=frameSum/20;
@@ -127,19 +109,10 @@ public class Generator implements Runnable{
     public double getFPSMean() {
         return FPSMean;
     }
-        /** public void getRenderingTime() {
-         long startTime = 0;
-         long endTime = 0;
 
-         startTime = System.nanoTime();
-         run();
-         endTime = System.nanoTime();
-         long renderingTime = endTime - startTime;
-         System.out.print("\nRendering time "+renderingTime);
-         }*/
 
-        public obj getObject () {
-            return object;
-        }
+    public obj getObject () {
+        return object;
+    }
 
 }

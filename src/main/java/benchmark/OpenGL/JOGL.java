@@ -5,10 +5,6 @@ import com.jogamp.newt.opengl.GLWindow;
 import com.jogamp.opengl.*;
 import com.jogamp.opengl.awt.GLCanvas;
 
-
-import javax.swing.JFrame;
-import java.awt.*;
-import java.awt.geom.Path2D;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -25,26 +21,15 @@ public class JOGL implements JOGLInterface {
     private float unitsWide=10;
 
     private EventListener eventListener;
-    public void renderGL(obj OBJECT)
+    public void renderGL(obj object)
     {
         GLProfile.initSingleton();
         GLProfile glProfile = GLProfile.get(GLProfile.GL2);
 
         GLCapabilities glCapabilities = new GLCapabilities(glProfile);
-        //glCapabilities.setDoubleBuffered(true); //to resolve de fps cap
-        //glCapabilities.setHardwareAccelerated(true);
 
         eventListener=new EventListener(this);
-        //FPSAnimator animator=new FPSAnimator(window, 60);
-        //animator.start();
-
-        /*window=GLWindow.create(glCapabilities);
-        window.setSize(ScreenWidth, ScreenHeight);
-        window.setResizable(false);
-        window.addGLEventListener(eventListener);
-
-        //window.setFullscreen(true);
-        window.setVisible(true);*/
+        eventListener.setOBJECT(object);
 
         glCanvas=new GLCanvas(glCapabilities);
         glCanvas.addGLEventListener(eventListener);
@@ -64,8 +49,6 @@ public class JOGL implements JOGLInterface {
         String version = gl.glGetString(GL.GL_VERSION);
         System.out.println("benchmark.OpenGL Vendor: " + vendor);
         System.out.println("benchmark.OpenGL Version: " + version);
-        //String extensions = gl.glGetString(GL.GL_EXTENSIONS);
-        //System.out.println("Supported Extensions: " + extensions);
         getResolution(drawable);
         getFrameRate(drawable);
 
@@ -171,24 +154,7 @@ public class JOGL implements JOGLInterface {
         this.unitsWide = unitsWide;
     }
 
-    /*public void renderObj(GL2 gl2)
-    {
-
-        OBJECT=obj.TETRAHEDRON;
-
-        switch(OBJECT){
-            case TETRAHEDRON -> {
-                //object=new TetrahedronDice(gl2);
-                object=new TetrahedronDice(gl2, 0.0f, 0.0f, 0.0f);
-            }
-            case CUBE -> {}
-            case SPHERE -> {}
-            case D20 -> {}
-            default -> {
-                System.out.println("rendering default");
-                //object=new TetrahedronDice(gl2);
-                object=new TetrahedronDice(gl2, 0.0f, 0.0f, 0.0f);
-            }
-        }
-    }*/
+    public EventListener getEventListener() {
+        return eventListener;
+    }
 }

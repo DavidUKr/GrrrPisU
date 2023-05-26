@@ -87,6 +87,6 @@ public class  ScoreController implements Initializable {
     }
 
     public void setScore(double score){
-        l_score.setText(String.valueOf(score));
+        l_score.setText(String.format(String.valueOf(score), "%.2f"));
     }
 }

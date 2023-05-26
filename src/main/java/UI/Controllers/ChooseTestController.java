@@ -2,6 +2,7 @@ package UI.Controllers;
 
 import UI.SceneLoaders.PageLoader;
 import UI.SceneLoaders.page_select;
+import benchmark.OpenGL.obj;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -29,7 +30,7 @@ public class ChooseTestController implements Initializable, IController{
 
             try {
                 PageLoader.load(event, page_select.LOADING);
-                Main.loadRender((LoadingScreenController) PageLoader.getController());
+                Main.loadRender((LoadingScreenController) PageLoader.getController(), obj.TETRAHEDRON);
             } catch (IOException | InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -39,7 +40,7 @@ public class ChooseTestController implements Initializable, IController{
 
             try {
                 PageLoader.load(event, page_select.LOADING);
-                Main.loadRender((LoadingScreenController) PageLoader.getController());
+                Main.loadRender((LoadingScreenController) PageLoader.getController(), obj.CUBE);
             } catch (IOException | InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -49,7 +50,7 @@ public class ChooseTestController implements Initializable, IController{
 
             try {
                 PageLoader.load(event, page_select.LOADING);
-                Main.loadRender((LoadingScreenController) PageLoader.getController());
+                Main.loadRender((LoadingScreenController) PageLoader.getController(), obj.D20);
             } catch (IOException | InterruptedException e) {
                 throw new RuntimeException(e);
             }

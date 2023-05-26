@@ -3,6 +3,7 @@ package main_pack;
 import UI.Controllers.LoadingScreenController;
 import UI.Controllers.ScoreController;
 import benchmark.OpenGL.Generator;
+import benchmark.OpenGL.obj;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -36,8 +37,8 @@ public class Main extends Application {
         launch(args);
     }
 
-    public static void loadRender(LoadingScreenController loadingController) throws IOException, InterruptedException {
-        generator=new Generator(loadingController);
+    public static void loadRender(LoadingScreenController loadingController, obj object) throws IOException, InterruptedException {
+        generator=new Generator(loadingController, object);
     }
 
     public static Generator getGenerator() {
