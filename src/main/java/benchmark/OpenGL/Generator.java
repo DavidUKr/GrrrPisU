@@ -54,7 +54,7 @@ public class Generator implements Runnable{
         long time=eventL.computeMeanRenderingTime();
 
         if(time!=0)
-           score=(FPSMean*resolution)/time;
+           score=(FPSMean*resolution)/time*10;
         else
             return -1;
         return score;
