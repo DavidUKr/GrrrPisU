@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="pane" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.ScoreController">
+<AnchorPane fx:id="pane" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.ScoreController">
    <children>
       <ImageView fx:id="img_Cat" fitHeight="510.0" fitWidth="344.0" layoutX="776.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -21,15 +21,15 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="b_hist" mnemonicParsing="false" style="-fx-border-color: black; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-pref-height: 30px; -fx-pref-width: 150px; -fx-background-color: #fee373;" text="Open History" textFill="#7e8e8e" GridPane.columnIndex="1">
+            <Button fx:id="b_hist" mnemonicParsing="false" style="-fx-border-color: black; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-pref-height: 30px; -fx-pref-width: 150px; -fx-background-color: C8D97D;" text="Open History" GridPane.columnIndex="1">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <Button fx:id="b_cat_fight" mnemonicParsing="false" style="-fx-border-color: black; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-pref-height: 30px; -fx-pref-width: 150px; -fx-background-color: CBF2F4;" text="Open Cat Fight" textFill="#7e8e8e" GridPane.columnIndex="2">
+            <Button fx:id="b_cat_fight" mnemonicParsing="false" style="-fx-border-color: black; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-pref-height: 30px; -fx-pref-width: 150px; -fx-background-color: C8D97D;" text="Open Cat Fight" GridPane.columnIndex="2">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <Button fx:id="b_menu" mnemonicParsing="false" style="-fx-pref-height: 30px; -fx-pref-width: 150px; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-color: CBF2F4;" text="Go back to main menu" textFill="#7e8e8e">
+            <Button fx:id="b_menu" mnemonicParsing="false" style="-fx-pref-height: 30px; -fx-pref-width: 150px; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-color: C8D97D;" text="Go back to main menu">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
@@ -57,11 +57,11 @@
             <Label fx:id="l_score" text="3.7" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="221.0" layoutY="184.0" prefHeight="30.0" prefWidth="143.0" style="-fx-background-color: #fee373; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Information:" textAlignment="CENTER" textFill="#7e8e8e">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="221.0" layoutY="184.0" prefHeight="30.0" prefWidth="143.0" style="-fx-background-color: C8D97D; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Information:" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Label>
-      <Label fx:id="l_congrats" alignment="TOP_CENTER" layoutX="190.0" layoutY="35.0" prefHeight="46.0" prefWidth="798.0" style="-fx-background-color: CBF2F4;" text="Congratulations on completing the testbench!" textAlignment="CENTER" textFill="#fee373">
+      <Label fx:id="l_congrats" alignment="TOP_CENTER" layoutX="190.0" layoutY="35.0" prefHeight="46.0" prefWidth="798.0" style="-fx-background-color: transparent;" text="Congratulations on completing the testbench!" textAlignment="CENTER">
          <font>
             <Font name="Book Antiqua Bold" size="30.0" />
          </font>
