@@ -1,0 +1,27 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="GrrrPisU:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/GrrrPisU_jar</output-path>
+    <root id="archive" name="GrrrPisU.jar">
+      <element id="module-output" name="GrrrPisU" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/19/javafx-fxml-19-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/19/javafx-base-19-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/19/javafx-graphics-19-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/SDK_s/jars/jogamp-all-platforms/jogamp-all-platforms/jar/gluegen-rt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/SDK_s/jars/jogamp-all-platforms/jogamp-all-platforms/jar/jogl-all.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/controlsfx/controlsfx/11.1.2/controlsfx-11.1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/SDK_s/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx-swt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/SDK_s/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.web.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/SDK_s/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.base.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/SDK_s/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.fxml.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/SDK_s/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.media.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/SDK_s/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.swing.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/SDK_s/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.controls.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/SDK_s/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.graphics.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/19/javafx-controls-19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/19/javafx-controls-19-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/19/javafx-graphics-19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/19/javafx-fxml-19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/19/javafx-base-19.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
