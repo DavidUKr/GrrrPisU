@@ -13,6 +13,7 @@ public class Generator implements Runnable{
     private Thread genThread;
     private boolean running;
     private int cycle_count = 0;
+
     private obj object;
 
     private EventListener eventL;
