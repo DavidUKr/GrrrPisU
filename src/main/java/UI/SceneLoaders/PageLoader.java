@@ -151,6 +151,8 @@ public class PageLoader {
                 } else {
                     FXML_name="/UI/pages/ENG/local_history.fxml";
                 }
+
+                CSS_lang = PageLoader.class.getResource("/UI/css/LocalHistory/local-history.css").toExternalForm();
             }
         }
 
@@ -183,7 +185,7 @@ public class PageLoader {
             scene.getStylesheets().add(CSS_theme);
             scene.getStylesheets().add(CSS_lang);
         }
-        if(page==page_select.DETECT_GPU || page==page_select.CHOOSE_TEST) scene.getStylesheets().add(CSS_lang);
+        if(page==page_select.DETECT_GPU || page==page_select.CHOOSE_TEST || page==page_select.LOCAL_HIST) scene.getStylesheets().add(CSS_lang);
 
         //loading stage
         stage.setScene(scene);

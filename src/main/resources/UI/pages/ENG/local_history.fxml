@@ -2,8 +2,9 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.TrialHist">
+<AnchorPane fx:id="pane" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.TrialHist">
    <children>
       <TableView fx:id="table" layoutX="297.0" layoutY="197.0" prefHeight="307.0" prefWidth="572.0">
         <columns>
@@ -13,7 +14,13 @@
           <TableColumn fx:id="t_score" prefWidth="153.0" text="score" />
         </columns>
       </TableView>
-      <Label layoutX="549.0" layoutY="110.0" text="History" />
-      <Button fx:id="b_go_back" layoutX="83.0" layoutY="619.0" mnemonicParsing="false" text="Go back" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="496.0" layoutY="109.0" prefHeight="45.0" prefWidth="208.0" style="-fx-background-color: C8D97D; -fx-background-radius: 20px;" text="History">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font></Label>
+      <Button fx:id="b_go_back" layoutX="83.0" layoutY="619.0" mnemonicParsing="false" style="-fx-background-color: C8D97D; -fx-background-radius: 20px;" text="Go back">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
    </children>
 </AnchorPane>

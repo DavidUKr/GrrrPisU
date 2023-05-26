@@ -10,7 +10,7 @@ public class DBUtils_local {
         Connection connection = null;
         PreparedStatement psInsert = null;
         try {
-            String url = "jdbc:mysql://localhost:3307/co";
+            String url = "jdbc:mysql://localhost:3306/co";
             String user = "root";
             String password = "";
             connection = DriverManager.getConnection(url, user, password);

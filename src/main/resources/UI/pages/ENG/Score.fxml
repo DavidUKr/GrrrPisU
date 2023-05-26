@@ -51,10 +51,10 @@
             <Label text="Input:" GridPane.rowIndex="1" />
             <Label text="Team:" GridPane.rowIndex="2" />
             <Label text="Score:" GridPane.rowIndex="3" />
-            <Label fx:id="l_name" prefHeight="21.0" prefWidth="436.0" text="...." GridPane.columnIndex="1" />
-            <Label fx:id="l_input" text="aaaa" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label fx:id="l_color" text="blue" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label fx:id="l_score" text="3.7" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="l_name" prefHeight="21.0" prefWidth="436.0" GridPane.columnIndex="1" />
+            <Label fx:id="l_input" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="l_color" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="l_score" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="221.0" layoutY="184.0" prefHeight="30.0" prefWidth="143.0" style="-fx-background-color: C8D97D; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Information:" textAlignment="CENTER">
