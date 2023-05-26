@@ -5,6 +5,8 @@ import main_pack.Main;
 
 import java.io.IOException;
 
+import static java.lang.String.join;
+
 public class Generator implements Runnable{
 
     private JOGL jogl;
@@ -29,7 +31,6 @@ public class Generator implements Runnable{
         eventL = jogl.getEventListener();
         start();
         //loadingScreenController.increaseProg(6);
-
     }
 
 

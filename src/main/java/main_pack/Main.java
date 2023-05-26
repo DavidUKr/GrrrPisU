@@ -21,7 +21,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        Parent root= FXMLLoader.load(getClass().getResource("/UI/pages/ENG/local_history.fxml"));
+        Parent root= FXMLLoader.load(getClass().getResource("/UI/pages/ENG/Initial_setup.fxml"));
         Scene scene=new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/UI/css/InitialSetup/NoTheme_init.css").toExternalForm());
         stage.setScene(scene);
