@@ -1,6 +1,7 @@
 package UI.SceneLoaders;
 
 import UI.Controllers.IController;
+import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -155,8 +156,7 @@ public class PageLoader {
     }*/
 
     public static void load(ActionEvent event, page_select page) throws IOException {
-        //lastEvent=event;
-
+        lastEvent=event;
 
         setPage(page);
         //setting up scene with its root
@@ -176,5 +176,9 @@ public class PageLoader {
         //loading stage
         stage.setScene(scene);
         stage.show();
+    }
+
+    public static ActionEvent getLastEvent() {
+        return lastEvent;
     }
 }

@@ -12,9 +12,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import main_pack.Main;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -44,11 +45,16 @@ public class  ScoreController implements Initializable {
     @FXML
     private Button b_cat_fight;
 
+    @FXML
+    private ImageView img_Cat;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         DBUtils_local.score(null, l_name.getText(), Integer.parseInt(l_input.getText()), l_color.getText(), Float.parseFloat(l_score.getText()));
 
         l_name.setText(GPUDetector.getGPU());
+        setL_input();
+        setL_color();
         setScore(Main.getScore());
         b_hist.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -89,5 +95,25 @@ public class  ScoreController implements Initializable {
 
     public void setScore(double score){
         l_score.setText(String.format(String.valueOf(score), "%.2f"));
+    }
+
+    public void setL_input(){
+        switch(Main.getObjectS()){
+            case TETRAHEDRON -> l_input.setText("Tetrahedron");
+            case CUBE -> l_input.setText("Cube");
+            case D20 -> l_input.setText("D&D 20 face dice");
+            case SPHERE -> l_input.setText("Sphere");
+        }
+    }
+
+    public void setL_color(){
+        if(PageLoader.getTHEME_b()) {
+            l_color.setText("Yellow");
+            img_Cat.setImage(new Image("/UI/images/CatFight/CatYellow.png"));
+        }
+        else {
+            l_color.setText("Blue");
+            img_Cat.setImage(new Image("/UI/images/CatFight/CatBlue.png"));
+        }
     }
 }

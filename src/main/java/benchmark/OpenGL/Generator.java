@@ -21,6 +21,7 @@ public class Generator implements Runnable{
 
     public Generator(LoadingScreenController loadingController, obj object) throws IOException, InterruptedException {
         loadingScreenController=loadingController;
+        loadingController.setDoneRendering(false);
         jogl = new JOGL();
         //loadingScreenController.increaseProg(5);
         this.object=object;
@@ -100,7 +101,10 @@ public class Generator implements Runnable{
 
             if (cycle_count==20) {
                 stop();
+                loadingScreenController.setDoneRendering(true);
+                //loadingScreenController.setLblAdvice("Now:) Wait a bit after pressing");
             }
+
             FPSMean = frameSum / 20;
             //System.out.println("The mean of fps is " + FPSMean);
 

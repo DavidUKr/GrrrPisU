@@ -7,7 +7,7 @@
 
 <AnchorPane fx:id="pane" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.ScoreController">
    <children>
-      <ImageView fx:id="image" fitHeight="510.0" fitWidth="344.0" layoutX="776.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="img_Cat" fitHeight="510.0" fitWidth="344.0" layoutX="776.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/Score/CatBlue.png" />
          </image></ImageView>

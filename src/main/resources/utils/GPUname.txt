@@ -1,7 +1,7 @@
 ------------------
 System Information
 ------------------
-      Time of this report: 5/26/2023, 09:18:09
+      Time of this report: 5/26/2023, 10:49:50
              Machine name: ROG-BKD
                Machine Id: {9C9D14BC-BF2F-4C65-B681-549864E4FDFB}
          Operating System: Windows 10 Pro 64-bit (10.0, Build 19045) (19041.vb_release.191206-1406)
@@ -12,7 +12,7 @@ System Information
                 Processor: 11th Gen Intel(R) Core(TM) i7-11700 @ 2.50GHz (16 CPUs), ~2.5GHz
                    Memory: 16384MB RAM
       Available OS Memory: 16220MB RAM
-                Page File: 17497MB used, 4099MB available
+                Page File: 17792MB used, 3803MB available
               Windows Dir: C:\WINDOWS
           DirectX Version: DirectX 12
       DX Setup Parameters: Not found
@@ -1722,6 +1722,25 @@ Diagnostics
 
 Windows Error Reporting:
 +++ WER0 +++:
+Fault bucket 2169117610987837659, type 5
+Event Name: MoAppHangXProc
+Response: Not available
+Cab Id: 0
+
+Problem signature:
+P1: A-Volute.SonicStudio3_3.16.21.0_x64__w2gh52qy24etm
+P2: praid:App
+P3: 3.16.210.0
+P4: 61de4250
+P5: 2ec3
+P6: 2097216
+P7: B9ECED6F.ArmouryCrate_5.6.3.0_x64__qmba6cd70vzyy
+P8: praid:App
+P9: 10.0.19041.546
+P10: 
+
+
++++ WER1 +++:
 Fault bucket 1610242013290696439, type 5
 Event Name: RADAR_PRE_LEAK_64
 Response: Not available
@@ -1740,7 +1759,7 @@ P9:
 P10: 
 
 
-+++ WER1 +++:
++++ WER2 +++:
 Fault bucket 2140915927001429021, type 5
 Event Name: MoAppHangXProc
 Response: Not available
@@ -1759,7 +1778,7 @@ P9: 10.0.19041.546
 P10: 
 
 
-+++ WER2 +++:
++++ WER3 +++:
 Fault bucket , type 0
 Event Name: AppHangB1
 Response: Not available
@@ -1778,7 +1797,7 @@ P9:
 P10: 
 
 
-+++ WER3 +++:
++++ WER4 +++:
 Fault bucket 1738321264911273108, type 5
 Event Name: AppHangB1
 Response: Not available
@@ -1789,25 +1808,6 @@ P1: java.exe
 P2: 19.0.1.0
 P3: 68d38a0d
 P4: 163f
-P5: 134217728
-P6: 
-P7: 
-P8: 
-P9: 
-P10: 
-
-
-+++ WER4 +++:
-Fault bucket 2255831663522457882, type 5
-Event Name: AppHangB1
-Response: Not available
-Cab Id: 0
-
-Problem signature:
-P1: java.exe
-P2: 19.0.1.0
-P3: 68d38a0d
-P4: e1aa
 P5: 134217728
 P6: 
 P7: 
@@ -1855,6 +1855,25 @@ P10:
 
 
 +++ WER7 +++:
+Fault bucket 2255831663522457882, type 5
+Event Name: AppHangB1
+Response: Not available
+Cab Id: 0
+
+Problem signature:
+P1: java.exe
+P2: 19.0.1.0
+P3: 68d38a0d
+P4: e1aa
+P5: 134217728
+P6: 
+P7: 
+P8: 
+P9: 
+P10: 
+
+
++++ WER8 +++:
 Fault bucket 1839887362148301479, type 5
 Event Name: RADAR_PRE_LEAK_64
 Response: Not available
@@ -1873,7 +1892,7 @@ P9:
 P10: 
 
 
-+++ WER8 +++:
++++ WER9 +++:
 Fault bucket 1828348203250309393, type 4
 Event Name: APPCRASH
 Response: Not available
@@ -1889,25 +1908,6 @@ P6: 6439ab81
 P7: c0000005
 P8: 00000000005ece10
 P9: 
-P10: 
-
-
-+++ WER9 +++:
-Fault bucket 2169117610987837659, type 5
-Event Name: MoAppHangXProc
-Response: Not available
-Cab Id: 0
-
-Problem signature:
-P1: A-Volute.SonicStudio3_3.16.21.0_x64__w2gh52qy24etm
-P2: praid:App
-P3: 3.16.210.0
-P4: 61de4250
-P5: 2ec3
-P6: 2097216
-P7: B9ECED6F.ArmouryCrate_5.6.3.0_x64__qmba6cd70vzyy
-P8: praid:App
-P9: 10.0.19041.546
 P10: 
 
 

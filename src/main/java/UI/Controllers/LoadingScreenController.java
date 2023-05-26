@@ -5,9 +5,11 @@ import UI.SceneLoaders.page_select;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -15,6 +17,11 @@ import java.util.Iterator;
 import java.util.ResourceBundle;
 
 public class LoadingScreenController implements Initializable,IController{
+
+    private boolean doneRendering;
+
+    @FXML
+    Label lblAdvice;
 
     @FXML
     private ImageView imgBar_Cat;
@@ -64,6 +71,11 @@ public class LoadingScreenController implements Initializable,IController{
         }
     }
 
+    public void increaseProg(ActionEvent event) throws IOException {
+        if(doneRendering)PageLoader.load(event, page_select.SCORE);
+        else lblAdvice.setText("Not yet");
+    }
+
     public void increaseProg(int steps) throws IOException {
 
         for (int i=0; i<steps;i++) {
@@ -87,7 +99,20 @@ public class LoadingScreenController implements Initializable,IController{
         }
     }
 
+    /*public void toScore() throws IOException {
+        PageLoader.load(PageLoader.getLastEvent(), page_select.SCORE);
+    }*/
+
     public LoadingScreenController getController(){
         return this;
+    }
+
+
+    public void setDoneRendering(boolean doneRendering) {
+        this.doneRendering = doneRendering;
+    }
+
+    public void setLblAdvice(String text){
+        lblAdvice.setText(text);
     }
 }
