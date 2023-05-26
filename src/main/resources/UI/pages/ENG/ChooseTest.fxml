@@ -48,7 +48,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="tetrahedron" mnemonicParsing="false" prefHeight="30.0" prefWidth="444.0" style="-fx-pref-height: 40px; -fx-pref-width: 200px; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-color: C8D97D;" text="Thedraedron" textFill="#070706" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button fx:id="tetrahedron" mnemonicParsing="false" prefHeight="30.0" prefWidth="444.0" style="-fx-pref-height: 40px; -fx-pref-width: 200px; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-color: C8D97D;" text="Tetrahedron" textFill="#070706" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
