@@ -1,7 +1,7 @@
 ------------------
 System Information
 ------------------
-      Time of this report: 5/26/2023, 14:01:56
+      Time of this report: 5/26/2023, 14:08:00
              Machine name: ROG-BKD
                Machine Id: {9C9D14BC-BF2F-4C65-B681-549864E4FDFB}
          Operating System: Windows 10 Pro 64-bit (10.0, Build 19045) (19041.vb_release.191206-1406)
@@ -12,7 +12,7 @@ System Information
                 Processor: 11th Gen Intel(R) Core(TM) i7-11700 @ 2.50GHz (16 CPUs), ~2.5GHz
                    Memory: 16384MB RAM
       Available OS Memory: 16220MB RAM
-                Page File: 14249MB used, 7346MB available
+                Page File: 14023MB used, 7572MB available
               Windows Dir: C:\WINDOWS
           DirectX Version: DirectX 12
       DX Setup Parameters: Not found

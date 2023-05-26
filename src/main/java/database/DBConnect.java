@@ -8,7 +8,7 @@ public class DBConnect {
     private static Connection connection;
 
     public static Connection getConnection() throws SQLException {
-        String DB_url = "jdbc:mysql://remote-host:3307/co";
+        String DB_url = "jdbc:mysql://localhost:3306/co";
         String DB_user = "root";
         String DB_password = "";
         try {
