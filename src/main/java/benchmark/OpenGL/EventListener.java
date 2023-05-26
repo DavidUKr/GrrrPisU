@@ -65,7 +65,7 @@ public class EventListener implements GLEventListener
         gl.glClear(GL2.GL_DEPTH_BUFFER_BIT);
         gl.glRotatef(-1, 1,1,0);
 
-        float size=2;
+
         long startTime = System.nanoTime();
 
         renderObj(gl);
