@@ -1,7 +1,7 @@
 ------------------
 System Information
 ------------------
-      Time of this report: 5/26/2023, 10:54:02
+      Time of this report: 5/26/2023, 12:30:04
              Machine name: ROG-BKD
                Machine Id: {9C9D14BC-BF2F-4C65-B681-549864E4FDFB}
          Operating System: Windows 10 Pro 64-bit (10.0, Build 19045) (19041.vb_release.191206-1406)
@@ -12,7 +12,7 @@ System Information
                 Processor: 11th Gen Intel(R) Core(TM) i7-11700 @ 2.50GHz (16 CPUs), ~2.5GHz
                    Memory: 16384MB RAM
       Available OS Memory: 16220MB RAM
-                Page File: 17091MB used, 4504MB available
+                Page File: 16031MB used, 5564MB available
               Windows Dir: C:\WINDOWS
           DirectX Version: DirectX 12
       DX Setup Parameters: Not found
@@ -574,7 +574,7 @@ USB Devices
 | | 
 | +-+ USB Composite Device
 | | | Vendor/Product ID: 0x046D, 0xC33C
-| | | Location: Port_#0004.Hub_#0003
+| | | Location: Port_#0004.Hub_#0004
 | | | Matching Device ID: USB\COMPOSITE
 | | | Service: usbccgp
 | | | Driver: usbccgp.sys, 3/4/2023 13:14:18, 190336 bytes
@@ -629,7 +629,7 @@ PS/2 Devices
 Disk & DVD/CD-ROM Drives
 ------------------------
       Drive: C:
- Free Space: 155.4 GB
+ Free Space: 155.1 GB
 Total Space: 575.5 GB
 File System: NTFS
       Model: WDC PC SN530 SDBPNPZ-1T00-1002
@@ -1722,6 +1722,44 @@ Diagnostics
 
 Windows Error Reporting:
 +++ WER0 +++:
+Fault bucket 1468478466330317310, type 4
+Event Name: APPCRASH
+Response: Not available
+Cab Id: 0
+
+Problem signature:
+P1: DtsApo4Service.exe
+P2: 1.5.3.0
+P3: 5f0d2715
+P4: DtsApo4Service.exe
+P5: 1.5.3.0
+P6: 5f0d2715
+P7: c0000005
+P8: 000000000000bdc2
+P9: 
+P10: 
+
+
++++ WER1 +++:
+Fault bucket 1828348203250309393, type 4
+Event Name: APPCRASH
+Response: Not available
+Cab Id: 0
+
+Problem signature:
+P1: lghub_updater.exe
+P2: 2023.3.6302.0
+P3: 6439ab81
+P4: lghub_updater.exe
+P5: 2023.3.6302.0
+P6: 6439ab81
+P7: c0000005
+P8: 00000000005ece10
+P9: 
+P10: 
+
+
++++ WER2 +++:
 Fault bucket 2169117610987837659, type 5
 Event Name: MoAppHangXProc
 Response: Not available
@@ -1740,7 +1778,7 @@ P9: 10.0.19041.546
 P10: 
 
 
-+++ WER1 +++:
++++ WER3 +++:
 Fault bucket 1610242013290696439, type 5
 Event Name: RADAR_PRE_LEAK_64
 Response: Not available
@@ -1759,7 +1797,7 @@ P9:
 P10: 
 
 
-+++ WER2 +++:
++++ WER4 +++:
 Fault bucket 2140915927001429021, type 5
 Event Name: MoAppHangXProc
 Response: Not available
@@ -1778,7 +1816,7 @@ P9: 10.0.19041.546
 P10: 
 
 
-+++ WER3 +++:
++++ WER5 +++:
 Fault bucket , type 0
 Event Name: AppHangB1
 Response: Not available
@@ -1797,7 +1835,7 @@ P9:
 P10: 
 
 
-+++ WER4 +++:
++++ WER6 +++:
 Fault bucket 1738321264911273108, type 5
 Event Name: AppHangB1
 Response: Not available
@@ -1808,44 +1846,6 @@ P1: java.exe
 P2: 19.0.1.0
 P3: 68d38a0d
 P4: 163f
-P5: 134217728
-P6: 
-P7: 
-P8: 
-P9: 
-P10: 
-
-
-+++ WER5 +++:
-Fault bucket 2255831663522457882, type 5
-Event Name: AppHangB1
-Response: Not available
-Cab Id: 0
-
-Problem signature:
-P1: java.exe
-P2: 19.0.1.0
-P3: 68d38a0d
-P4: e1aa
-P5: 134217728
-P6: 
-P7: 
-P8: 
-P9: 
-P10: 
-
-
-+++ WER6 +++:
-Fault bucket 2255831663522457882, type 5
-Event Name: AppHangB1
-Response: Not available
-Cab Id: 0
-
-Problem signature:
-P1: java.exe
-P2: 19.0.1.0
-P3: 68d38a0d
-P4: e1aa
 P5: 134217728
 P6: 
 P7: 
@@ -1874,17 +1874,17 @@ P10:
 
 
 +++ WER8 +++:
-Fault bucket 1839887362148301479, type 5
-Event Name: RADAR_PRE_LEAK_64
+Fault bucket 2255831663522457882, type 5
+Event Name: AppHangB1
 Response: Not available
 Cab Id: 0
 
 Problem signature:
 P1: java.exe
 P2: 19.0.1.0
-P3: 10.0.19045.2.0.0
-P4: 
-P5: 
+P3: 68d38a0d
+P4: e1aa
+P5: 134217728
 P6: 
 P7: 
 P8: 
@@ -1893,20 +1893,20 @@ P10:
 
 
 +++ WER9 +++:
-Fault bucket 1828348203250309393, type 4
-Event Name: APPCRASH
+Fault bucket 2255831663522457882, type 5
+Event Name: AppHangB1
 Response: Not available
 Cab Id: 0
 
 Problem signature:
-P1: lghub_updater.exe
-P2: 2023.3.6302.0
-P3: 6439ab81
-P4: lghub_updater.exe
-P5: 2023.3.6302.0
-P6: 6439ab81
-P7: c0000005
-P8: 00000000005ece10
+P1: java.exe
+P2: 19.0.1.0
+P3: 68d38a0d
+P4: e1aa
+P5: 134217728
+P6: 
+P7: 
+P8: 
 P9: 
 P10: 
 
