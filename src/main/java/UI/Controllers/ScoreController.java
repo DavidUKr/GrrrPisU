@@ -4,6 +4,7 @@ import UI.SceneLoaders.PageLoader;
 import UI.SceneLoaders.PopUpLoader;
 import UI.SceneLoaders.page_select;
 import benchmark.OpenGL.Generator;
+import data.GPUDetector;
 import database.DBUtils_local;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -47,7 +48,7 @@ public class  ScoreController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         DBUtils_local.score(null, l_name.getText(), Integer.parseInt(l_input.getText()), l_color.getText(), Float.parseFloat(l_score.getText()));
 
-
+        l_name.setText(GPUDetector.getGPU());
         setScore(Main.getScore());
         b_hist.setOnAction(new EventHandler<ActionEvent>() {
 

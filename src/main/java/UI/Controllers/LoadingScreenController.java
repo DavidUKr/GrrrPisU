@@ -48,12 +48,7 @@ public class LoadingScreenController implements Initializable,IController{
         YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB10.png"));
         YELLOW.add(new Image("/UI/images/Loading/Yellow/LoadingB11.png"));
 
-        if(PageLoader.getTHEME_b()) {
-            imIt=YELLOW.iterator();
-        }
-        else {
-            imIt=BLUE.iterator();
-        }
+        initIterator();
 
         if(imIt.hasNext()) imgBar_Cat.setImage(imIt.next());
         else System.out.println("Loading bar images null");
@@ -63,8 +58,9 @@ public class LoadingScreenController implements Initializable,IController{
 
         if(imIt.hasNext()) imgBar_Cat.setImage(imIt.next());
         else {
-            System.out.println("Loading finished");
-            PageLoader.load(event, page_select.SCORE);
+            //System.out.println("Loading finished");
+            //PageLoader.load(event, page_select.SCORE);
+            initIterator();
         }
     }
 
@@ -79,6 +75,16 @@ public class LoadingScreenController implements Initializable,IController{
             }
         }
 
+    }
+
+    private void initIterator(){
+
+        if(PageLoader.getTHEME_b()) {
+            imIt=YELLOW.iterator();
+        }
+        else {
+            imIt=BLUE.iterator();
+        }
     }
 
     public LoadingScreenController getController(){
