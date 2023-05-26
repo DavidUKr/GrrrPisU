@@ -30,7 +30,7 @@ public class ChooseTestController implements Initializable, IController{
             try {
                 PageLoader.load(event, page_select.LOADING);
                 Main.loadRender((LoadingScreenController) PageLoader.getController());
-            } catch (IOException e) {
+            } catch (IOException | InterruptedException e) {
                 throw new RuntimeException(e);
             }
         });
@@ -40,7 +40,7 @@ public class ChooseTestController implements Initializable, IController{
             try {
                 PageLoader.load(event, page_select.LOADING);
                 Main.loadRender((LoadingScreenController) PageLoader.getController());
-            } catch (IOException e) {
+            } catch (IOException | InterruptedException e) {
                 throw new RuntimeException(e);
             }
         });
@@ -50,7 +50,7 @@ public class ChooseTestController implements Initializable, IController{
             try {
                 PageLoader.load(event, page_select.LOADING);
                 Main.loadRender((LoadingScreenController) PageLoader.getController());
-            } catch (IOException e) {
+            } catch (IOException | InterruptedException e) {
                 throw new RuntimeException(e);
             }
         });

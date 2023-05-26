@@ -1,21 +1,14 @@
 package benchmark.OpenGL;
 
 
-import benchmark.rendering.objects.CubeDice;
-import benchmark.rendering.objects.D20Dice;
-import benchmark.rendering.objects.IObject;
-import benchmark.rendering.objects.TetrahedronDice;
-
 import benchmark.rendering.basicComponents.*;
 import benchmark.rendering.objects.*;
-
 import com.jogamp.opengl.GL;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLEventListener;
 import com.jogamp.opengl.awt.GLCanvas;
 import com.jogamp.opengl.glu.GLU;
-
 
 import java.util.ArrayList;
 
@@ -32,19 +25,15 @@ public class EventListener implements GLEventListener
 
     GLAutoDrawable drawable;
 
+
     public EventListener(JOGL jogl)
     {
         super();
-        //totalTime=0;
-        //numIterations=0;
         this.jogl=jogl;
     }
     @Override
     public void init(GLAutoDrawable drawable)
     {
-        //totalTime=0;
-        //numIterations=0;
-
         gl=drawable.getGL().getGL2();
         gl.glClearColor(0,0,0,1);
 
@@ -54,12 +43,6 @@ public class EventListener implements GLEventListener
         System.out.println("benchmark.OpenGL Vendor: " + vendor);
         System.out.println("benchmark.OpenGL Version: " + version);
         String extensions = gl.glGetString(GL.GL_EXTENSIONS);
-
-
-        //System.out.println("Supported Extensions: " + extensions);
-        jogl.getResolution(drawable);
-        jogl.getFrameRate(drawable);
-
 
         //System.out.println("Supported Extensions: " + extensions);
         jogl.getResolution(drawable);
@@ -78,76 +61,31 @@ public class EventListener implements GLEventListener
     {
         //Clear the color and depth buffers
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
-
         gl.glRotatef(-1, 1,1,0);
 
         float size=2;
         long startTime = System.nanoTime();
 
-         //gl.glColor4f(0,1,0,1);
-        gl.glBegin(GL2.GL_QUADS);
-            //Front face
-            gl.glColor3f(1,0.5f,0.5f); //red
-            gl.glVertex3f(-size, -size, size);
-            gl.glVertex3f(size, -size, size);
-            gl.glVertex3f(size, size, size);
-            gl.glVertex3f(-size, size, size);
+        renderObj(gl);
 
-            // Back face
-            gl.glColor3f(1,1,0); //yellow
-            gl.glVertex3f(size, -size, -size);
-            gl.glVertex3f(-size, -size, -size);
-            gl.glVertex3f(-size, size, -size);
-            gl.glVertex3f(size, size, -size);
-
-            // Left face
-            gl.glColor3f(1,1,1); //white
-            gl.glVertex3f(-size, -size, -size);
-            gl.glVertex3f(-size, -size, size);
-            gl.glVertex3f(-size, size, size);
-            gl.glVertex3f(-size, size, -size);
-
-            // Right face
-            gl.glColor3f(0,1,1); //turquoise
-            gl.glVertex3f(size, -size, size);
-            gl.glVertex3f(size, -size, -size);
-            gl.glVertex3f(size, size, -size);
-            gl.glVertex3f(size, size, size);
-
-            // Top face
-            gl.glColor3f(0,0,1); // blue
-            gl.glVertex3f(-size, size, size);
-            gl.glVertex3f(size, size, size);
-            gl.glVertex3f(size, size, -size);
-            gl.glVertex3f(-size, size, -size);
-
-            // Bottom face
-            gl.glColor3f(1,0,1); //magenta
-            gl.glVertex3f(-size, -size, -size);
-            gl.glVertex3f(size, -size, -size);
-            gl.glVertex3f(size, -size, size);
-            gl.glVertex3f(-size, -size, size);
-
-        gl.glEnd();
         numIterations++;
         long endTime = System.nanoTime();
         long elapsedTime = endTime - startTime;
 
         totalTime = totalTime+elapsedTime;
 
-        System.out.println("start: "+numIterations + " end: "+endTime+ ": total: "+totalTime);
+        //System.out.println("start: "+numIterations + " end: "+endTime+ ": total: "+totalTime + "; Thread"+Thread.currentThread().getName());
 
-        // renderObj(gl);
     }
 
     public double computeMeanRenderingTime(double totalTime, int numIterations) {
 
         totalTime=getTotalTime();
         numIterations=getNumIterations();
-        System.out.println("debug:time+"+numIterations);
+        //System.out.println("debug:itNum:"+numIterations+":totalTime:"+totalTime);
         if (numIterations > 0) {
             double meanRenderingTime = totalTime / numIterations;
-           // System.out.println("Mean rendering time: " + meanRenderingTime + " ms");
+            //System.out.println("Mean rendering time: " + meanRenderingTime + " ms");
             return  meanRenderingTime;
         } else {
             // System.out.println("No rendering iterations performed.");
@@ -162,12 +100,6 @@ public class EventListener implements GLEventListener
 
     public int getNumIterations() {
         return numIterations;
-
-        //gl.glRotatef(-1, 1,1,0);
-
-        //gl.glColor4f(0,1,0,1);
-
-        //renderObj(gl);
     }
 
     @Override
@@ -183,7 +115,6 @@ public class EventListener implements GLEventListener
 
         gl.glMatrixMode(GL2.GL_MODELVIEW);
         //gl.glLoadIdentity();
-
     }
 
 
@@ -191,19 +122,13 @@ public class EventListener implements GLEventListener
     {
         float size=1;
 
-        OBJECT = obj.TETRAHEDRON;
+        //OBJECT = obj.TETRAHEDRON;
         //OBJECT=obj.CUBE;
-        //OBJECT=obj.D20;
+        OBJECT=obj.D20;
 
         switch(OBJECT)
         {
             case TETRAHEDRON -> {
-
-                object=new TetrahedronDice(gl2, 0 ,0, 0);
-            }
-           /** case CUBE -> {
-                object=new CubeDice(gl2, 0 ,0, 0);
-
                 object = new TetrahedronDice(gl2, 0 ,0, 0);
                 ArrayList<Vertex> VERTS = object.getVERTS();
 
@@ -239,7 +164,7 @@ public class EventListener implements GLEventListener
                 gl.glVertex3f(vB.getX(), vB.getY(), vB.getZ());
 
                 gl.glEnd();
-            }*/
+            }
             case CUBE -> {
                 object = new CubeDice(gl2, 0 ,0, 0);
                 ArrayList<Vertex> VERTS = object.getVERTS();
@@ -327,9 +252,6 @@ public class EventListener implements GLEventListener
 
             }*/
             case D20 -> {
-
-                object=new D20Dice(gl2, 0, 0, 0);
-
                 object = new D20Dice(gl2, 0, 0, 0);
                 ArrayList<Vertex> VERTS = object.getVERTS();
 

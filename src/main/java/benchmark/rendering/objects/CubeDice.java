@@ -28,7 +28,8 @@ public class CubeDice implements IObject
         Vertex vG = new Vertex(-1.0f, +1.0f, -1.0f);
         Vertex vH = new Vertex(-1.0f, +1.0f, +1.0f);
 
-        VERTS.addAll(List.of(vA,vB,vC,vD, vE,vF,vG,vH));
+        VERTS.addAll(List.of(vA,vB,vC,vD,
+                            vE,vF,vG,vH));
 
 
         //ABCD

@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import main_pack.Main;
 
 import java.io.IOException;
 import java.net.URL;
@@ -47,17 +48,7 @@ public class  ScoreController implements Initializable {
         DBUtils_local.score(null, l_name.getText(), Integer.parseInt(l_input.getText()), l_color.getText(), Float.parseFloat(l_score.getText()));
 
 
-        /**public void setValueInGridPane() {
-             l_score = new Label(String.valueOf(value)); // Create a label with the value
-
-            // Set the position of the label in the GridPane
-            GridPane.setRowIndex(label, row);
-            GridPane.setColumnIndex(label, column);
-
-            // Add the label to the GridPane
-            g_information.getChildren().add(l_score);
-        }*/
-
+        setScore(Main.getScore());
         b_hist.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
@@ -93,5 +84,9 @@ public class  ScoreController implements Initializable {
                 }
             }
         });
+    }
+
+    public void setScore(double score){
+        l_score.setText(String.valueOf(score));
     }
 }
