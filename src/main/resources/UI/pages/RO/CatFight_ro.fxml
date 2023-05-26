@@ -3,7 +3,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.control.Label?>
 
 <AnchorPane prefHeight="400.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.CatFightController">
    <children>
@@ -42,15 +41,13 @@
             <Image url="@../../images/CatFight/TotalScore(RO).png" />
          </image>
       </ImageView>
-      <Button fx:id="btnBack"/>
+      <Button fx:id="btnBack" />
 
-      <Label fx:id="labelHelp" text="Apasa pe X pentru a inchide"></Label>
-
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="181.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../images/CatFight/Text_Blue(RO).png" />
-         </image>
-      </ImageView>
+      <Label fx:id="labelHelp" text="Apasa pe X pentru a inchide" />
+      <Label fx:id="winner" layoutX="261.0" layoutY="288.0" text="Label" />
+      <Label fx:id="blue_score" layoutX="127.0" layoutY="200.0" text="Label" />
+      <Label fx:id="yellow_score" layoutX="405.0" layoutY="200.0" text="Label" />
+      
 
    </children>
 </AnchorPane>

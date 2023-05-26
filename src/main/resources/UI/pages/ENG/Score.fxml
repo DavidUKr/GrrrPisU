@@ -57,8 +57,8 @@
             <Label text="Team:" GridPane.rowIndex="2" />
             <Label text="Score:" GridPane.rowIndex="3" />
             <Label fx:id="l_name" text="...." GridPane.columnIndex="1" />
-            <Label fx:id="l_input" text="4" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label fx:id="l_color" text="Blue" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="l_input" text="aaaa" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="l_color" text="blue" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label fx:id="l_score" text="3.7" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>

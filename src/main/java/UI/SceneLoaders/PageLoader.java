@@ -132,11 +132,19 @@ public class PageLoader {
                     CSS_theme = PageLoader.class.getResource("/UI/css/Score/Yellow_score.css").toExternalForm();
                 else CSS_theme = PageLoader.class.getResource("/UI/css/Score/Blue_score.css").toExternalForm();
 
-                FXML_name="/UI/pages/ENG/Score.fxml";
+                if (LANG_b) {
+                    FXML_name="/UI/pages/RO/Score.fxml";
+                } else {
+                    FXML_name="/UI/pages/ENG/Score.fxml";
+                }
             }
 
             case LOCAL_HIST -> {
-                FXML_name="/UI/pages/ENG/local_history.fxml";
+                if (LANG_b) {
+                    FXML_name="/UI/pages/RO/local_history.fxml";
+                } else {
+                    FXML_name="/UI/pages/ENG/local_history.fxml";
+                }
             }
         }
 
@@ -170,9 +178,8 @@ public class PageLoader {
             scene.getStylesheets().add(CSS_theme);
             scene.getStylesheets().add(CSS_lang);
         }
-        if(page==page_select.SCORE && page==page_select.LOCAL_HIST) {
-            scene.getStylesheets().add(CSS_theme);
-        }
+        if(page==page_select.DETECT_GPU || page==page_select.SCORE) scene.getStylesheets().add(CSS_lang);
+
         //loading stage
         stage.setScene(scene);
         stage.show();

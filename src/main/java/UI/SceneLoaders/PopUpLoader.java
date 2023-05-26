@@ -1,5 +1,6 @@
 package UI.SceneLoaders;
 
+import UI.Controllers.CatFightController;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -53,7 +54,12 @@ public class PopUpLoader {
         } else {
             loader = new FXMLLoader(PopUpLoader.class.getResource("/UI/pages/ENG/CatFight_eng.fxml"));
         }
+
         Parent root = loader.load();
+        CatFightController catFightController = loader.getController();
+        catFightController.setBlueScore();
+        catFightController.setYellowScore();
+        catFightController.setWinner();
 
         // Create a new stage
         Stage popupStage = new Stage();
